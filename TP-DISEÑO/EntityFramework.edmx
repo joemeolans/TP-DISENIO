@@ -1,0 +1,1304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CapitalHumanoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="bloque">
+          <Key>
+            <PropertyRef Name="IdBloque" />
+          </Key>
+          <Property Name="IdBloque" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NumeroBloque" Type="int" Nullable="false" />
+          <Property Name="IdCuestionario" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="candidato">
+          <Key>
+            <PropertyRef Name="IdCandidato" />
+          </Key>
+          <Property Name="IdCandidato" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Apellido" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Contraseña" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="NombreUsuario" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Tipo" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="NumDocumento" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="competencia">
+          <Key>
+            <PropertyRef Name="IdCompetencia" />
+          </Key>
+          <Property Name="IdCompetencia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreCompetencia" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="TipoCompetencia" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="competenciacuestionario">
+          <Key>
+            <PropertyRef Name="IdCompetenciaCuestionario" />
+          </Key>
+          <Property Name="IdCompetenciaCuestionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreCompetencia" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ValorObtenido" Type="float" Nullable="false" />
+          <Property Name="IdCuestionario" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cuestionario">
+          <Key>
+            <PropertyRef Name="IdCuestionario" />
+          </Key>
+          <Property Name="IdCuestionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EstadoDeAprobación" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Estado" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="FechaFin" Type="date" Nullable="false" />
+          <Property Name="FechaInicio" Type="date" Nullable="false" />
+          <Property Name="Resultado" Type="float" Nullable="false" />
+          <Property Name="CantidadAccesos" Type="int" Nullable="false" />
+          <Property Name="UltimoIngreso" Type="date" Nullable="false" />
+          <Property Name="PlazoParaSerContestado" Type="float" Nullable="false" />
+          <Property Name="IdUsuario" Type="int" Nullable="false" />
+          <Property Name="IdEvaluación" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="empresa">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+          </Key>
+          <Property Name="IdEmpresa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreEmpresa" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="DireccionEmpresa" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TelefonoEmpresa" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="estado">
+          <Key>
+            <PropertyRef Name="IdEstado" />
+          </Key>
+          <Property Name="IdEstado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Estado" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="estadodeaprobacion">
+          <Key>
+            <PropertyRef Name="IdEstadoDeAprobación" />
+          </Key>
+          <Property Name="IdEstadoDeAprobación" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EstadoDeAprobación" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="evaluacion">
+          <Key>
+            <PropertyRef Name="IdEvaluacion" />
+          </Key>
+          <Property Name="IdEvaluacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FechaEvaluacion" Type="date" Nullable="false" />
+          <Property Name="IdPuesto" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="factor">
+          <Key>
+            <PropertyRef Name="IdFactor" />
+          </Key>
+          <Property Name="IdFactor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreFactor" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="IdCompetencia" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="factorcuestionario">
+          <Key>
+            <PropertyRef Name="IdFactorCuestionario" />
+          </Key>
+          <Property Name="IdFactorCuestionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ValorObtenido" Type="float" Nullable="false" />
+          <Property Name="NombreFactor" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="IdCompetenciaCuestionario" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="itemrespuesta">
+          <Key>
+            <PropertyRef Name="IdItemRespuesta" />
+          </Key>
+          <Property Name="IdItemRespuesta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrdenRespuesta" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="280" Nullable="false" />
+          <Property Name="NumeroOpcion" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="itemrespuestapregunta">
+          <Key>
+            <PropertyRef Name="IdItemRespuesta" />
+            <PropertyRef Name="IdPregunta" />
+          </Key>
+          <Property Name="IdItemRespuesta" Type="int" Nullable="false" />
+          <Property Name="IdPregunta" Type="int" Nullable="false" />
+          <Property Name="PonderacionRespuesta" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="opcionrespuesta">
+          <Key>
+            <PropertyRef Name="NumeroOpcion" />
+          </Key>
+          <Property Name="NumeroOpcion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="pregunta">
+          <Key>
+            <PropertyRef Name="IdPregunta" />
+          </Key>
+          <Property Name="IdPregunta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TextoPregunta" Type="varchar" MaxLength="400" Nullable="false" />
+          <Property Name="NumeroOpcion" Type="int" Nullable="false" />
+          <Property Name="IdFactor" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="preguntacuestionario">
+          <Key>
+            <PropertyRef Name="IdPreguntaCuestionario" />
+          </Key>
+          <Property Name="IdPreguntaCuestionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrdenPregunta" Type="int" Nullable="false" />
+          <Property Name="TextoPregunta" Type="varchar" MaxLength="400" Nullable="false" />
+          <Property Name="IdFactorCuestionario" Type="int" Nullable="false" />
+          <Property Name="IdBloque" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="puestobuscado">
+          <Key>
+            <PropertyRef Name="IdPuesto" />
+          </Key>
+          <Property Name="IdPuesto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodigoPuesto" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="NombrePuesto" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Eliminado" Type="bit" Nullable="false" />
+          <Property Name="IdEmpresa" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="puestobuscadocompetencia">
+          <Key>
+            <PropertyRef Name="IdPuesto" />
+            <PropertyRef Name="IdCompetencia" />
+          </Key>
+          <Property Name="IdPuesto" Type="int" Nullable="false" />
+          <Property Name="IdCompetencia" Type="int" Nullable="false" />
+          <Property Name="PuntajeMinimo" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="respuestacuestionario">
+          <Key>
+            <PropertyRef Name="IdRespuestaCuestionario" />
+          </Key>
+          <Property Name="IdRespuestaCuestionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrdenRespuesta" Type="int" Nullable="false" />
+          <Property Name="Descripción" Type="varchar" MaxLength="280" Nullable="false" />
+          <Property Name="RespuestaSeleccionada" Type="int" Nullable="false" />
+          <Property Name="Ponderación" Type="float" Nullable="false" />
+          <Property Name="IdPreguntaCuestionario" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tipocompetencia">
+          <Key>
+            <PropertyRef Name="IdTipoCompetencia" />
+          </Key>
+          <Property Name="IdTipoCompetencia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TipoCompetencia" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tipodocumento">
+          <Key>
+            <PropertyRef Name="IdTipoDocumento" />
+          </Key>
+          <Property Name="IdTipoDocumento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tipo" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_competencia_cuestionario">
+          <End Role="cuestionario" Type="Self.cuestionario" Multiplicity="1" />
+          <End Role="competenciacuestionario" Type="Self.competenciacuestionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cuestionario">
+              <PropertyRef Name="IdCuestionario" />
+            </Principal>
+            <Dependent Role="competenciacuestionario">
+              <PropertyRef Name="IdCuestionario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_cuestionario">
+          <End Role="cuestionario" Type="Self.cuestionario" Multiplicity="1" />
+          <End Role="bloque" Type="Self.bloque" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cuestionario">
+              <PropertyRef Name="IdCuestionario" />
+            </Principal>
+            <Dependent Role="bloque">
+              <PropertyRef Name="IdCuestionario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errores durante la generación:
+advertencia 6035: La relación 'fk_cuestionario_estado' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="fk_cuestionario_estado" />-->
+        <!--Errores durante la generación:
+advertencia 6035: La relación 'fk_cuestionario_estado2' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="fk_cuestionario_estado2" />-->
+        <Association Name="fk_cuestionario_evaluacion">
+          <End Role="evaluacion" Type="Self.evaluacion" Multiplicity="1" />
+          <End Role="cuestionario" Type="Self.cuestionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="evaluacion">
+              <PropertyRef Name="IdEvaluacion" />
+            </Principal>
+            <Dependent Role="cuestionario">
+              <PropertyRef Name="IdEvaluación" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_cuestionario_usuario">
+          <End Role="candidato" Type="Self.candidato" Multiplicity="1" />
+          <End Role="cuestionario" Type="Self.cuestionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="candidato">
+              <PropertyRef Name="IdCandidato" />
+            </Principal>
+            <Dependent Role="cuestionario">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_evaluacion_puesto">
+          <End Role="puestobuscado" Type="Self.puestobuscado" Multiplicity="1" />
+          <End Role="evaluacion" Type="Self.evaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="puestobuscado">
+              <PropertyRef Name="IdPuesto" />
+            </Principal>
+            <Dependent Role="evaluacion">
+              <PropertyRef Name="IdPuesto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_factor_competencia">
+          <End Role="competencia" Type="Self.competencia" Multiplicity="1" />
+          <End Role="factor" Type="Self.factor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="competencia">
+              <PropertyRef Name="IdCompetencia" />
+            </Principal>
+            <Dependent Role="factor">
+              <PropertyRef Name="IdCompetencia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_factorcuestionario_competenciacuestionario">
+          <End Role="competenciacuestionario" Type="Self.competenciacuestionario" Multiplicity="1" />
+          <End Role="factorcuestionario" Type="Self.factorcuestionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="competenciacuestionario">
+              <PropertyRef Name="IdCompetenciaCuestionario" />
+            </Principal>
+            <Dependent Role="factorcuestionario">
+              <PropertyRef Name="IdCompetenciaCuestionario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_itemrespuesta_opcionrespuesta">
+          <End Role="opcionrespuesta" Type="Self.opcionrespuesta" Multiplicity="1" />
+          <End Role="itemrespuesta" Type="Self.itemrespuesta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="opcionrespuesta">
+              <PropertyRef Name="NumeroOpcion" />
+            </Principal>
+            <Dependent Role="itemrespuesta">
+              <PropertyRef Name="NumeroOpcion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_itemrespuestapregunta_itemrespuesta">
+          <End Role="itemrespuesta" Type="Self.itemrespuesta" Multiplicity="1" />
+          <End Role="itemrespuestapregunta" Type="Self.itemrespuestapregunta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="itemrespuesta">
+              <PropertyRef Name="IdItemRespuesta" />
+            </Principal>
+            <Dependent Role="itemrespuestapregunta">
+              <PropertyRef Name="IdItemRespuesta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_itemrespuestapregunta_pregunta">
+          <End Role="pregunta" Type="Self.pregunta" Multiplicity="1" />
+          <End Role="itemrespuestapregunta" Type="Self.itemrespuestapregunta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pregunta">
+              <PropertyRef Name="IdPregunta" />
+            </Principal>
+            <Dependent Role="itemrespuestapregunta">
+              <PropertyRef Name="IdPregunta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_pregunta_factor">
+          <End Role="factor" Type="Self.factor" Multiplicity="1" />
+          <End Role="pregunta" Type="Self.pregunta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="factor">
+              <PropertyRef Name="IdFactor" />
+            </Principal>
+            <Dependent Role="pregunta">
+              <PropertyRef Name="IdFactor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_pregunta_numeroopcion">
+          <End Role="opcionrespuesta" Type="Self.opcionrespuesta" Multiplicity="1" />
+          <End Role="pregunta" Type="Self.pregunta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="opcionrespuesta">
+              <PropertyRef Name="NumeroOpcion" />
+            </Principal>
+            <Dependent Role="pregunta">
+              <PropertyRef Name="NumeroOpcion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_preguntacuestionario_bloque">
+          <End Role="bloque" Type="Self.bloque" Multiplicity="1" />
+          <End Role="preguntacuestionario" Type="Self.preguntacuestionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bloque">
+              <PropertyRef Name="IdBloque" />
+            </Principal>
+            <Dependent Role="preguntacuestionario">
+              <PropertyRef Name="IdBloque" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_preguntacuestionario_factorcuestionario">
+          <End Role="factorcuestionario" Type="Self.factorcuestionario" Multiplicity="1" />
+          <End Role="preguntacuestionario" Type="Self.preguntacuestionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="factorcuestionario">
+              <PropertyRef Name="IdFactorCuestionario" />
+            </Principal>
+            <Dependent Role="preguntacuestionario">
+              <PropertyRef Name="IdFactorCuestionario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_puestobuscado_empresa">
+          <End Role="empresa" Type="Self.empresa" Multiplicity="1" />
+          <End Role="puestobuscado" Type="Self.puestobuscado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empresa">
+              <PropertyRef Name="IdEmpresa" />
+            </Principal>
+            <Dependent Role="puestobuscado">
+              <PropertyRef Name="IdEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_puestobuscadocompetencia_competencia">
+          <End Role="competencia" Type="Self.competencia" Multiplicity="1" />
+          <End Role="puestobuscadocompetencia" Type="Self.puestobuscadocompetencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="competencia">
+              <PropertyRef Name="IdCompetencia" />
+            </Principal>
+            <Dependent Role="puestobuscadocompetencia">
+              <PropertyRef Name="IdCompetencia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_puestobuscadocompetencia_puestobuscado">
+          <End Role="puestobuscado" Type="Self.puestobuscado" Multiplicity="1" />
+          <End Role="puestobuscadocompetencia" Type="Self.puestobuscadocompetencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="puestobuscado">
+              <PropertyRef Name="IdPuesto" />
+            </Principal>
+            <Dependent Role="puestobuscadocompetencia">
+              <PropertyRef Name="IdPuesto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_respuesta_pregunta">
+          <End Role="preguntacuestionario" Type="Self.preguntacuestionario" Multiplicity="1" />
+          <End Role="respuestacuestionario" Type="Self.respuestacuestionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="preguntacuestionario">
+              <PropertyRef Name="IdPreguntaCuestionario" />
+            </Principal>
+            <Dependent Role="respuestacuestionario">
+              <PropertyRef Name="IdPreguntaCuestionario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errores durante la generación:
+advertencia 6035: La relación 'fk_tipocompetencia' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="fk_tipocompetencia" />-->
+        <!--Errores durante la generación:
+advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="fk_tipodocumento" />-->
+        <EntityContainer Name="CapitalHumanoModelStoreContainer">
+          <EntitySet Name="bloque" EntityType="Self.bloque" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="candidato" EntityType="Self.candidato" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="competencia" EntityType="Self.competencia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="competenciacuestionario" EntityType="Self.competenciacuestionario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cuestionario" EntityType="Self.cuestionario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="empresa" EntityType="Self.empresa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="estado" EntityType="Self.estado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="estadodeaprobacion" EntityType="Self.estadodeaprobacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="evaluacion" EntityType="Self.evaluacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="factor" EntityType="Self.factor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="factorcuestionario" EntityType="Self.factorcuestionario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="itemrespuesta" EntityType="Self.itemrespuesta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="itemrespuestapregunta" EntityType="Self.itemrespuestapregunta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="opcionrespuesta" EntityType="Self.opcionrespuesta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pregunta" EntityType="Self.pregunta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="preguntacuestionario" EntityType="Self.preguntacuestionario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="puestobuscado" EntityType="Self.puestobuscado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="puestobuscadocompetencia" EntityType="Self.puestobuscadocompetencia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="respuestacuestionario" EntityType="Self.respuestacuestionario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tipocompetencia" EntityType="Self.tipocompetencia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tipodocumento" EntityType="Self.tipodocumento" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="fk_competencia_cuestionario" Association="Self.fk_competencia_cuestionario">
+            <End Role="cuestionario" EntitySet="cuestionario" />
+            <End Role="competenciacuestionario" EntitySet="competenciacuestionario" />
+          </AssociationSet>
+          <AssociationSet Name="fk_cuestionario" Association="Self.fk_cuestionario">
+            <End Role="cuestionario" EntitySet="cuestionario" />
+            <End Role="bloque" EntitySet="bloque" />
+          </AssociationSet>
+          <AssociationSet Name="fk_cuestionario_evaluacion" Association="Self.fk_cuestionario_evaluacion">
+            <End Role="evaluacion" EntitySet="evaluacion" />
+            <End Role="cuestionario" EntitySet="cuestionario" />
+          </AssociationSet>
+          <AssociationSet Name="fk_cuestionario_usuario" Association="Self.fk_cuestionario_usuario">
+            <End Role="candidato" EntitySet="candidato" />
+            <End Role="cuestionario" EntitySet="cuestionario" />
+          </AssociationSet>
+          <AssociationSet Name="fk_evaluacion_puesto" Association="Self.fk_evaluacion_puesto">
+            <End Role="puestobuscado" EntitySet="puestobuscado" />
+            <End Role="evaluacion" EntitySet="evaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_factor_competencia" Association="Self.fk_factor_competencia">
+            <End Role="competencia" EntitySet="competencia" />
+            <End Role="factor" EntitySet="factor" />
+          </AssociationSet>
+          <AssociationSet Name="fk_factorcuestionario_competenciacuestionario" Association="Self.fk_factorcuestionario_competenciacuestionario">
+            <End Role="competenciacuestionario" EntitySet="competenciacuestionario" />
+            <End Role="factorcuestionario" EntitySet="factorcuestionario" />
+          </AssociationSet>
+          <AssociationSet Name="fk_itemrespuesta_opcionrespuesta" Association="Self.fk_itemrespuesta_opcionrespuesta">
+            <End Role="opcionrespuesta" EntitySet="opcionrespuesta" />
+            <End Role="itemrespuesta" EntitySet="itemrespuesta" />
+          </AssociationSet>
+          <AssociationSet Name="fk_itemrespuestapregunta_itemrespuesta" Association="Self.fk_itemrespuestapregunta_itemrespuesta">
+            <End Role="itemrespuesta" EntitySet="itemrespuesta" />
+            <End Role="itemrespuestapregunta" EntitySet="itemrespuestapregunta" />
+          </AssociationSet>
+          <AssociationSet Name="fk_itemrespuestapregunta_pregunta" Association="Self.fk_itemrespuestapregunta_pregunta">
+            <End Role="pregunta" EntitySet="pregunta" />
+            <End Role="itemrespuestapregunta" EntitySet="itemrespuestapregunta" />
+          </AssociationSet>
+          <AssociationSet Name="fk_pregunta_factor" Association="Self.fk_pregunta_factor">
+            <End Role="factor" EntitySet="factor" />
+            <End Role="pregunta" EntitySet="pregunta" />
+          </AssociationSet>
+          <AssociationSet Name="fk_pregunta_numeroopcion" Association="Self.fk_pregunta_numeroopcion">
+            <End Role="opcionrespuesta" EntitySet="opcionrespuesta" />
+            <End Role="pregunta" EntitySet="pregunta" />
+          </AssociationSet>
+          <AssociationSet Name="fk_preguntacuestionario_bloque" Association="Self.fk_preguntacuestionario_bloque">
+            <End Role="bloque" EntitySet="bloque" />
+            <End Role="preguntacuestionario" EntitySet="preguntacuestionario" />
+          </AssociationSet>
+          <AssociationSet Name="fk_preguntacuestionario_factorcuestionario" Association="Self.fk_preguntacuestionario_factorcuestionario">
+            <End Role="factorcuestionario" EntitySet="factorcuestionario" />
+            <End Role="preguntacuestionario" EntitySet="preguntacuestionario" />
+          </AssociationSet>
+          <AssociationSet Name="fk_puestobuscado_empresa" Association="Self.fk_puestobuscado_empresa">
+            <End Role="empresa" EntitySet="empresa" />
+            <End Role="puestobuscado" EntitySet="puestobuscado" />
+          </AssociationSet>
+          <AssociationSet Name="fk_puestobuscadocompetencia_competencia" Association="Self.fk_puestobuscadocompetencia_competencia">
+            <End Role="competencia" EntitySet="competencia" />
+            <End Role="puestobuscadocompetencia" EntitySet="puestobuscadocompetencia" />
+          </AssociationSet>
+          <AssociationSet Name="fk_puestobuscadocompetencia_puestobuscado" Association="Self.fk_puestobuscadocompetencia_puestobuscado">
+            <End Role="puestobuscado" EntitySet="puestobuscado" />
+            <End Role="puestobuscadocompetencia" EntitySet="puestobuscadocompetencia" />
+          </AssociationSet>
+          <AssociationSet Name="fk_respuesta_pregunta" Association="Self.fk_respuesta_pregunta">
+            <End Role="preguntacuestionario" EntitySet="preguntacuestionario" />
+            <End Role="respuestacuestionario" EntitySet="respuestacuestionario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CapitalHumanoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="bloque">
+          <Key>
+            <PropertyRef Name="IdBloque" />
+          </Key>
+          <Property Name="IdBloque" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NumeroBloque" Type="Int32" Nullable="false" />
+          <Property Name="IdCuestionario" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="cuestionario" Relationship="Self.fk_cuestionario" FromRole="bloque" ToRole="cuestionario" />
+          <NavigationProperty Name="preguntacuestionario" Relationship="Self.fk_preguntacuestionario_bloque" FromRole="bloque" ToRole="preguntacuestionario" />
+        </EntityType>
+        <EntityType Name="candidato">
+          <Key>
+            <PropertyRef Name="IdCandidato" />
+          </Key>
+          <Property Name="IdCandidato" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Contraseña" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NombreUsuario" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tipo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NumDocumento" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="cuestionario" Relationship="Self.fk_cuestionario_usuario" FromRole="candidato" ToRole="cuestionario" />
+        </EntityType>
+        <EntityType Name="competencia">
+          <Key>
+            <PropertyRef Name="IdCompetencia" />
+          </Key>
+          <Property Name="IdCompetencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreCompetencia" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TipoCompetencia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="factor" Relationship="Self.fk_factor_competencia" FromRole="competencia" ToRole="factor" />
+          <NavigationProperty Name="puestobuscadocompetencia" Relationship="Self.fk_puestobuscadocompetencia_competencia" FromRole="competencia" ToRole="puestobuscadocompetencia" />
+        </EntityType>
+        <EntityType Name="competenciacuestionario">
+          <Key>
+            <PropertyRef Name="IdCompetenciaCuestionario" />
+          </Key>
+          <Property Name="IdCompetenciaCuestionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreCompetencia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ValorObtenido" Type="Double" Nullable="false" />
+          <Property Name="IdCuestionario" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="cuestionario" Relationship="Self.fk_competencia_cuestionario" FromRole="competenciacuestionario" ToRole="cuestionario" />
+          <NavigationProperty Name="factorcuestionario" Relationship="Self.fk_factorcuestionario_competenciacuestionario" FromRole="competenciacuestionario" ToRole="factorcuestionario" />
+        </EntityType>
+        <EntityType Name="cuestionario">
+          <Key>
+            <PropertyRef Name="IdCuestionario" />
+          </Key>
+          <Property Name="IdCuestionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EstadoDeAprobación" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Estado" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FechaFin" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FechaInicio" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Resultado" Type="Double" Nullable="false" />
+          <Property Name="CantidadAccesos" Type="Int32" Nullable="false" />
+          <Property Name="UltimoIngreso" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PlazoParaSerContestado" Type="Double" Nullable="false" />
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" />
+          <Property Name="IdEvaluación" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="bloque" Relationship="Self.fk_cuestionario" FromRole="cuestionario" ToRole="bloque" />
+          <NavigationProperty Name="candidato" Relationship="Self.fk_cuestionario_usuario" FromRole="cuestionario" ToRole="candidato" />
+          <NavigationProperty Name="competenciacuestionario" Relationship="Self.fk_competencia_cuestionario" FromRole="cuestionario" ToRole="competenciacuestionario" />
+          <NavigationProperty Name="evaluacion" Relationship="Self.fk_cuestionario_evaluacion" FromRole="cuestionario" ToRole="evaluacion" />
+        </EntityType>
+        <EntityType Name="empresa">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+          </Key>
+          <Property Name="IdEmpresa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreEmpresa" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DireccionEmpresa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TelefonoEmpresa" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="puestobuscado" Relationship="Self.fk_puestobuscado_empresa" FromRole="empresa" ToRole="puestobuscado" />
+        </EntityType>
+        <EntityType Name="estado">
+          <Key>
+            <PropertyRef Name="IdEstado" />
+          </Key>
+          <Property Name="IdEstado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Estado1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="estadodeaprobacion">
+          <Key>
+            <PropertyRef Name="IdEstadoDeAprobación" />
+          </Key>
+          <Property Name="IdEstadoDeAprobación" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EstadoDeAprobación" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="evaluacion">
+          <Key>
+            <PropertyRef Name="IdEvaluacion" />
+          </Key>
+          <Property Name="IdEvaluacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FechaEvaluacion" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IdPuesto" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="cuestionario" Relationship="Self.fk_cuestionario_evaluacion" FromRole="evaluacion" ToRole="cuestionario" />
+          <NavigationProperty Name="puestobuscado" Relationship="Self.fk_evaluacion_puesto" FromRole="evaluacion" ToRole="puestobuscado" />
+        </EntityType>
+        <EntityType Name="factor">
+          <Key>
+            <PropertyRef Name="IdFactor" />
+          </Key>
+          <Property Name="IdFactor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreFactor" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdCompetencia" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="competencia" Relationship="Self.fk_factor_competencia" FromRole="factor" ToRole="competencia" />
+          <NavigationProperty Name="pregunta" Relationship="Self.fk_pregunta_factor" FromRole="factor" ToRole="pregunta" />
+        </EntityType>
+        <EntityType Name="factorcuestionario">
+          <Key>
+            <PropertyRef Name="IdFactorCuestionario" />
+          </Key>
+          <Property Name="IdFactorCuestionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ValorObtenido" Type="Double" Nullable="false" />
+          <Property Name="NombreFactor" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdCompetenciaCuestionario" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="competenciacuestionario" Relationship="Self.fk_factorcuestionario_competenciacuestionario" FromRole="factorcuestionario" ToRole="competenciacuestionario" />
+          <NavigationProperty Name="preguntacuestionario" Relationship="Self.fk_preguntacuestionario_factorcuestionario" FromRole="factorcuestionario" ToRole="preguntacuestionario" />
+        </EntityType>
+        <EntityType Name="itemrespuesta">
+          <Key>
+            <PropertyRef Name="IdItemRespuesta" />
+          </Key>
+          <Property Name="IdItemRespuesta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrdenRespuesta" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="280" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NumeroOpcion" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="opcionrespuesta" Relationship="Self.fk_itemrespuesta_opcionrespuesta" FromRole="itemrespuesta" ToRole="opcionrespuesta" />
+          <NavigationProperty Name="itemrespuestapregunta" Relationship="Self.fk_itemrespuestapregunta_itemrespuesta" FromRole="itemrespuesta" ToRole="itemrespuestapregunta" />
+        </EntityType>
+        <EntityType Name="itemrespuestapregunta">
+          <Key>
+            <PropertyRef Name="IdItemRespuesta" />
+            <PropertyRef Name="IdPregunta" />
+          </Key>
+          <Property Name="IdItemRespuesta" Type="Int32" Nullable="false" />
+          <Property Name="IdPregunta" Type="Int32" Nullable="false" />
+          <Property Name="PonderacionRespuesta" Type="Double" Nullable="false" />
+          <NavigationProperty Name="itemrespuesta" Relationship="Self.fk_itemrespuestapregunta_itemrespuesta" FromRole="itemrespuestapregunta" ToRole="itemrespuesta" />
+          <NavigationProperty Name="pregunta" Relationship="Self.fk_itemrespuestapregunta_pregunta" FromRole="itemrespuestapregunta" ToRole="pregunta" />
+        </EntityType>
+        <EntityType Name="opcionrespuesta">
+          <Key>
+            <PropertyRef Name="NumeroOpcion" />
+          </Key>
+          <Property Name="NumeroOpcion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="itemrespuesta" Relationship="Self.fk_itemrespuesta_opcionrespuesta" FromRole="opcionrespuesta" ToRole="itemrespuesta" />
+          <NavigationProperty Name="pregunta" Relationship="Self.fk_pregunta_numeroopcion" FromRole="opcionrespuesta" ToRole="pregunta" />
+        </EntityType>
+        <EntityType Name="pregunta">
+          <Key>
+            <PropertyRef Name="IdPregunta" />
+          </Key>
+          <Property Name="IdPregunta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TextoPregunta" Type="String" MaxLength="400" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NumeroOpcion" Type="Int32" Nullable="false" />
+          <Property Name="IdFactor" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="factor" Relationship="Self.fk_pregunta_factor" FromRole="pregunta" ToRole="factor" />
+          <NavigationProperty Name="itemrespuestapregunta" Relationship="Self.fk_itemrespuestapregunta_pregunta" FromRole="pregunta" ToRole="itemrespuestapregunta" />
+          <NavigationProperty Name="opcionrespuesta" Relationship="Self.fk_pregunta_numeroopcion" FromRole="pregunta" ToRole="opcionrespuesta" />
+        </EntityType>
+        <EntityType Name="preguntacuestionario">
+          <Key>
+            <PropertyRef Name="IdPreguntaCuestionario" />
+          </Key>
+          <Property Name="IdPreguntaCuestionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrdenPregunta" Type="Int32" Nullable="false" />
+          <Property Name="TextoPregunta" Type="String" MaxLength="400" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdFactorCuestionario" Type="Int32" Nullable="false" />
+          <Property Name="IdBloque" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="bloque" Relationship="Self.fk_preguntacuestionario_bloque" FromRole="preguntacuestionario" ToRole="bloque" />
+          <NavigationProperty Name="factorcuestionario" Relationship="Self.fk_preguntacuestionario_factorcuestionario" FromRole="preguntacuestionario" ToRole="factorcuestionario" />
+          <NavigationProperty Name="respuestacuestionario" Relationship="Self.fk_respuesta_pregunta" FromRole="preguntacuestionario" ToRole="respuestacuestionario" />
+        </EntityType>
+        <EntityType Name="puestobuscado">
+          <Key>
+            <PropertyRef Name="IdPuesto" />
+          </Key>
+          <Property Name="IdPuesto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodigoPuesto" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NombrePuesto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Eliminado" Type="Boolean" Nullable="false" />
+          <Property Name="IdEmpresa" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="empresa" Relationship="Self.fk_puestobuscado_empresa" FromRole="puestobuscado" ToRole="empresa" />
+          <NavigationProperty Name="evaluacion" Relationship="Self.fk_evaluacion_puesto" FromRole="puestobuscado" ToRole="evaluacion" />
+          <NavigationProperty Name="puestobuscadocompetencia" Relationship="Self.fk_puestobuscadocompetencia_puestobuscado" FromRole="puestobuscado" ToRole="puestobuscadocompetencia" />
+        </EntityType>
+        <EntityType Name="puestobuscadocompetencia">
+          <Key>
+            <PropertyRef Name="IdPuesto" />
+            <PropertyRef Name="IdCompetencia" />
+          </Key>
+          <Property Name="IdPuesto" Type="Int32" Nullable="false" />
+          <Property Name="IdCompetencia" Type="Int32" Nullable="false" />
+          <Property Name="PuntajeMinimo" Type="Double" Nullable="false" />
+          <NavigationProperty Name="competencia" Relationship="Self.fk_puestobuscadocompetencia_competencia" FromRole="puestobuscadocompetencia" ToRole="competencia" />
+          <NavigationProperty Name="puestobuscado" Relationship="Self.fk_puestobuscadocompetencia_puestobuscado" FromRole="puestobuscadocompetencia" ToRole="puestobuscado" />
+        </EntityType>
+        <EntityType Name="respuestacuestionario">
+          <Key>
+            <PropertyRef Name="IdRespuestaCuestionario" />
+          </Key>
+          <Property Name="IdRespuestaCuestionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrdenRespuesta" Type="Int32" Nullable="false" />
+          <Property Name="Descripción" Type="String" MaxLength="280" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RespuestaSeleccionada" Type="Int32" Nullable="false" />
+          <Property Name="Ponderación" Type="Double" Nullable="false" />
+          <Property Name="IdPreguntaCuestionario" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="preguntacuestionario" Relationship="Self.fk_respuesta_pregunta" FromRole="respuestacuestionario" ToRole="preguntacuestionario" />
+        </EntityType>
+        <EntityType Name="tipocompetencia">
+          <Key>
+            <PropertyRef Name="IdTipoCompetencia" />
+          </Key>
+          <Property Name="IdTipoCompetencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoCompetencia1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tipodocumento">
+          <Key>
+            <PropertyRef Name="IdTipoDocumento" />
+          </Key>
+          <Property Name="IdTipoDocumento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tipo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_cuestionario">
+          <End Role="cuestionario" Type="Self.cuestionario" Multiplicity="1" />
+          <End Role="bloque" Type="Self.bloque" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cuestionario">
+              <PropertyRef Name="IdCuestionario" />
+            </Principal>
+            <Dependent Role="bloque">
+              <PropertyRef Name="IdCuestionario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_preguntacuestionario_bloque">
+          <End Role="bloque" Type="Self.bloque" Multiplicity="1" />
+          <End Role="preguntacuestionario" Type="Self.preguntacuestionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bloque">
+              <PropertyRef Name="IdBloque" />
+            </Principal>
+            <Dependent Role="preguntacuestionario">
+              <PropertyRef Name="IdBloque" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_cuestionario_usuario">
+          <End Role="candidato" Type="Self.candidato" Multiplicity="1" />
+          <End Role="cuestionario" Type="Self.cuestionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="candidato">
+              <PropertyRef Name="IdCandidato" />
+            </Principal>
+            <Dependent Role="cuestionario">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_factor_competencia">
+          <End Role="competencia" Type="Self.competencia" Multiplicity="1" />
+          <End Role="factor" Type="Self.factor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="competencia">
+              <PropertyRef Name="IdCompetencia" />
+            </Principal>
+            <Dependent Role="factor">
+              <PropertyRef Name="IdCompetencia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_puestobuscadocompetencia_competencia">
+          <End Role="competencia" Type="Self.competencia" Multiplicity="1" />
+          <End Role="puestobuscadocompetencia" Type="Self.puestobuscadocompetencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="competencia">
+              <PropertyRef Name="IdCompetencia" />
+            </Principal>
+            <Dependent Role="puestobuscadocompetencia">
+              <PropertyRef Name="IdCompetencia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_competencia_cuestionario">
+          <End Role="cuestionario" Type="Self.cuestionario" Multiplicity="1" />
+          <End Role="competenciacuestionario" Type="Self.competenciacuestionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cuestionario">
+              <PropertyRef Name="IdCuestionario" />
+            </Principal>
+            <Dependent Role="competenciacuestionario">
+              <PropertyRef Name="IdCuestionario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_factorcuestionario_competenciacuestionario">
+          <End Role="competenciacuestionario" Type="Self.competenciacuestionario" Multiplicity="1" />
+          <End Role="factorcuestionario" Type="Self.factorcuestionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="competenciacuestionario">
+              <PropertyRef Name="IdCompetenciaCuestionario" />
+            </Principal>
+            <Dependent Role="factorcuestionario">
+              <PropertyRef Name="IdCompetenciaCuestionario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_cuestionario_evaluacion">
+          <End Role="evaluacion" Type="Self.evaluacion" Multiplicity="1" />
+          <End Role="cuestionario" Type="Self.cuestionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="evaluacion">
+              <PropertyRef Name="IdEvaluacion" />
+            </Principal>
+            <Dependent Role="cuestionario">
+              <PropertyRef Name="IdEvaluación" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_puestobuscado_empresa">
+          <End Role="empresa" Type="Self.empresa" Multiplicity="1" />
+          <End Role="puestobuscado" Type="Self.puestobuscado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empresa">
+              <PropertyRef Name="IdEmpresa" />
+            </Principal>
+            <Dependent Role="puestobuscado">
+              <PropertyRef Name="IdEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_evaluacion_puesto">
+          <End Role="puestobuscado" Type="Self.puestobuscado" Multiplicity="1" />
+          <End Role="evaluacion" Type="Self.evaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="puestobuscado">
+              <PropertyRef Name="IdPuesto" />
+            </Principal>
+            <Dependent Role="evaluacion">
+              <PropertyRef Name="IdPuesto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_pregunta_factor">
+          <End Role="factor" Type="Self.factor" Multiplicity="1" />
+          <End Role="pregunta" Type="Self.pregunta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="factor">
+              <PropertyRef Name="IdFactor" />
+            </Principal>
+            <Dependent Role="pregunta">
+              <PropertyRef Name="IdFactor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_preguntacuestionario_factorcuestionario">
+          <End Role="factorcuestionario" Type="Self.factorcuestionario" Multiplicity="1" />
+          <End Role="preguntacuestionario" Type="Self.preguntacuestionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="factorcuestionario">
+              <PropertyRef Name="IdFactorCuestionario" />
+            </Principal>
+            <Dependent Role="preguntacuestionario">
+              <PropertyRef Name="IdFactorCuestionario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_itemrespuesta_opcionrespuesta">
+          <End Role="opcionrespuesta" Type="Self.opcionrespuesta" Multiplicity="1" />
+          <End Role="itemrespuesta" Type="Self.itemrespuesta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="opcionrespuesta">
+              <PropertyRef Name="NumeroOpcion" />
+            </Principal>
+            <Dependent Role="itemrespuesta">
+              <PropertyRef Name="NumeroOpcion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_itemrespuestapregunta_itemrespuesta">
+          <End Role="itemrespuesta" Type="Self.itemrespuesta" Multiplicity="1" />
+          <End Role="itemrespuestapregunta" Type="Self.itemrespuestapregunta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="itemrespuesta">
+              <PropertyRef Name="IdItemRespuesta" />
+            </Principal>
+            <Dependent Role="itemrespuestapregunta">
+              <PropertyRef Name="IdItemRespuesta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_itemrespuestapregunta_pregunta">
+          <End Role="pregunta" Type="Self.pregunta" Multiplicity="1" />
+          <End Role="itemrespuestapregunta" Type="Self.itemrespuestapregunta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pregunta">
+              <PropertyRef Name="IdPregunta" />
+            </Principal>
+            <Dependent Role="itemrespuestapregunta">
+              <PropertyRef Name="IdPregunta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_pregunta_numeroopcion">
+          <End Role="opcionrespuesta" Type="Self.opcionrespuesta" Multiplicity="1" />
+          <End Role="pregunta" Type="Self.pregunta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="opcionrespuesta">
+              <PropertyRef Name="NumeroOpcion" />
+            </Principal>
+            <Dependent Role="pregunta">
+              <PropertyRef Name="NumeroOpcion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_respuesta_pregunta">
+          <End Role="preguntacuestionario" Type="Self.preguntacuestionario" Multiplicity="1" />
+          <End Role="respuestacuestionario" Type="Self.respuestacuestionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="preguntacuestionario">
+              <PropertyRef Name="IdPreguntaCuestionario" />
+            </Principal>
+            <Dependent Role="respuestacuestionario">
+              <PropertyRef Name="IdPreguntaCuestionario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_puestobuscadocompetencia_puestobuscado">
+          <End Role="puestobuscado" Type="Self.puestobuscado" Multiplicity="1" />
+          <End Role="puestobuscadocompetencia" Type="Self.puestobuscadocompetencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="puestobuscado">
+              <PropertyRef Name="IdPuesto" />
+            </Principal>
+            <Dependent Role="puestobuscadocompetencia">
+              <PropertyRef Name="IdPuesto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CapitalHumanoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="bloque" EntityType="Self.bloque" />
+          <EntitySet Name="candidato" EntityType="Self.candidato" />
+          <EntitySet Name="competencia" EntityType="Self.competencia" />
+          <EntitySet Name="competenciacuestionario" EntityType="Self.competenciacuestionario" />
+          <EntitySet Name="cuestionario" EntityType="Self.cuestionario" />
+          <EntitySet Name="empresa" EntityType="Self.empresa" />
+          <EntitySet Name="estado" EntityType="Self.estado" />
+          <EntitySet Name="estadodeaprobacion" EntityType="Self.estadodeaprobacion" />
+          <EntitySet Name="evaluacion" EntityType="Self.evaluacion" />
+          <EntitySet Name="factor" EntityType="Self.factor" />
+          <EntitySet Name="factorcuestionario" EntityType="Self.factorcuestionario" />
+          <EntitySet Name="itemrespuesta" EntityType="Self.itemrespuesta" />
+          <EntitySet Name="itemrespuestapregunta" EntityType="Self.itemrespuestapregunta" />
+          <EntitySet Name="opcionrespuesta" EntityType="Self.opcionrespuesta" />
+          <EntitySet Name="pregunta" EntityType="Self.pregunta" />
+          <EntitySet Name="preguntacuestionario" EntityType="Self.preguntacuestionario" />
+          <EntitySet Name="puestobuscado" EntityType="Self.puestobuscado" />
+          <EntitySet Name="puestobuscadocompetencia" EntityType="Self.puestobuscadocompetencia" />
+          <EntitySet Name="respuestacuestionario" EntityType="Self.respuestacuestionario" />
+          <EntitySet Name="tipocompetencia" EntityType="Self.tipocompetencia" />
+          <EntitySet Name="tipodocumento" EntityType="Self.tipodocumento" />
+          <AssociationSet Name="fk_cuestionario" Association="Self.fk_cuestionario">
+            <End Role="cuestionario" EntitySet="cuestionario" />
+            <End Role="bloque" EntitySet="bloque" />
+          </AssociationSet>
+          <AssociationSet Name="fk_preguntacuestionario_bloque" Association="Self.fk_preguntacuestionario_bloque">
+            <End Role="bloque" EntitySet="bloque" />
+            <End Role="preguntacuestionario" EntitySet="preguntacuestionario" />
+          </AssociationSet>
+          <AssociationSet Name="fk_cuestionario_usuario" Association="Self.fk_cuestionario_usuario">
+            <End Role="candidato" EntitySet="candidato" />
+            <End Role="cuestionario" EntitySet="cuestionario" />
+          </AssociationSet>
+          <AssociationSet Name="fk_factor_competencia" Association="Self.fk_factor_competencia">
+            <End Role="competencia" EntitySet="competencia" />
+            <End Role="factor" EntitySet="factor" />
+          </AssociationSet>
+          <AssociationSet Name="fk_puestobuscadocompetencia_competencia" Association="Self.fk_puestobuscadocompetencia_competencia">
+            <End Role="competencia" EntitySet="competencia" />
+            <End Role="puestobuscadocompetencia" EntitySet="puestobuscadocompetencia" />
+          </AssociationSet>
+          <AssociationSet Name="fk_competencia_cuestionario" Association="Self.fk_competencia_cuestionario">
+            <End Role="cuestionario" EntitySet="cuestionario" />
+            <End Role="competenciacuestionario" EntitySet="competenciacuestionario" />
+          </AssociationSet>
+          <AssociationSet Name="fk_factorcuestionario_competenciacuestionario" Association="Self.fk_factorcuestionario_competenciacuestionario">
+            <End Role="competenciacuestionario" EntitySet="competenciacuestionario" />
+            <End Role="factorcuestionario" EntitySet="factorcuestionario" />
+          </AssociationSet>
+          <AssociationSet Name="fk_cuestionario_evaluacion" Association="Self.fk_cuestionario_evaluacion">
+            <End Role="evaluacion" EntitySet="evaluacion" />
+            <End Role="cuestionario" EntitySet="cuestionario" />
+          </AssociationSet>
+          <AssociationSet Name="fk_puestobuscado_empresa" Association="Self.fk_puestobuscado_empresa">
+            <End Role="empresa" EntitySet="empresa" />
+            <End Role="puestobuscado" EntitySet="puestobuscado" />
+          </AssociationSet>
+          <AssociationSet Name="fk_evaluacion_puesto" Association="Self.fk_evaluacion_puesto">
+            <End Role="puestobuscado" EntitySet="puestobuscado" />
+            <End Role="evaluacion" EntitySet="evaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_pregunta_factor" Association="Self.fk_pregunta_factor">
+            <End Role="factor" EntitySet="factor" />
+            <End Role="pregunta" EntitySet="pregunta" />
+          </AssociationSet>
+          <AssociationSet Name="fk_preguntacuestionario_factorcuestionario" Association="Self.fk_preguntacuestionario_factorcuestionario">
+            <End Role="factorcuestionario" EntitySet="factorcuestionario" />
+            <End Role="preguntacuestionario" EntitySet="preguntacuestionario" />
+          </AssociationSet>
+          <AssociationSet Name="fk_itemrespuesta_opcionrespuesta" Association="Self.fk_itemrespuesta_opcionrespuesta">
+            <End Role="opcionrespuesta" EntitySet="opcionrespuesta" />
+            <End Role="itemrespuesta" EntitySet="itemrespuesta" />
+          </AssociationSet>
+          <AssociationSet Name="fk_itemrespuestapregunta_itemrespuesta" Association="Self.fk_itemrespuestapregunta_itemrespuesta">
+            <End Role="itemrespuesta" EntitySet="itemrespuesta" />
+            <End Role="itemrespuestapregunta" EntitySet="itemrespuestapregunta" />
+          </AssociationSet>
+          <AssociationSet Name="fk_itemrespuestapregunta_pregunta" Association="Self.fk_itemrespuestapregunta_pregunta">
+            <End Role="pregunta" EntitySet="pregunta" />
+            <End Role="itemrespuestapregunta" EntitySet="itemrespuestapregunta" />
+          </AssociationSet>
+          <AssociationSet Name="fk_pregunta_numeroopcion" Association="Self.fk_pregunta_numeroopcion">
+            <End Role="opcionrespuesta" EntitySet="opcionrespuesta" />
+            <End Role="pregunta" EntitySet="pregunta" />
+          </AssociationSet>
+          <AssociationSet Name="fk_respuesta_pregunta" Association="Self.fk_respuesta_pregunta">
+            <End Role="preguntacuestionario" EntitySet="preguntacuestionario" />
+            <End Role="respuestacuestionario" EntitySet="respuestacuestionario" />
+          </AssociationSet>
+          <AssociationSet Name="fk_puestobuscadocompetencia_puestobuscado" Association="Self.fk_puestobuscadocompetencia_puestobuscado">
+            <End Role="puestobuscado" EntitySet="puestobuscado" />
+            <End Role="puestobuscadocompetencia" EntitySet="puestobuscadocompetencia" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CapitalHumanoModelStoreContainer" CdmEntityContainer="CapitalHumanoEntities">
+          <EntitySetMapping Name="bloque">
+            <EntityTypeMapping TypeName="CapitalHumanoModel.bloque">
+              <MappingFragment StoreEntitySet="bloque">
+                <ScalarProperty Name="IdBloque" ColumnName="IdBloque" />
+                <ScalarProperty Name="NumeroBloque" ColumnName="NumeroBloque" />
+                <ScalarProperty Name="IdCuestionario" ColumnName="IdCuestionario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="candidato">
+            <EntityTypeMapping TypeName="CapitalHumanoModel.candidato">
+              <MappingFragment StoreEntitySet="candidato">
+                <ScalarProperty Name="IdCandidato" ColumnName="IdCandidato" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+                <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="NumDocumento" ColumnName="NumDocumento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="competencia">
+            <EntityTypeMapping TypeName="CapitalHumanoModel.competencia">
+              <MappingFragment StoreEntitySet="competencia">
+                <ScalarProperty Name="IdCompetencia" ColumnName="IdCompetencia" />
+                <ScalarProperty Name="NombreCompetencia" ColumnName="NombreCompetencia" />
+                <ScalarProperty Name="TipoCompetencia" ColumnName="TipoCompetencia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="competenciacuestionario">
+            <EntityTypeMapping TypeName="CapitalHumanoModel.competenciacuestionario">
+              <MappingFragment StoreEntitySet="competenciacuestionario">
+                <ScalarProperty Name="IdCompetenciaCuestionario" ColumnName="IdCompetenciaCuestionario" />
+                <ScalarProperty Name="NombreCompetencia" ColumnName="NombreCompetencia" />
+                <ScalarProperty Name="ValorObtenido" ColumnName="ValorObtenido" />
+                <ScalarProperty Name="IdCuestionario" ColumnName="IdCuestionario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cuestionario">
+            <EntityTypeMapping TypeName="CapitalHumanoModel.cuestionario">
+              <MappingFragment StoreEntitySet="cuestionario">
+                <ScalarProperty Name="IdCuestionario" ColumnName="IdCuestionario" />
+                <ScalarProperty Name="EstadoDeAprobación" ColumnName="EstadoDeAprobación" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="Resultado" ColumnName="Resultado" />
+                <ScalarProperty Name="CantidadAccesos" ColumnName="CantidadAccesos" />
+                <ScalarProperty Name="UltimoIngreso" ColumnName="UltimoIngreso" />
+                <ScalarProperty Name="PlazoParaSerContestado" ColumnName="PlazoParaSerContestado" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="IdEvaluación" ColumnName="IdEvaluación" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="empresa">
+            <EntityTypeMapping TypeName="CapitalHumanoModel.empresa">
+              <MappingFragment StoreEntitySet="empresa">
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+                <ScalarProperty Name="NombreEmpresa" ColumnName="NombreEmpresa" />
+                <ScalarProperty Name="DireccionEmpresa" ColumnName="DireccionEmpresa" />
+                <ScalarProperty Name="TelefonoEmpresa" ColumnName="TelefonoEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="estado">
+            <EntityTypeMapping TypeName="CapitalHumanoModel.estado">
+              <MappingFragment StoreEntitySet="estado">
+                <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+                <ScalarProperty Name="Estado1" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="estadodeaprobacion">
+            <EntityTypeMapping TypeName="CapitalHumanoModel.estadodeaprobacion">
+              <MappingFragment StoreEntitySet="estadodeaprobacion">
+                <ScalarProperty Name="IdEstadoDeAprobación" ColumnName="IdEstadoDeAprobación" />
+                <ScalarProperty Name="EstadoDeAprobación" ColumnName="EstadoDeAprobación" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="evaluacion">
+            <EntityTypeMapping TypeName="CapitalHumanoModel.evaluacion">
+              <MappingFragment StoreEntitySet="evaluacion">
+                <ScalarProperty Name="IdEvaluacion" ColumnName="IdEvaluacion" />
+                <ScalarProperty Name="FechaEvaluacion" ColumnName="FechaEvaluacion" />
+                <ScalarProperty Name="IdPuesto" ColumnName="IdPuesto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="factor">
+            <EntityTypeMapping TypeName="CapitalHumanoModel.factor">
+              <MappingFragment StoreEntitySet="factor">
+                <ScalarProperty Name="IdFactor" ColumnName="IdFactor" />
+                <ScalarProperty Name="NombreFactor" ColumnName="NombreFactor" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdCompetencia" ColumnName="IdCompetencia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="factorcuestionario">
+            <EntityTypeMapping TypeName="CapitalHumanoModel.factorcuestionario">
+              <MappingFragment StoreEntitySet="factorcuestionario">
+                <ScalarProperty Name="IdFactorCuestionario" ColumnName="IdFactorCuestionario" />
+                <ScalarProperty Name="ValorObtenido" ColumnName="ValorObtenido" />
+                <ScalarProperty Name="NombreFactor" ColumnName="NombreFactor" />
+                <ScalarProperty Name="IdCompetenciaCuestionario" ColumnName="IdCompetenciaCuestionario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="itemrespuesta">
+            <EntityTypeMapping TypeName="CapitalHumanoModel.itemrespuesta">
+              <MappingFragment StoreEntitySet="itemrespuesta">
+                <ScalarProperty Name="IdItemRespuesta" ColumnName="IdItemRespuesta" />
+                <ScalarProperty Name="OrdenRespuesta" ColumnName="OrdenRespuesta" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="NumeroOpcion" ColumnName="NumeroOpcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="itemrespuestapregunta">
+            <EntityTypeMapping TypeName="CapitalHumanoModel.itemrespuestapregunta">
+              <MappingFragment StoreEntitySet="itemrespuestapregunta">
+                <ScalarProperty Name="IdItemRespuesta" ColumnName="IdItemRespuesta" />
+                <ScalarProperty Name="IdPregunta" ColumnName="IdPregunta" />
+                <ScalarProperty Name="PonderacionRespuesta" ColumnName="PonderacionRespuesta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="opcionrespuesta">
+            <EntityTypeMapping TypeName="CapitalHumanoModel.opcionrespuesta">
+              <MappingFragment StoreEntitySet="opcionrespuesta">
+                <ScalarProperty Name="NumeroOpcion" ColumnName="NumeroOpcion" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pregunta">
+            <EntityTypeMapping TypeName="CapitalHumanoModel.pregunta">
+              <MappingFragment StoreEntitySet="pregunta">
+                <ScalarProperty Name="IdPregunta" ColumnName="IdPregunta" />
+                <ScalarProperty Name="TextoPregunta" ColumnName="TextoPregunta" />
+                <ScalarProperty Name="NumeroOpcion" ColumnName="NumeroOpcion" />
+                <ScalarProperty Name="IdFactor" ColumnName="IdFactor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="preguntacuestionario">
+            <EntityTypeMapping TypeName="CapitalHumanoModel.preguntacuestionario">
+              <MappingFragment StoreEntitySet="preguntacuestionario">
+                <ScalarProperty Name="IdPreguntaCuestionario" ColumnName="IdPreguntaCuestionario" />
+                <ScalarProperty Name="OrdenPregunta" ColumnName="OrdenPregunta" />
+                <ScalarProperty Name="TextoPregunta" ColumnName="TextoPregunta" />
+                <ScalarProperty Name="IdFactorCuestionario" ColumnName="IdFactorCuestionario" />
+                <ScalarProperty Name="IdBloque" ColumnName="IdBloque" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="puestobuscado">
+            <EntityTypeMapping TypeName="CapitalHumanoModel.puestobuscado">
+              <MappingFragment StoreEntitySet="puestobuscado">
+                <ScalarProperty Name="IdPuesto" ColumnName="IdPuesto" />
+                <ScalarProperty Name="CodigoPuesto" ColumnName="CodigoPuesto" />
+                <ScalarProperty Name="NombrePuesto" ColumnName="NombrePuesto" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Eliminado" ColumnName="Eliminado" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="puestobuscadocompetencia">
+            <EntityTypeMapping TypeName="CapitalHumanoModel.puestobuscadocompetencia">
+              <MappingFragment StoreEntitySet="puestobuscadocompetencia">
+                <ScalarProperty Name="IdPuesto" ColumnName="IdPuesto" />
+                <ScalarProperty Name="IdCompetencia" ColumnName="IdCompetencia" />
+                <ScalarProperty Name="PuntajeMinimo" ColumnName="PuntajeMinimo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="respuestacuestionario">
+            <EntityTypeMapping TypeName="CapitalHumanoModel.respuestacuestionario">
+              <MappingFragment StoreEntitySet="respuestacuestionario">
+                <ScalarProperty Name="IdRespuestaCuestionario" ColumnName="IdRespuestaCuestionario" />
+                <ScalarProperty Name="OrdenRespuesta" ColumnName="OrdenRespuesta" />
+                <ScalarProperty Name="Descripción" ColumnName="Descripción" />
+                <ScalarProperty Name="RespuestaSeleccionada" ColumnName="RespuestaSeleccionada" />
+                <ScalarProperty Name="Ponderación" ColumnName="Ponderación" />
+                <ScalarProperty Name="IdPreguntaCuestionario" ColumnName="IdPreguntaCuestionario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipocompetencia">
+            <EntityTypeMapping TypeName="CapitalHumanoModel.tipocompetencia">
+              <MappingFragment StoreEntitySet="tipocompetencia">
+                <ScalarProperty Name="IdTipoCompetencia" ColumnName="IdTipoCompetencia" />
+                <ScalarProperty Name="TipoCompetencia1" ColumnName="TipoCompetencia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipodocumento">
+            <EntityTypeMapping TypeName="CapitalHumanoModel.tipodocumento">
+              <MappingFragment StoreEntitySet="tipodocumento">
+                <ScalarProperty Name="IdTipoDocumento" ColumnName="IdTipoDocumento" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
