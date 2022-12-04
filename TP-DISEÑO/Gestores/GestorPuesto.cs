@@ -206,15 +206,46 @@ namespace TP_DISEÑO.Gestores
             }
         }
 
+        public List<int> validarBuscaPuesto(DTO.PuestoBuscadoDTO pbDTO, CapitalHumanoEntities context)
+        {
+            List<int> resultado = new List<int>();
+
+            if(pbDTO.nombre is string)
+            {
+                if(pbDTO.nombre.Length > 0 && pbDTO.nombre.Length <= 50)
+                {
+                    resultado.Add(1);
+                }
+            }
+            if(pbDTO.codigo is string)
+            {
+                if(pbDTO.codigo.Length > 0 && pbDTO.codigo.Length <= 10)
+                {
+                    resultado.Add(2);
+                }
+            }
+            if(pbDTO.nombreEmpresa is string)
+            {
+                if(pbDTO.nombreEmpresa.Length > 0 && pbDTO.nombreEmpresa.Length <= 20)
+                {
+                    if(!(this.empresaDAO.GetEmpresaByNombre(pbDTO.nombreEmpresa) == null))
+                    {
+                    resultado.Add(3);
+                    }
+                }
+            }
+            return resultado;
+        }
+
         public List<DTO.PuestoBuscadoDTO> BuscarPuesto(DTO.PuestoBuscadoDTO pbDTO)
         {
             using (CapitalHumanoEntities context = new CapitalHumanoEntities())
             {
-                // validar
+                List<int> parametros = this.validarBuscaPuesto(pbDTO);
                 // Falta: en validar ver que parametros te pasaron y con esa informacion saber como hacer la consulta.
                 // modificar el DAO con el tema de que te pueden pasar cualquiera de los 3.
                 List<DTO.PuestoBuscadoDTO> puestosDTO = new List<DTO.PuestoBuscadoDTO>();
-                List<puestobuscado> puestos = this.puestoBuscadoDAO.GetPuestosBuscados(pbDTO, context);
+                List<puestobuscado> puestos = this.puestoBuscadoDAO.GetPuestosBuscados(pbDTO, parametros, context);
                 foreach(puestobuscado oPuesto in puestos)
                 {
                     DTO.PuestoBuscadoDTO oPuestoBuscadoDTO = new DTO.PuestoBuscadoDTO();
