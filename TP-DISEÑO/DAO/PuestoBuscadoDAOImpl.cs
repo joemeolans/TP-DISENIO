@@ -12,8 +12,6 @@ namespace TP_DISEÑO.DAO
 
         public void createPuestoBuscado(puestobuscado puestobuscado, CapitalHumanoEntities context)
         {
-
-           
             try
             {
                 context.puestobuscado.Add(puestobuscado);
@@ -32,6 +30,30 @@ namespace TP_DISEÑO.DAO
                     }
                 }
             }
+        }
+
+        public List<puestobuscado> GetPuestosBuscados(DTO.PuestoBuscadoDTO pbDTO, CapitalHumanoEntities context)
+        {
+            List<puestobuscado> puestos = new List<puestobuscado>();
+
+            try
+            {
+                puestos.Concat(context.puestobuscado.Where(p => p.CodigoPuesto == pbDTO.codigo).ToList());
+                puestos.Concat(context.puestobuscado.Where(p => p.NombrePuesto == pbDTO.nombre).ToList());
+                puestos.Concat(context.empresa.Where(e => e.nombre == pbDTO.nombreEmpresa).SelectMany(p => p.puestobuscado).ToList());
+                puestos.Distinct.ToList();
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        System.Console.WriteLine("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
+            return puestos;
         }
     }
 }

@@ -11,7 +11,6 @@ namespace TP_DISEÑO.DAO
         public competencia GetCompetencia(int id, CapitalHumanoEntities context)
         {
             competencia competencia = context.competencia.Find(id);
-            //   competencia competencia = context.competencia.Attach(oCompetencia);
             return competencia;
         }
         public competencia GetCompetenciaByNombre(string nombre, CapitalHumanoEntities context)

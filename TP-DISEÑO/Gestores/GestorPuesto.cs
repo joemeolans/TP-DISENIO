@@ -205,5 +205,26 @@ namespace TP_DISEÑO.Gestores
                 return errores;
             }
         }
+
+        public List<DTO.PuestoBuscadoDTO> BuscarPuesto(DTO.PuestoBuscadoDTO pbDTO)
+        {
+            using (CapitalHumanoEntities context = new CapitalHumanoEntities())
+            {
+                // validar
+                // Falta: en validar ver que parametros te pasaron y con esa informacion saber como hacer la consulta.
+                // modificar el DAO con el tema de que te pueden pasar cualquiera de los 3.
+                List<DTO.PuestoBuscadoDTO> puestosDTO = new List<DTO.PuestoBuscadoDTO>();
+                List<puestobuscado> puestos = this.puestoBuscadoDAO.GetPuestosBuscados(pbDTO, context);
+                foreach(puestobuscado oPuesto in puestos)
+                {
+                    DTO.PuestoBuscadoDTO oPuestoBuscadoDTO = new DTO.PuestoBuscadoDTO();
+                    oPuestoBuscadoDTO.nombre = oPuesto.NombrePuesto;
+                    oPuestoBuscadoDTO.codigo = oPuesto.CodigoPuesto;
+                    oPuestoBuscadoDTO.nombreEmpresa = oPuesto.empresa.NombreEmpresa;
+                }
+                return puestosDTO;
+            }
+            
+        }
     }
 }
