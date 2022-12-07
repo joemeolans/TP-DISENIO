@@ -32,7 +32,7 @@ namespace TP_DISEÑO.DAO
             }
         }
 
-        public List<puestobuscado> GetPuestosBuscados(DTO.PuestoBuscadoDTO pbDTO, List<int> parametros, CapitalHumanoEntities context)
+        public List<puestobuscado> GetPuestosBuscados(string nombre, string codigo, string nombreEmpresa, List<int> parametros, CapitalHumanoEntities context)
         {
             List<puestobuscado> puestos = new List<puestobuscado>();
 
@@ -43,17 +43,17 @@ namespace TP_DISEÑO.DAO
                     switch (oParametro)
                     {
                         case 1:
-                            puestos.Concat(context.puestobuscado.Where(p => p.NombrePuesto == pbDTO.nombre).ToList());
+                            puestos.Concat(context.puestobuscado.Where(p => p.NombrePuesto == nombre).ToList());
                             break;
                         case 2:
-                            puestos.Concat(context.puestobuscado.Where(p => p.CodigoPuesto == pbDTO.codigo).ToList());
+                            puestos.Concat(context.puestobuscado.Where(p => p.CodigoPuesto == codigo).ToList());
                             break;
                         case 3:
-                            puestos.Concat(context.empresa.Where(e => e.nombre == pbDTO.nombreEmpresa).SelectMany(p => p.puestobuscado).ToList());
+                            puestos.Concat(context.empresa.Where(e => e.NombreEmpresa == nombreEmpresa).SelectMany(p => p.puestobuscado).ToList());
                             break;
                     }
                 }
-                puestos.Distinct.ToList();
+                puestos.Distinct().ToList();
             }
             catch (DbEntityValidationException dbEx)
             {
