@@ -73,13 +73,18 @@
     <Compile Include="cuestionario.cs">
       <DependentUpon>EntityFramework.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAO\CandidatoDAOImpl.cs" />
     <Compile Include="DAO\CompetenciaDAOImpl.cs" />
+    <Compile Include="DAO\ConsultorDAOImpl.cs" />
     <Compile Include="DAO\EmpresaDAOImpl.cs" />
+    <Compile Include="DAO\ICandidatoDAO.cs" />
     <Compile Include="DAO\ICompetenciaDAO.cs" />
+    <Compile Include="DAO\IConsultorDAO.cs" />
     <Compile Include="DAO\IEmpresaDAO.cs" />
     <Compile Include="DAO\IPuestoBuscadoDAO.cs" />
     <Compile Include="DAO\PuestoBuscadoDAOImpl.cs" />
     <Compile Include="DTO\PuestoBuscadoDTO.cs" />
+    <Compile Include="DTO\UsuarioDTO.cs" />
     <Compile Include="empresa.cs">
       <DependentUpon>EntityFramework.tt</DependentUpon>
     </Compile>
