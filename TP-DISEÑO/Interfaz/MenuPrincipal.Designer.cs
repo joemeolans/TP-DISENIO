@@ -54,7 +54,7 @@
             this.GestionarCandidatos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.GestionarCandidatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GestionarCandidatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GestionarCandidatos.Location = new System.Drawing.Point(219, 153);
+            this.GestionarCandidatos.Location = new System.Drawing.Point(323, 215);
             this.GestionarCandidatos.Name = "GestionarCandidatos";
             this.GestionarCandidatos.Size = new System.Drawing.Size(222, 43);
             this.GestionarCandidatos.TabIndex = 1;
@@ -71,7 +71,7 @@
             this.ImportarCandidatos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.ImportarCandidatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ImportarCandidatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ImportarCandidatos.Location = new System.Drawing.Point(219, 202);
+            this.ImportarCandidatos.Location = new System.Drawing.Point(323, 279);
             this.ImportarCandidatos.Name = "ImportarCandidatos";
             this.ImportarCandidatos.Size = new System.Drawing.Size(222, 43);
             this.ImportarCandidatos.TabIndex = 2;
@@ -88,7 +88,7 @@
             this.EvaluarCandidatos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.EvaluarCandidatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EvaluarCandidatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EvaluarCandidatos.Location = new System.Drawing.Point(219, 251);
+            this.EvaluarCandidatos.Location = new System.Drawing.Point(323, 342);
             this.EvaluarCandidatos.Name = "EvaluarCandidatos";
             this.EvaluarCandidatos.Size = new System.Drawing.Size(222, 43);
             this.EvaluarCandidatos.TabIndex = 3;
@@ -105,7 +105,7 @@
             this.GestionarCompetencias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.GestionarCompetencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GestionarCompetencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GestionarCompetencias.Location = new System.Drawing.Point(219, 300);
+            this.GestionarCompetencias.Location = new System.Drawing.Point(323, 407);
             this.GestionarCompetencias.Name = "GestionarCompetencias";
             this.GestionarCompetencias.Size = new System.Drawing.Size(222, 43);
             this.GestionarCompetencias.TabIndex = 4;
@@ -122,7 +122,7 @@
             this.GestionarFactores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.GestionarFactores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GestionarFactores.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GestionarFactores.Location = new System.Drawing.Point(219, 349);
+            this.GestionarFactores.Location = new System.Drawing.Point(323, 465);
             this.GestionarFactores.Name = "GestionarFactores";
             this.GestionarFactores.Size = new System.Drawing.Size(222, 43);
             this.GestionarFactores.TabIndex = 5;
@@ -139,7 +139,7 @@
             this.GestionarPreguntas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.GestionarPreguntas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GestionarPreguntas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GestionarPreguntas.Location = new System.Drawing.Point(219, 398);
+            this.GestionarPreguntas.Location = new System.Drawing.Point(323, 529);
             this.GestionarPreguntas.Name = "GestionarPreguntas";
             this.GestionarPreguntas.Size = new System.Drawing.Size(222, 43);
             this.GestionarPreguntas.TabIndex = 6;
@@ -156,7 +156,7 @@
             this.GestionarPuestos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.GestionarPuestos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GestionarPuestos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GestionarPuestos.Location = new System.Drawing.Point(219, 447);
+            this.GestionarPuestos.Location = new System.Drawing.Point(323, 595);
             this.GestionarPuestos.Name = "GestionarPuestos";
             this.GestionarPuestos.Size = new System.Drawing.Size(222, 43);
             this.GestionarPuestos.TabIndex = 7;
@@ -174,7 +174,7 @@
             this.ocho.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.ocho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ocho.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ocho.Location = new System.Drawing.Point(219, 545);
+            this.ocho.Location = new System.Drawing.Point(323, 729);
             this.ocho.Name = "ocho";
             this.ocho.Size = new System.Drawing.Size(222, 43);
             this.ocho.TabIndex = 9;
@@ -191,7 +191,7 @@
             this.nueve.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.nueve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nueve.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nueve.Location = new System.Drawing.Point(219, 594);
+            this.nueve.Location = new System.Drawing.Point(323, 795);
             this.nueve.Name = "nueve";
             this.nueve.Size = new System.Drawing.Size(222, 43);
             this.nueve.TabIndex = 10;
@@ -202,7 +202,7 @@
             // 
             this.Menu.AutoSize = true;
             this.Menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Menu.Location = new System.Drawing.Point(226, 119);
+            this.Menu.Location = new System.Drawing.Point(334, 155);
             this.Menu.Name = "Menu";
             this.Menu.Size = new System.Drawing.Size(203, 31);
             this.Menu.TabIndex = 10;
@@ -212,9 +212,9 @@
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(280, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(376, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(104, 103);
+            this.pictureBox1.Size = new System.Drawing.Size(134, 131);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
@@ -229,7 +229,7 @@
             this.diez.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.diez.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.diez.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.diez.Location = new System.Drawing.Point(219, 496);
+            this.diez.Location = new System.Drawing.Point(323, 664);
             this.diez.Name = "diez";
             this.diez.Size = new System.Drawing.Size(222, 43);
             this.diez.TabIndex = 8;
@@ -258,7 +258,6 @@
             this.Name = "MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
-            this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

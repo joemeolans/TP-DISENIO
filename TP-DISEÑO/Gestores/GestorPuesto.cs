@@ -205,7 +205,6 @@ namespace TP_DISEÑO.Gestores
                 return errores;
             }
         }
-
         public List<int> validarBuscaPuesto(DTO.PuestoBuscadoDTO pbDTO, CapitalHumanoEntities context)
         {
             List<int> resultado = new List<int>();
@@ -236,7 +235,6 @@ namespace TP_DISEÑO.Gestores
             }
             return resultado;
         }
-
         public List<DTO.PuestoBuscadoDTO> BuscarPuesto(DTO.PuestoBuscadoDTO pbDTO)
         {
             using (CapitalHumanoEntities context = new CapitalHumanoEntities())
