@@ -47,13 +47,15 @@ namespace TP_DISEÑO
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Salir = new System.Windows.Forms.Button();
             this.CerrarSesion = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.NombreEmpresa = new System.Windows.Forms.Label();
             this.NombreEmpresaInput = new System.Windows.Forms.ComboBox();
             this.Cancelar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BordeFotoCapitalHumano = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.TablaCaracterísticasDelPuesto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).BeginInit();
             this.SuspendLayout();
             // 
             // CodigoDelPuestoInput
@@ -243,18 +245,6 @@ namespace TP_DISEÑO
             this.CerrarSesion.UseVisualStyleBackColor = false;
             this.CerrarSesion.Click += new System.EventHandler(this.CerrarSesion_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(21, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(117, 119);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            // 
             // NombreEmpresa
             // 
             this.NombreEmpresa.AutoSize = true;
@@ -302,6 +292,25 @@ namespace TP_DISEÑO
             this.label1.TabIndex = 18;
             this.label1.Text = "(*) Como mínimo debe haber una competencia";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(30, 40);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(94, 92);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            // 
+            // BordeFotoCapitalHumano
+            // 
+            this.BordeFotoCapitalHumano.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.BordeFotoCapitalHumano.Location = new System.Drawing.Point(19, 30);
+            this.BordeFotoCapitalHumano.Name = "BordeFotoCapitalHumano";
+            this.BordeFotoCapitalHumano.Size = new System.Drawing.Size(117, 114);
+            this.BordeFotoCapitalHumano.TabIndex = 20;
+            this.BordeFotoCapitalHumano.TabStop = false;
+            // 
             // CDU009
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,11 +318,12 @@ namespace TP_DISEÑO
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Aquamarine;
             this.ClientSize = new System.Drawing.Size(870, 861);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.BordeFotoCapitalHumano);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Cancelar);
             this.Controls.Add(this.NombreEmpresaInput);
             this.Controls.Add(this.NombreEmpresa);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.CerrarSesion);
             this.Controls.Add(this.Salir);
             this.Controls.Add(this.TablaCaracterísticasDelPuesto);
@@ -336,6 +346,7 @@ namespace TP_DISEÑO
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TablaCaracterísticasDelPuesto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -355,7 +366,6 @@ namespace TP_DISEÑO
         private System.Windows.Forms.DataGridView TablaCaracterísticasDelPuesto;
         private System.Windows.Forms.Button Salir;
         private System.Windows.Forms.Button CerrarSesion;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label NombreEmpresa;
         private System.Windows.Forms.ComboBox NombreEmpresaInput;
         private System.Windows.Forms.Button Cancelar;
@@ -363,6 +373,8 @@ namespace TP_DISEÑO
         private System.Windows.Forms.DataGridViewComboBoxColumn Competencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ponderación;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox BordeFotoCapitalHumano;
     }
 }
 

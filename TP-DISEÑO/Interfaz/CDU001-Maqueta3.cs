@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TP_DISEÑO.Interfaz
 {
-    public partial class CDU001_Maqueta2 : Form
+    public partial class CDU001_Maqueta3 : Form
     {
-        public CDU001_Maqueta2()
+        public CDU001_Maqueta3()
         {
             InitializeComponent();
         }
@@ -24,4 +24,11 @@ namespace TP_DISEÑO.Interfaz
             this.Hide();
         }
 
+        private void Aceptar_Click(object sender, EventArgs e)
+        {
+            Form responderCuestionario = new CDU001_Maqueta1();
+            responderCuestionario.Show();
+            this.Hide();
+        }
+    }
 }

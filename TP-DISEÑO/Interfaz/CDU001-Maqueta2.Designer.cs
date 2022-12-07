@@ -29,69 +29,50 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CDU001_Maqueta2));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BordeFotoCapitalHumano = new System.Windows.Forms.PictureBox();
             this.NombreDelPuestoInput = new System.Windows.Forms.TextBox();
             this.textContrasenia = new System.Windows.Forms.Label();
             this.textNombreUsuario = new System.Windows.Forms.Label();
             this.CodigoDelPuestoInput = new System.Windows.Forms.TextBox();
             this.Aceptar = new System.Windows.Forms.Button();
             this.botonVolver = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BordeFotoCapitalHumano = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(350, 35);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(160, 158);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // BordeFotoCapitalHumano
-            // 
-            this.BordeFotoCapitalHumano.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.BordeFotoCapitalHumano.Location = new System.Drawing.Point(339, 25);
-            this.BordeFotoCapitalHumano.Name = "BordeFotoCapitalHumano";
-            this.BordeFotoCapitalHumano.Size = new System.Drawing.Size(183, 180);
-            this.BordeFotoCapitalHumano.TabIndex = 3;
-            this.BordeFotoCapitalHumano.TabStop = false;
-            // 
             // NombreDelPuestoInput
             // 
-            this.NombreDelPuestoInput.Location = new System.Drawing.Point(238, 374);
+            this.NombreDelPuestoInput.Location = new System.Drawing.Point(201, 370);
             this.NombreDelPuestoInput.Name = "NombreDelPuestoInput";
-            this.NombreDelPuestoInput.Size = new System.Drawing.Size(368, 20);
+            this.NombreDelPuestoInput.Size = new System.Drawing.Size(466, 20);
             this.NombreDelPuestoInput.TabIndex = 6;
             // 
             // textContrasenia
             // 
             this.textContrasenia.AutoSize = true;
             this.textContrasenia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textContrasenia.Location = new System.Drawing.Point(235, 354);
+            this.textContrasenia.Location = new System.Drawing.Point(198, 350);
             this.textContrasenia.Name = "textContrasenia";
-            this.textContrasenia.Size = new System.Drawing.Size(109, 17);
+            this.textContrasenia.Size = new System.Drawing.Size(243, 17);
             this.textContrasenia.TabIndex = 8;
-            this.textContrasenia.Text = "Contraseña(*)";
+            this.textContrasenia.Text = "Contraseña (campo obligatorio*)";
             // 
             // textNombreUsuario
             // 
             this.textNombreUsuario.AutoSize = true;
             this.textNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textNombreUsuario.Location = new System.Drawing.Point(235, 301);
+            this.textNombreUsuario.Location = new System.Drawing.Point(198, 297);
             this.textNombreUsuario.Name = "textNombreUsuario";
-            this.textNombreUsuario.Size = new System.Drawing.Size(169, 17);
+            this.textNombreUsuario.Size = new System.Drawing.Size(298, 17);
             this.textNombreUsuario.TabIndex = 7;
-            this.textNombreUsuario.Text = "Nombre de usuario (*)";
+            this.textNombreUsuario.Text = "Nombre de usuario (campo obligatorio*)";
             // 
             // CodigoDelPuestoInput
             // 
-            this.CodigoDelPuestoInput.Location = new System.Drawing.Point(238, 321);
+            this.CodigoDelPuestoInput.Location = new System.Drawing.Point(201, 317);
             this.CodigoDelPuestoInput.Name = "CodigoDelPuestoInput";
-            this.CodigoDelPuestoInput.Size = new System.Drawing.Size(368, 20);
+            this.CodigoDelPuestoInput.Size = new System.Drawing.Size(466, 20);
             this.CodigoDelPuestoInput.TabIndex = 5;
             // 
             // Aceptar
@@ -128,6 +109,25 @@
             this.botonVolver.Text = "Volver";
             this.botonVolver.UseVisualStyleBackColor = false;
             this.botonVolver.Click += new System.EventHandler(this.botonVolver_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(351, 67);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(160, 158);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // BordeFotoCapitalHumano
+            // 
+            this.BordeFotoCapitalHumano.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.BordeFotoCapitalHumano.Location = new System.Drawing.Point(340, 57);
+            this.BordeFotoCapitalHumano.Name = "BordeFotoCapitalHumano";
+            this.BordeFotoCapitalHumano.Size = new System.Drawing.Size(183, 180);
+            this.BordeFotoCapitalHumano.TabIndex = 3;
+            this.BordeFotoCapitalHumano.TabStop = false;
             // 
             // CDU001_Maqueta2
             // 

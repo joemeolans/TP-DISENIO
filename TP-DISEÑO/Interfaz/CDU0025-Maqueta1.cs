@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace TP_DISEÑO.Interfaz
 {
-    public partial class CDU001_Maqueta2 : Form
+    public partial class CDU0025_Maqueta1 : Form
     {
-        public CDU001_Maqueta2()
+        public CDU0025_Maqueta1()
         {
             InitializeComponent();
         }
-
-        private void botonVolver_Click(object sender, EventArgs e)
-        {
-            Form volverACDU001Maqueta1 = new CDU001_Maqueta1();
-            volverACDU001Maqueta1.Show();
-            this.Hide();
-        }
-
+    }
 }

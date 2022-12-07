@@ -131,6 +131,18 @@
     <Compile Include="Interfaz\CDU001-Maqueta2.Designer.cs">
       <DependentUpon>CDU001-Maqueta2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\CDU001-Maqueta3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\CDU001-Maqueta3.Designer.cs">
+      <DependentUpon>CDU001-Maqueta3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\CDU0025-Maqueta1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\CDU0025-Maqueta1.Designer.cs">
+      <DependentUpon>CDU0025-Maqueta1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\CDU009-DarDeAltaPuesto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +203,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\CDU001-Maqueta2.resx">
       <DependentUpon>CDU001-Maqueta2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\CDU001-Maqueta3.resx">
+      <DependentUpon>CDU001-Maqueta3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\CDU0025-Maqueta1.resx">
+      <DependentUpon>CDU0025-Maqueta1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\CDU008-GestionarPuestos.resx">
       <DependentUpon>CDU008-GestionarPuestos.cs</DependentUpon>
