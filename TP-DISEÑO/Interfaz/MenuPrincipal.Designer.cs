@@ -201,10 +201,10 @@
             // Menu
             // 
             this.Menu.AutoSize = true;
-            this.Menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Menu.Location = new System.Drawing.Point(334, 155);
+            this.Menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Menu.Location = new System.Drawing.Point(294, 146);
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(203, 31);
+            this.Menu.Size = new System.Drawing.Size(293, 46);
             this.Menu.TabIndex = 10;
             this.Menu.Text = "Menú principal";
             // 

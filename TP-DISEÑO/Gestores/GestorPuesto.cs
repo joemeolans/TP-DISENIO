@@ -227,7 +227,7 @@ namespace TP_DISEÑO.Gestores
             {
                 if(pbDTO.nombreEmpresa.Length > 0 && pbDTO.nombreEmpresa.Length <= 20)
                 {
-                    if(!(this.empresaDAO.GetEmpresaByNombre(pbDTO.nombreEmpresa) == null))
+                    if(!(this.empresaDAO.GetEmpresaByNombre(pbDTO.nombreEmpresa, context) == null))
                     {
                     resultado.Add(3);
                     }
@@ -239,11 +239,11 @@ namespace TP_DISEÑO.Gestores
         {
             using (CapitalHumanoEntities context = new CapitalHumanoEntities())
             {
-                List<int> parametros = this.validarBuscaPuesto(pbDTO);
+                List<int> parametros = this.validarBuscaPuesto(pbDTO, context);
                 // Falta: en validar ver que parametros te pasaron y con esa informacion saber como hacer la consulta.
                 // modificar el DAO con el tema de que te pueden pasar cualquiera de los 3.
                 List<DTO.PuestoBuscadoDTO> puestosDTO = new List<DTO.PuestoBuscadoDTO>();
-                List<puestobuscado> puestos = this.puestoBuscadoDAO.GetPuestosBuscados(pbDTO, parametros, context);
+                List<puestobuscado> puestos = this.puestoBuscadoDAO.GetPuestosBuscados(pbDTO.nombre, pbDTO.codigo, pbDTO.nombreEmpresa, parametros, context);
                 foreach(puestobuscado oPuesto in puestos)
                 {
                     DTO.PuestoBuscadoDTO oPuestoBuscadoDTO = new DTO.PuestoBuscadoDTO();

@@ -9,6 +9,6 @@ namespace TP_DISEÑO.DAO
     public interface IPuestoBuscadoDAO
     {
         void createPuestoBuscado(puestobuscado puestobuscado, CapitalHumanoEntities context);
-        List<puestobuscado> GetPuestosBuscados(DTO.PuestoBuscadoDTO, List<int> parametros, CapitalHumanoEntities context);
+        List<puestobuscado> GetPuestosBuscados(string nombre, string codigo, string nombreEmpresa, List<int> parametros, CapitalHumanoEntities context);
     }
 }
