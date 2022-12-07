@@ -233,7 +233,7 @@
             this.diez.Name = "diez";
             this.diez.Size = new System.Drawing.Size(222, 43);
             this.diez.TabIndex = 8;
-            this.diez.Text = "Importar candidatos";
+            this.diez.Text = "Exportar resultados";
             this.diez.UseVisualStyleBackColor = false;
             // 
             // MenuPrincipal

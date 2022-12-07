@@ -13,10 +13,10 @@ namespace TP_DISEÑO
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CapitalHumanoEntities : DbContext
+    public partial class CapitalHumano2Entities : DbContext
     {
-        public CapitalHumanoEntities()
-            : base("name=CapitalHumanoEntities")
+        public CapitalHumano2Entities()
+            : base("name=CapitalHumano2Entities")
         {
         }
     
@@ -29,6 +29,7 @@ namespace TP_DISEÑO
         public virtual DbSet<candidato> candidato { get; set; }
         public virtual DbSet<competencia> competencia { get; set; }
         public virtual DbSet<competenciacuestionario> competenciacuestionario { get; set; }
+        public virtual DbSet<consultor> consultor { get; set; }
         public virtual DbSet<cuestionario> cuestionario { get; set; }
         public virtual DbSet<empresa> empresa { get; set; }
         public virtual DbSet<estado> estado { get; set; }

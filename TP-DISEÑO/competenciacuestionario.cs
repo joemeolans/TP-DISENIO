@@ -22,7 +22,7 @@ namespace TP_DISEÑO
     
         public int IdCompetenciaCuestionario { get; set; }
         public string NombreCompetencia { get; set; }
-        public double ValorObtenido { get; set; }
+        public int ValorObtenido { get; set; }
         public int IdCuestionario { get; set; }
     
         public virtual cuestionario cuestionario { get; set; }

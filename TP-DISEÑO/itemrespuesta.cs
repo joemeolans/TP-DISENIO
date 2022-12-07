@@ -25,7 +25,6 @@ namespace TP_DISEÑO
         public string Descripcion { get; set; }
         public int NumeroOpcion { get; set; }
     
-        public virtual opcionrespuesta opcionrespuesta { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<itemrespuestapregunta> itemrespuestapregunta { get; set; }
     }

@@ -4,46 +4,45 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="974c60c8ffef4e3a9d92e01f4c36e551" Name="Diagram1">
-        <EntityTypeShape EntityType="CapitalHumanoModel.bloque" Width="1.5" PointX="9.75" PointY="3.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="CapitalHumanoModel.candidato" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="CapitalHumanoModel.competencia" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CapitalHumanoModel.competenciacuestionario" Width="1.5" PointX="9.75" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="CapitalHumanoModel.cuestionario" Width="1.5" PointX="7.5" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CapitalHumanoModel.empresa" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CapitalHumanoModel.estado" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="CapitalHumanoModel.estadodeaprobacion" Width="1.5" PointX="7.75" PointY="9.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="CapitalHumanoModel.evaluacion" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CapitalHumanoModel.factor" Width="1.5" PointX="5.25" PointY="12.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="CapitalHumanoModel.factorcuestionario" Width="1.5" PointX="12" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="CapitalHumanoModel.itemrespuesta" Width="1.5" PointX="7.5" PointY="16.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="CapitalHumanoModel.itemrespuestapregunta" Width="1.5" PointX="9.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CapitalHumanoModel.opcionrespuesta" Width="1.5" PointX="5.25" PointY="15.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="CapitalHumanoModel.pregunta" Width="1.5" PointX="7.5" PointY="12.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="CapitalHumanoModel.preguntacuestionario" Width="1.5" PointX="14.25" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="CapitalHumanoModel.puestobuscado" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="CapitalHumanoModel.puestobuscadocompetencia" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CapitalHumanoModel.respuestacuestionario" Width="1.5" PointX="16.5" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="CapitalHumanoModel.tipocompetencia" Width="1.5" PointX="9.75" PointY="9.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="CapitalHumanoModel.tipodocumento" Width="1.5" PointX="0.75" PointY="11.125" IsExpanded="true" />
-        <AssociationConnector Association="CapitalHumanoModel.fk_cuestionario" ManuallyRouted="false" />
-        <AssociationConnector Association="CapitalHumanoModel.fk_preguntacuestionario_bloque" ManuallyRouted="false" />
-        <AssociationConnector Association="CapitalHumanoModel.fk_cuestionario_usuario" ManuallyRouted="false" />
-        <AssociationConnector Association="CapitalHumanoModel.fk_factor_competencia" ManuallyRouted="false" />
-        <AssociationConnector Association="CapitalHumanoModel.fk_puestobuscadocompetencia_competencia" ManuallyRouted="false" />
-        <AssociationConnector Association="CapitalHumanoModel.fk_competencia_cuestionario" ManuallyRouted="false" />
-        <AssociationConnector Association="CapitalHumanoModel.fk_factorcuestionario_competenciacuestionario" ManuallyRouted="false" />
-        <AssociationConnector Association="CapitalHumanoModel.fk_cuestionario_evaluacion" ManuallyRouted="false" />
-        <AssociationConnector Association="CapitalHumanoModel.fk_puestobuscado_empresa" ManuallyRouted="false" />
-        <AssociationConnector Association="CapitalHumanoModel.fk_evaluacion_puesto" ManuallyRouted="false" />
-        <AssociationConnector Association="CapitalHumanoModel.fk_pregunta_factor" ManuallyRouted="false" />
-        <AssociationConnector Association="CapitalHumanoModel.fk_preguntacuestionario_factorcuestionario" ManuallyRouted="false" />
-        <AssociationConnector Association="CapitalHumanoModel.fk_itemrespuesta_opcionrespuesta" ManuallyRouted="false" />
-        <AssociationConnector Association="CapitalHumanoModel.fk_itemrespuestapregunta_itemrespuesta" ManuallyRouted="false" />
-        <AssociationConnector Association="CapitalHumanoModel.fk_itemrespuestapregunta_pregunta" ManuallyRouted="false" />
-        <AssociationConnector Association="CapitalHumanoModel.fk_pregunta_numeroopcion" ManuallyRouted="false" />
-        <AssociationConnector Association="CapitalHumanoModel.fk_respuesta_pregunta" ManuallyRouted="false" />
-        <AssociationConnector Association="CapitalHumanoModel.fk_puestobuscadocompetencia_puestobuscado" ManuallyRouted="false" />
+      <Diagram DiagramId="144db175b6a443e8aaa921d16b80c77c" Name="Diagram1">
+        <EntityTypeShape EntityType="CapitalHumano2Model.bloque" Width="1.5" PointX="10.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano2Model.candidato" Width="1.5" PointX="5.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano2Model.competencia" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano2Model.competenciacuestionario" Width="1.5" PointX="10.25" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano2Model.consultor" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano2Model.cuestionario" Width="1.5" PointX="8" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano2Model.empresa" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano2Model.estado" Width="1.5" PointX="7.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano2Model.estadodeaprobacion" Width="1.5" PointX="7.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano2Model.evaluacion" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano2Model.factor" Width="1.5" PointX="5.25" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano2Model.factorcuestionario" Width="1.5" PointX="12.5" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano2Model.itemrespuesta" Width="1.5" PointX="7.5" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano2Model.itemrespuestapregunta" Width="1.5" PointX="9.75" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano2Model.opcionrespuesta" Width="1.5" PointX="9.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano2Model.pregunta" Width="1.5" PointX="7.5" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano2Model.preguntacuestionario" Width="1.5" PointX="14.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano2Model.puestobuscado" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano2Model.puestobuscadocompetencia" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano2Model.respuestacuestionario" Width="1.5" PointX="17" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano2Model.tipocompetencia" Width="1.5" PointX="9.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano2Model.tipodocumento" Width="1.5" PointX="11.75" PointY="2" IsExpanded="true" />
+        <AssociationConnector Association="CapitalHumano2Model.fk_cuestionario" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano2Model.fk_preguntacuestionario_bloque" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano2Model.fk_cuestionario_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano2Model.fk_factor_competencia" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano2Model.fk_puestobuscadocompetencia_competencia" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano2Model.fk_competencia_cuestionario" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano2Model.fk_factorcuestionario_competenciacuestionario" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano2Model.fk_evaluacion_consultor" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano2Model.fk_puestobuscado_empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano2Model.fk_evaluacion_puesto" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano2Model.fk_pregunta_factor" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano2Model.fk_preguntacuestionario_factorcuestionario" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano2Model.fk_itemrespuestapregunta_itemrespuesta" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano2Model.fk_itemrespuestapregunta_pregunta" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano2Model.fk_respuestacuestionario" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano2Model.fk_puestobuscadocompetencia_puestobuscado" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

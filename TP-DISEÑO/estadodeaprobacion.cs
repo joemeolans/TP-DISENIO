@@ -14,7 +14,7 @@ namespace TP_DISEÑO
     
     public partial class estadodeaprobacion
     {
-        public int IdEstadoDeAprobación { get; set; }
-        public string EstadoDeAprobación { get; set; }
+        public int IdEstadoDeAprobacion { get; set; }
+        public string EstadoDeAprobacion1 { get; set; }
     }
 }

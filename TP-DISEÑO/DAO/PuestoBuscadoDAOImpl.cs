@@ -10,7 +10,7 @@ namespace TP_DISEÑO.DAO
     class PuestoBuscadoDAOImpl : IPuestoBuscadoDAO
     {
 
-        public void createPuestoBuscado(puestobuscado puestobuscado, CapitalHumanoEntities context)
+        public void createPuestoBuscado(puestobuscado puestobuscado, CapitalHumano2Entities context)
         {
             try
             {
@@ -32,7 +32,7 @@ namespace TP_DISEÑO.DAO
             }
         }
 
-        public List<puestobuscado> GetPuestosBuscados(string nombre, string codigo, string nombreEmpresa, List<int> parametros, CapitalHumanoEntities context)
+        public List<puestobuscado> GetPuestosBuscados(string nombre, string codigo, string nombreEmpresa, List<int> parametros, CapitalHumano2Entities context)
         {
             List<puestobuscado> puestos = new List<puestobuscado>();
 
@@ -43,13 +43,13 @@ namespace TP_DISEÑO.DAO
                     switch (oParametro)
                     {
                         case 1:
-                            puestos.Concat(context.puestobuscado.Where(p => p.NombrePuesto == nombre).ToList());
+                            puestos.Concat(context.puestobuscado.Where(p => p.Nombre == nombre).ToList());
                             break;
                         case 2:
                             puestos.Concat(context.puestobuscado.Where(p => p.CodigoPuesto == codigo).ToList());
                             break;
                         case 3:
-                            puestos.Concat(context.empresa.Where(e => e.NombreEmpresa == nombreEmpresa).SelectMany(p => p.puestobuscado).ToList());
+                            puestos.Concat(context.empresa.Where(e => e.Nombre == nombreEmpresa).SelectMany(p => p.puestobuscado).ToList());
                             break;
                     }
                 }

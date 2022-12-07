@@ -23,7 +23,7 @@ namespace TP_DISEÑO
     
         public int IdPuesto { get; set; }
         public string CodigoPuesto { get; set; }
-        public string NombrePuesto { get; set; }
+        public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public bool Eliminado { get; set; }
         public int IdEmpresa { get; set; }

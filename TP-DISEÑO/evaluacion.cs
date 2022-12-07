@@ -14,18 +14,12 @@ namespace TP_DISEÑO
     
     public partial class evaluacion
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public evaluacion()
-        {
-            this.cuestionario = new HashSet<cuestionario>();
-        }
-    
         public int IdEvaluacion { get; set; }
         public System.DateTime FechaEvaluacion { get; set; }
         public int IdPuesto { get; set; }
+        public int IdConsultor { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<cuestionario> cuestionario { get; set; }
+        public virtual consultor consultor { get; set; }
         public virtual puestobuscado puestobuscado { get; set; }
     }
 }

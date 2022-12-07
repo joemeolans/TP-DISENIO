@@ -67,6 +67,9 @@
     <Compile Include="competenciacuestionario.cs">
       <DependentUpon>EntityFramework.tt</DependentUpon>
     </Compile>
+    <Compile Include="consultor.cs">
+      <DependentUpon>EntityFramework.tt</DependentUpon>
+    </Compile>
     <Compile Include="cuestionario.cs">
       <DependentUpon>EntityFramework.tt</DependentUpon>
     </Compile>
@@ -111,6 +114,18 @@
       <DependentUpon>EntityFramework.tt</DependentUpon>
     </Compile>
     <Compile Include="Gestores\GestorPuesto.cs" />
+    <Compile Include="Interfaz\CDU001-Maqueta1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\CDU001-Maqueta1.Designer.cs">
+      <DependentUpon>CDU001-Maqueta1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\CDU001-Maqueta2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\CDU001-Maqueta2.Designer.cs">
+      <DependentUpon>CDU001-Maqueta2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\CDU009-DarDeAltaPuesto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +161,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="puestobuscado.cs">
       <DependentUpon>EntityFramework.tt</DependentUpon>
     </Compile>
@@ -161,6 +181,12 @@
     <Compile Include="tipodocumento.cs">
       <DependentUpon>EntityFramework.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Interfaz\CDU001-Maqueta1.resx">
+      <DependentUpon>CDU001-Maqueta1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\CDU001-Maqueta2.resx">
+      <DependentUpon>CDU001-Maqueta2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\CDU008-GestionarPuestos.resx">
       <DependentUpon>CDU008-GestionarPuestos.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,14 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EntityDeploy Include="EntityFramework.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>EntityFramework.Designer.cs</LastGenOutput>
@@ -202,9 +223,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\tachitodebasura.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
@@ -218,6 +236,10 @@
       <DependentUpon>EntityFramework.edmx</DependentUpon>
       <LastGenOutput>EntityFramework.cs</LastGenOutput>
     </Content>
+    <Content Include="Resources\CAPITALHUMANO1.png" />
+    <Content Include="Resources\REALIZAR CUESTIONARIO.png" />
+    <Content Include="Resources\tachitodebasura.png" />
+    <Content Include="Resources\USUARIOS.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

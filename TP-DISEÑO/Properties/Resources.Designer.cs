@@ -63,9 +63,39 @@ namespace TP_DISEÑO.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CAPITALHUMANO {
+            get {
+                object obj = ResourceManager.GetObject("CAPITALHUMANO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REALIZAR_CUESTIONARIO {
+            get {
+                object obj = ResourceManager.GetObject("REALIZAR CUESTIONARIO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tachitodebasura {
             get {
                 object obj = ResourceManager.GetObject("tachitodebasura", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap USUARIOS {
+            get {
+                object obj = ResourceManager.GetObject("USUARIOS", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

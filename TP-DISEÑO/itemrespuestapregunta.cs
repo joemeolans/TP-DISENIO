@@ -16,7 +16,7 @@ namespace TP_DISEÑO
     {
         public int IdItemRespuesta { get; set; }
         public int IdPregunta { get; set; }
-        public double PonderacionRespuesta { get; set; }
+        public int PonderacionRespuesta { get; set; }
     
         public virtual itemrespuesta itemrespuesta { get; set; }
         public virtual pregunta pregunta { get; set; }

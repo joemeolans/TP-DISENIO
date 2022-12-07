@@ -22,22 +22,21 @@ namespace TP_DISEÑO
         }
     
         public int IdCuestionario { get; set; }
-        public string EstadoDeAprobación { get; set; }
+        public string EstadoDeAprobacion { get; set; }
         public string Estado { get; set; }
         public System.DateTime FechaFin { get; set; }
         public System.DateTime FechaInicio { get; set; }
-        public double Resultado { get; set; }
+        public int Resultado { get; set; }
         public int CantidadAccesos { get; set; }
         public System.DateTime UltimoIngreso { get; set; }
-        public double PlazoParaSerContestado { get; set; }
+        public int PlazoParaSerContestado { get; set; }
         public int IdUsuario { get; set; }
-        public int IdEvaluación { get; set; }
+        public int IdEvaluacion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<bloque> bloque { get; set; }
         public virtual candidato candidato { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<competenciacuestionario> competenciacuestionario { get; set; }
-        public virtual evaluacion evaluacion { get; set; }
     }
 }
