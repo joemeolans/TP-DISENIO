@@ -10,8 +10,8 @@ namespace TP_DISEÑO.DAO
     interface IconsultorDAO
     {
 
-        consultor GetUsuarioByNombre(string nombreUsuarioConsultor, CapitalHumanoEntities context);
-        consultor checkPassword(string contraseña, CapitalHumanoEntities context);
+        consultor GetUsuarioByNombre(string nombreUsuarioConsultor, CapitalHumano2Entities context);
+        consultor checkPassword(string contraseña, CapitalHumano2Entities context);
 
     }
 }

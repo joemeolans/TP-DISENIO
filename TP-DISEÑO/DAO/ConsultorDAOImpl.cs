@@ -10,23 +10,23 @@ namespace TP_DISEÑO.DAO
     class ConsultorDAOImpl : IconsultorDAO
     {
 
-        public consultor GetUsuarioByNombre(string nombreUsuarioConsultor, CapitalHumanoEntities context)
+        public consultor GetUsuarioByNombre(string nombreUsuarioConsultor, CapitalHumano2Entities context)
         {
             consultor consultor = null;
             try
             {
-                consultor = context.consultor.Where(c => c.NombreUsuario == nombreUsuarioConsultor).FirstOrDefault();
+                consultor = context.consultor.Where(c => c.Usuario == nombreUsuarioConsultor).FirstOrDefault();
             }
             catch (Exception e)
             {
                 Console.WriteLine("{0} Exception caught.", e);
             }
-            return candidato;
+            return consultor;
         }
 
-        public consultor checkPassword(string contra, CapitalHumanoEntities context)
+        public consultor checkPassword(string contra, CapitalHumano2Entities context)
         {
-            if (context.consultor.contraseña = contra)
+            if (context.consultor.Contrasenia = contra)
             {
                 return 1;
             }

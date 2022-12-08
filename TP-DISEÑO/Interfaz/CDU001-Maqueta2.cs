@@ -23,5 +23,5 @@ namespace TP_DISEÑO.Interfaz
             volverACDU001Maqueta1.Show();
             this.Hide();
         }
-
+    }
 }
