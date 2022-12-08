@@ -21,12 +21,12 @@ namespace TP_DISEÑO.DAO
             {
                 Console.WriteLine("{0} Exception caught.", e);
             }
-            return candidato;
+            return consultor;
         }
 
-        public consultor checkPassword(string contra, CapitalHumanoEntities context)
+        public int checkPassword(consultor oconsultor, string contra)
         {
-            if (context.consultor.contraseña = contra)
+            if (oconsultor.contraseña = contra)
             {
                 return 1;
             }

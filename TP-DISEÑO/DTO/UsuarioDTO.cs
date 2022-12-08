@@ -13,7 +13,7 @@ namespace TP_DISEÑO.DTO
         public string apellido { get; set; }
         public string nombreUsuario { get; set; }
         public string contraseña { get; set; }
-        public string numDocumento { get; set; }
+        public int numDocumento { get; set; }
         public string Tipo { get; set; }
 
     }

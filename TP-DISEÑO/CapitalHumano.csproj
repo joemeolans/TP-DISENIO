@@ -115,6 +115,8 @@
     <Compile Include="factorcuestionario.cs">
       <DependentUpon>EntityFramework.tt</DependentUpon>
     </Compile>
+    <Compile Include="Gestores\GestorCandidato.cs" />
+    <Compile Include="Gestores\GestorConsultor.cs" />
     <Compile Include="Gestores\GestorPuesto.cs" />
     <Compile Include="Interfaz\CDU009-DarDeAltaPuesto.cs">
       <SubType>Form</SubType>

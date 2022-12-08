@@ -11,7 +11,7 @@ namespace TP_DISEÑO.DAO
     {
 
         consultor GetUsuarioByNombre(string nombreUsuarioConsultor, CapitalHumanoEntities context);
-        consultor checkPassword(string contraseña, CapitalHumanoEntities context);
+        int checkPassword(consultor oConsultor, string contraseña);
 
     }
 }

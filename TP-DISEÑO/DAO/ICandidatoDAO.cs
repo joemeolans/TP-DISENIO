@@ -10,7 +10,7 @@ namespace TP_DISEÑO.DAO
     interface ICandidatoDAO
     {
         candidato GetCandidatoByDoc(int numDoc, string TipoDoc, CapitalHumanoEntities context);
-        cuestionario GetUltimoCuestionarioActivo(int numDoc, CapitalHumanoEntities context);
+        cuestionario GetUltimoCuestionarioActivo(candidato candidato);
     }
 
 }
