@@ -66,7 +66,7 @@ namespace TP_DISEÑO.Gestores
             int valor = new int();
 
 
-            foreach (consultor consultor in UDTO.contraseña)
+            foreach (var consultor in UDTO.contraseña)
             {
                 if (consultorIngresado.Contrasenia == UDTO.contraseña)
                 {
