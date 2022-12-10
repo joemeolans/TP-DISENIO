@@ -42,15 +42,16 @@
             this.textCodigo = new System.Windows.Forms.Label();
             this.CompletarLosSigDatos = new System.Windows.Forms.Label();
             this.CodigoDelPuestoInput = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCandidatosAEvaluar = new System.Windows.Forms.DataGridView();
+            this.botonModificarPuesto = new System.Windows.Forms.Button();
+            this.botonEliminarPuesto = new System.Windows.Forms.Button();
+            this.textoListaCandidatosAEvaluar = new System.Windows.Forms.Label();
             this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreDelPuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.botonModificarPuesto = new System.Windows.Forms.Button();
-            this.botonEliminarPuesto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidatosAEvaluar)).BeginInit();
             this.SuspendLayout();
             // 
             // NuevoPuesto
@@ -204,35 +205,19 @@
             this.CodigoDelPuestoInput.Size = new System.Drawing.Size(209, 20);
             this.CodigoDelPuestoInput.TabIndex = 37;
             // 
-            // dataGridView1
+            // dataGridViewCandidatosAEvaluar
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCandidatosAEvaluar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCandidatosAEvaluar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Código,
             this.NombreDelPuesto,
             this.Empresa});
-            this.dataGridView1.Location = new System.Drawing.Point(22, 359);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(824, 318);
-            this.dataGridView1.TabIndex = 48;
-            // 
-            // Código
-            // 
-            this.Código.HeaderText = "Código";
-            this.Código.Name = "Código";
-            this.Código.Width = 200;
-            // 
-            // NombreDelPuesto
-            // 
-            this.NombreDelPuesto.HeaderText = "Nombre del puesto";
-            this.NombreDelPuesto.Name = "NombreDelPuesto";
-            this.NombreDelPuesto.Width = 360;
-            // 
-            // Empresa
-            // 
-            this.Empresa.HeaderText = "Empresa";
-            this.Empresa.Name = "Empresa";
-            this.Empresa.Width = 200;
+            this.dataGridViewCandidatosAEvaluar.Location = new System.Drawing.Point(22, 359);
+            this.dataGridViewCandidatosAEvaluar.Name = "dataGridViewCandidatosAEvaluar";
+            this.dataGridViewCandidatosAEvaluar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridViewCandidatosAEvaluar.RowHeadersVisible = false;
+            this.dataGridViewCandidatosAEvaluar.Size = new System.Drawing.Size(824, 318);
+            this.dataGridViewCandidatosAEvaluar.TabIndex = 48;
             // 
             // botonModificarPuesto
             // 
@@ -268,15 +253,45 @@
             this.botonEliminarPuesto.Text = "Eliminar puesto";
             this.botonEliminarPuesto.UseVisualStyleBackColor = false;
             // 
+            // textoListaCandidatosAEvaluar
+            // 
+            this.textoListaCandidatosAEvaluar.AutoSize = true;
+            this.textoListaCandidatosAEvaluar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textoListaCandidatosAEvaluar.Location = new System.Drawing.Point(27, 325);
+            this.textoListaCandidatosAEvaluar.Name = "textoListaCandidatosAEvaluar";
+            this.textoListaCandidatosAEvaluar.Size = new System.Drawing.Size(374, 31);
+            this.textoListaCandidatosAEvaluar.TabIndex = 51;
+            this.textoListaCandidatosAEvaluar.Text = "Lista de candidatos a evaluar:";
+            this.textoListaCandidatosAEvaluar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Código
+            // 
+            this.Código.HeaderText = "Código";
+            this.Código.Name = "Código";
+            this.Código.Width = 150;
+            // 
+            // NombreDelPuesto
+            // 
+            this.NombreDelPuesto.HeaderText = "Nombre del puesto";
+            this.NombreDelPuesto.Name = "NombreDelPuesto";
+            this.NombreDelPuesto.Width = 350;
+            // 
+            // Empresa
+            // 
+            this.Empresa.HeaderText = "Empresa";
+            this.Empresa.Name = "Empresa";
+            this.Empresa.Width = 304;
+            // 
             // CDU008
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aquamarine;
             this.ClientSize = new System.Drawing.Size(870, 861);
+            this.Controls.Add(this.textoListaCandidatosAEvaluar);
             this.Controls.Add(this.botonEliminarPuesto);
             this.Controls.Add(this.botonModificarPuesto);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewCandidatosAEvaluar);
             this.Controls.Add(this.botonBuscar);
             this.Controls.Add(this.textEmpresa);
             this.Controls.Add(this.EmpresaInput);
@@ -295,7 +310,7 @@
             this.Text = "CDU008-GestionarPuestos";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidatosAEvaluar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,11 +331,12 @@
         private System.Windows.Forms.Label textCodigo;
         private System.Windows.Forms.Label CompletarLosSigDatos;
         private System.Windows.Forms.TextBox CodigoDelPuestoInput;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewCandidatosAEvaluar;
+        private System.Windows.Forms.Button botonModificarPuesto;
+        private System.Windows.Forms.Button botonEliminarPuesto;
+        private System.Windows.Forms.Label textoListaCandidatosAEvaluar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Código;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreDelPuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Empresa;
-        private System.Windows.Forms.Button botonModificarPuesto;
-        private System.Windows.Forms.Button botonEliminarPuesto;
     }
 }
