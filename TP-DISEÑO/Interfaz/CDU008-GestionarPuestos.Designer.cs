@@ -43,12 +43,12 @@
             this.CompletarLosSigDatos = new System.Windows.Forms.Label();
             this.CodigoDelPuestoInput = new System.Windows.Forms.TextBox();
             this.dataGridViewCandidatosAEvaluar = new System.Windows.Forms.DataGridView();
-            this.botonModificarPuesto = new System.Windows.Forms.Button();
-            this.botonEliminarPuesto = new System.Windows.Forms.Button();
-            this.textoListaCandidatosAEvaluar = new System.Windows.Forms.Label();
             this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreDelPuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.botonModificarPuesto = new System.Windows.Forms.Button();
+            this.botonEliminarPuesto = new System.Windows.Forms.Button();
+            this.textoListaCandidatosAEvaluar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidatosAEvaluar)).BeginInit();
@@ -176,6 +176,7 @@
             this.CerrarSesion.TabIndex = 40;
             this.CerrarSesion.Text = "Cerrar Sesión";
             this.CerrarSesion.UseVisualStyleBackColor = false;
+            this.CerrarSesion.Click += new System.EventHandler(this.CerrarSesion_Click);
             // 
             // textCodigo
             // 
@@ -218,6 +219,24 @@
             this.dataGridViewCandidatosAEvaluar.RowHeadersVisible = false;
             this.dataGridViewCandidatosAEvaluar.Size = new System.Drawing.Size(824, 318);
             this.dataGridViewCandidatosAEvaluar.TabIndex = 48;
+            // 
+            // Código
+            // 
+            this.Código.HeaderText = "Código";
+            this.Código.Name = "Código";
+            this.Código.Width = 150;
+            // 
+            // NombreDelPuesto
+            // 
+            this.NombreDelPuesto.HeaderText = "Nombre del puesto";
+            this.NombreDelPuesto.Name = "NombreDelPuesto";
+            this.NombreDelPuesto.Width = 350;
+            // 
+            // Empresa
+            // 
+            this.Empresa.HeaderText = "Empresa";
+            this.Empresa.Name = "Empresa";
+            this.Empresa.Width = 304;
             // 
             // botonModificarPuesto
             // 
@@ -263,24 +282,6 @@
             this.textoListaCandidatosAEvaluar.TabIndex = 51;
             this.textoListaCandidatosAEvaluar.Text = "Lista de candidatos a evaluar:";
             this.textoListaCandidatosAEvaluar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Código
-            // 
-            this.Código.HeaderText = "Código";
-            this.Código.Name = "Código";
-            this.Código.Width = 150;
-            // 
-            // NombreDelPuesto
-            // 
-            this.NombreDelPuesto.HeaderText = "Nombre del puesto";
-            this.NombreDelPuesto.Name = "NombreDelPuesto";
-            this.NombreDelPuesto.Width = 350;
-            // 
-            // Empresa
-            // 
-            this.Empresa.HeaderText = "Empresa";
-            this.Empresa.Name = "Empresa";
-            this.Empresa.Width = 304;
             // 
             // CDU008
             // 

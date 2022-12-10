@@ -24,5 +24,11 @@ namespace TP_DISEÑO.Interfaz
             this.Hide();
         }
 
+        private void EvaluarCandidatos_Click(object sender, EventArgs e)
+        {
+            Form evaluarCandidatos = new CDU0025_Maqueta1();
+            evaluarCandidatos.Show();
+            this.Hide();
+        }
     }
 }

@@ -23,5 +23,12 @@ namespace TP_DISEÑO.Interfaz
             volverACDU001Maqueta1.Show();
             this.Hide();
         }
+
+        private void Aceptar_Click(object sender, EventArgs e)
+        {
+            Form irAlMenuPrincipal = new MenuPrincipal();
+            irAlMenuPrincipal.Show();
+            this.Hide();
+        }
     }
 }

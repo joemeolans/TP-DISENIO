@@ -94,6 +94,7 @@
             this.EvaluarCandidatos.TabIndex = 3;
             this.EvaluarCandidatos.Text = "Evaluar candidatos";
             this.EvaluarCandidatos.UseVisualStyleBackColor = false;
+            this.EvaluarCandidatos.Click += new System.EventHandler(this.EvaluarCandidatos_Click);
             // 
             // GestionarCompetencias
             // 
