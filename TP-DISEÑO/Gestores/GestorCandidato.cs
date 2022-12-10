@@ -62,7 +62,7 @@ namespace TP_DISEÑO.Gestores
             return errores;
         }
 
-        public ResultadoCuestionarioDTO realizarCuestionario(DTO.UsuarioDTO UDTO)
+        public DTO.ResultadoCuestionarioDTO realizarCuestionario(DTO.UsuarioDTO UDTO)
         {
             List<int> resultado = new List<int>();
 
