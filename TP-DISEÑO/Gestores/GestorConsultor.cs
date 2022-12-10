@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TP_DISEÑO.DTO;
 
 namespace TP_DISEÑO.Gestores
 {
@@ -58,5 +59,59 @@ namespace TP_DISEÑO.Gestores
 
             return errores;
         }
+
+        public int checkPassword(consultor consultorIngresado)
+        {
+            UsuarioDTO UDTO = new UsuarioDTO();
+            int valor = new int();
+
+
+            foreach (consultor consultor in UDTO.contraseña)
+            {
+                if (consultorIngresado.Contrasenia == UDTO.contraseña)
+                {
+                    valor = 1; //Existe un usuario con tal contraseña.
+                } 
+                else
+                {
+                    valor = 0; //No existe un usuario con tal contraseña.
+                } 
+            }
+
+            return valor;
+        }
+
+        public DTO.ResultadoIngresoDTO ingresarUsuario(DTO.UsuarioDTO UDTO)
+        {
+            List<int> resultadoValidacion = new List<int>();
+
+            using (CapitalHumano2Entities context = new CapitalHumano2Entities())
+            {
+
+                resultadoValidacion = this.validarConsultor(UDTO, context);
+                int resultadoCheck = new int();
+                consultor consultor = new consultor();
+
+                if (resultadoValidacion.Count == 0)
+                {
+                    consultor = this.consultorDAO.GetUsuarioByNombre(UDTO.nombreUsuario, context);
+
+                    resultadoCheck = this.checkPassword(consultor);
+                    if (resultadoCheck == 0)
+                    {
+                        resultadoValidacion.Add(7); //El error numero 7 indica que la contrasenia ingresada no es la correcta. 
+                    }
+
+                }
+
+                ResultadoIngresoDTO ResIngresoDTO = new ResultadoIngresoDTO();
+                ResIngresoDTO.Errores.Concat(resultadoValidacion);
+                ResIngresoDTO.idConsultor = consultor.IdConsultor;
+
+                return ResIngresoDTO;
+            }
+
+        }
+
     }
 }
