@@ -240,8 +240,6 @@ namespace TP_DISEÑO.Gestores
             using (CapitalHumano2Entities context = new CapitalHumano2Entities())
             {
                 List<int> parametros = this.validarBuscaPuesto(pbDTO, context);
-                // Falta: en validar ver que parametros te pasaron y con esa informacion saber como hacer la consulta.
-                // modificar el DAO con el tema de que te pueden pasar cualquiera de los 3.
                 List<DTO.PuestoBuscadoDTO> puestosDTO = new List<DTO.PuestoBuscadoDTO>();
                 List<puestobuscado> puestos = this.puestoBuscadoDAO.GetPuestosBuscados(pbDTO.nombre, pbDTO.codigo, pbDTO.nombreEmpresa, parametros, context);
                 foreach(puestobuscado oPuesto in puestos)

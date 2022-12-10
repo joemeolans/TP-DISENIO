@@ -25,30 +25,20 @@ namespace TP_DISEÑO.DAO
             return candidato;
         }
 
-<<<<<<< HEAD
-        public cuestionario GetUltimoCuestionarioActivo(candidato candidato)
-=======
-        public cuestionario GetUltimoCuestionarioActivo(int numDoc, CapitalHumano2Entities context)
->>>>>>> ee74cc5a3caf8367d2a53f7affdf4c20d4f99383
+        public cuestionario GetUltimoCuestionarioActivo(candidato candidato, CapitalHumano2Entities context)
         {
 
             cuestionario cuestionario = null;
 
             try
             {
-<<<<<<< HEAD
-                
                 foreach (cuestionario oCuestionario in candidato.cuestionario)
                 {
-                    if(oCuestionario.Estado == "Activo")
+                    if (oCuestionario.Estado == "Activo")
                     {
                         cuestionario = oCuestionario;
                     }
                 }
-                
-=======
-                (context.candidato.Where(c => c.NumDocumento == numDoc).FirstOrDefault()).cuestionario.Estado = "Activo";
->>>>>>> ee74cc5a3caf8367d2a53f7affdf4c20d4f99383
             }
             catch (Exception e)
             {

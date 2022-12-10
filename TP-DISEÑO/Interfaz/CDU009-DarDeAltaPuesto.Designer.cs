@@ -295,7 +295,7 @@ namespace TP_DISEÑO
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(30, 40);
+            this.pictureBox1.Location = new System.Drawing.Point(30, 25);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(94, 92);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -305,7 +305,7 @@ namespace TP_DISEÑO
             // BordeFotoCapitalHumano
             // 
             this.BordeFotoCapitalHumano.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.BordeFotoCapitalHumano.Location = new System.Drawing.Point(19, 30);
+            this.BordeFotoCapitalHumano.Location = new System.Drawing.Point(19, 15);
             this.BordeFotoCapitalHumano.Name = "BordeFotoCapitalHumano";
             this.BordeFotoCapitalHumano.Size = new System.Drawing.Size(117, 114);
             this.BordeFotoCapitalHumano.TabIndex = 20;
