@@ -8,12 +8,12 @@ namespace TP_DISEÑO.DAO
 {
     class EmpresaDAOImpl : IEmpresaDAO
     {
-        public empresa GetEmpresaByNombre(string nombre, CapitalHumanoEntities context)
+        public empresa GetEmpresaByNombre(string nombre, CapitalHumano2Entities context)
         {
             empresa empresa = null;
             try
             {
-                empresa = context.empresa.Where(e => e.NombreEmpresa == nombre).FirstOrDefault<empresa>();
+                empresa = context.empresa.Where(e => e.Nombre == nombre).FirstOrDefault<empresa>();
             }
             catch (Exception e)
             {
@@ -21,13 +21,13 @@ namespace TP_DISEÑO.DAO
             }
             return empresa;
         }
-        public List<string> GetAllEmpresas(CapitalHumanoEntities context)
+        public List<string> GetAllEmpresas(CapitalHumano2Entities context)
         {
             List<string> nombresempresas = new List<string>();
             var empresas = context.empresa;
             foreach (empresa oEmpresa in empresas)
             {
-                nombresempresas.Add(oEmpresa.NombreEmpresa);
+                nombresempresas.Add(oEmpresa.Nombre);
             }
             return nombresempresas;
         }

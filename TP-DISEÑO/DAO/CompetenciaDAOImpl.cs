@@ -8,12 +8,12 @@ namespace TP_DISEÑO.DAO
 {
     class CompetenciaDAOImpl : ICompetenciaDAO
     {
-        public competencia GetCompetencia(int id, CapitalHumanoEntities context)
+        public competencia GetCompetencia(int id, CapitalHumano2Entities context)
         {
             competencia competencia = context.competencia.Find(id);
             return competencia;
         }
-        public competencia GetCompetenciaByNombre(string nombre, CapitalHumanoEntities context)
+        public competencia GetCompetenciaByNombre(string nombre, CapitalHumano2Entities context)
         {
             competencia competencia = null;
             try
@@ -26,7 +26,7 @@ namespace TP_DISEÑO.DAO
             }
             return competencia;
         }
-        public List<string> GetAllCompetencias(CapitalHumanoEntities context)
+        public List<string> GetAllCompetencias(CapitalHumano2Entities context)
         {
             List<string> nombres = new List<string>();
             var competencias = context.competencia;

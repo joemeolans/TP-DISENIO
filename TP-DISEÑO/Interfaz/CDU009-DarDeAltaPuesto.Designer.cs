@@ -1,4 +1,6 @@
-﻿namespace TP_DISEÑO
+﻿using TP_DISEÑO.Properties;
+
+namespace TP_DISEÑO
 {
     partial class CDU009
     {
@@ -45,18 +47,20 @@
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Salir = new System.Windows.Forms.Button();
             this.CerrarSesion = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.NombreEmpresa = new System.Windows.Forms.Label();
             this.NombreEmpresaInput = new System.Windows.Forms.ComboBox();
             this.Cancelar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BordeFotoCapitalHumano = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.TablaCaracterísticasDelPuesto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).BeginInit();
             this.SuspendLayout();
             // 
             // CodigoDelPuestoInput
             // 
-            this.CodigoDelPuestoInput.Location = new System.Drawing.Point(22, 170);
+            this.CodigoDelPuestoInput.Location = new System.Drawing.Point(122, 225);
             this.CodigoDelPuestoInput.Name = "CodigoDelPuestoInput";
             this.CodigoDelPuestoInput.Size = new System.Drawing.Size(620, 20);
             this.CodigoDelPuestoInput.TabIndex = 1;
@@ -65,7 +69,7 @@
             // 
             this.CompletarLosSigDatos.AutoSize = true;
             this.CompletarLosSigDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CompletarLosSigDatos.Location = new System.Drawing.Point(16, 104);
+            this.CompletarLosSigDatos.Location = new System.Drawing.Point(116, 155);
             this.CompletarLosSigDatos.Name = "CompletarLosSigDatos";
             this.CompletarLosSigDatos.Size = new System.Drawing.Size(393, 31);
             this.CompletarLosSigDatos.TabIndex = 2;
@@ -76,7 +80,7 @@
             // 
             this.labelCodigoDelPuesto.AutoSize = true;
             this.labelCodigoDelPuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCodigoDelPuesto.Location = new System.Drawing.Point(19, 150);
+            this.labelCodigoDelPuesto.Location = new System.Drawing.Point(119, 205);
             this.labelCodigoDelPuesto.Name = "labelCodigoDelPuesto";
             this.labelCodigoDelPuesto.Size = new System.Drawing.Size(291, 17);
             this.labelCodigoDelPuesto.TabIndex = 3;
@@ -86,7 +90,7 @@
             // 
             this.labelNombreDelPuesto.AutoSize = true;
             this.labelNombreDelPuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombreDelPuesto.Location = new System.Drawing.Point(19, 193);
+            this.labelNombreDelPuesto.Location = new System.Drawing.Point(119, 258);
             this.labelNombreDelPuesto.Name = "labelNombreDelPuesto";
             this.labelNombreDelPuesto.Size = new System.Drawing.Size(297, 17);
             this.labelNombreDelPuesto.TabIndex = 4;
@@ -94,7 +98,7 @@
             // 
             // NombreDelPuestoInput
             // 
-            this.NombreDelPuestoInput.Location = new System.Drawing.Point(22, 213);
+            this.NombreDelPuestoInput.Location = new System.Drawing.Point(122, 278);
             this.NombreDelPuestoInput.Name = "NombreDelPuestoInput";
             this.NombreDelPuestoInput.Size = new System.Drawing.Size(620, 20);
             this.NombreDelPuestoInput.TabIndex = 2;
@@ -103,7 +107,7 @@
             // 
             this.labelDescripcion.AutoSize = true;
             this.labelDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDescripcion.Location = new System.Drawing.Point(19, 236);
+            this.labelDescripcion.Location = new System.Drawing.Point(119, 312);
             this.labelDescripcion.Name = "labelDescripcion";
             this.labelDescripcion.Size = new System.Drawing.Size(245, 17);
             this.labelDescripcion.TabIndex = 6;
@@ -111,7 +115,7 @@
             // 
             // DescripcionInput
             // 
-            this.DescripcionInput.Location = new System.Drawing.Point(22, 256);
+            this.DescripcionInput.Location = new System.Drawing.Point(122, 332);
             this.DescripcionInput.Multiline = true;
             this.DescripcionInput.Name = "DescripcionInput";
             this.DescripcionInput.Size = new System.Drawing.Size(620, 89);
@@ -121,7 +125,7 @@
             // 
             this.labelCaracteristicaDelPuesto.AutoSize = true;
             this.labelCaracteristicaDelPuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCaracteristicaDelPuesto.Location = new System.Drawing.Point(19, 391);
+            this.labelCaracteristicaDelPuesto.Location = new System.Drawing.Point(119, 489);
             this.labelCaracteristicaDelPuesto.Name = "labelCaracteristicaDelPuesto";
             this.labelCaracteristicaDelPuesto.Size = new System.Drawing.Size(349, 17);
             this.labelCaracteristicaDelPuesto.TabIndex = 8;
@@ -137,7 +141,7 @@
             this.AgregarFila.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.AgregarFila.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AgregarFila.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AgregarFila.Location = new System.Drawing.Point(251, 580);
+            this.AgregarFila.Location = new System.Drawing.Point(364, 710);
             this.AgregarFila.Name = "AgregarFila";
             this.AgregarFila.Size = new System.Drawing.Size(104, 31);
             this.AgregarFila.TabIndex = 6;
@@ -155,7 +159,7 @@
             this.Aceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.Aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Aceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Aceptar.Location = new System.Drawing.Point(562, 621);
+            this.Aceptar.Location = new System.Drawing.Point(741, 791);
             this.Aceptar.Name = "Aceptar";
             this.Aceptar.Size = new System.Drawing.Size(103, 39);
             this.Aceptar.TabIndex = 7;
@@ -174,7 +178,7 @@
             this.Competencia,
             this.Ponderación,
             this.Eliminar});
-            this.TablaCaracterísticasDelPuesto.Location = new System.Drawing.Point(22, 411);
+            this.TablaCaracterísticasDelPuesto.Location = new System.Drawing.Point(122, 509);
             this.TablaCaracterísticasDelPuesto.Name = "TablaCaracterísticasDelPuesto";
             this.TablaCaracterísticasDelPuesto.RowHeadersVisible = false;
             this.TablaCaracterísticasDelPuesto.Size = new System.Drawing.Size(620, 166);
@@ -215,9 +219,9 @@
             this.Salir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Salir.Location = new System.Drawing.Point(2, 621);
+            this.Salir.Location = new System.Drawing.Point(21, 791);
             this.Salir.Name = "Salir";
-            this.Salir.Size = new System.Drawing.Size(95, 39);
+            this.Salir.Size = new System.Drawing.Size(103, 39);
             this.Salir.TabIndex = 9;
             this.Salir.Text = "Salir";
             this.Salir.UseVisualStyleBackColor = false;
@@ -233,7 +237,7 @@
             this.CerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.CerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CerrarSesion.Location = new System.Drawing.Point(533, 4);
+            this.CerrarSesion.Location = new System.Drawing.Point(713, 25);
             this.CerrarSesion.Name = "CerrarSesion";
             this.CerrarSesion.Size = new System.Drawing.Size(131, 39);
             this.CerrarSesion.TabIndex = 10;
@@ -241,22 +245,11 @@
             this.CerrarSesion.UseVisualStyleBackColor = false;
             this.CerrarSesion.Click += new System.EventHandler(this.CerrarSesion_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(2, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(83, 85);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            // 
             // NombreEmpresa
             // 
             this.NombreEmpresa.AutoSize = true;
             this.NombreEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NombreEmpresa.Location = new System.Drawing.Point(19, 348);
+            this.NombreEmpresa.Location = new System.Drawing.Point(119, 436);
             this.NombreEmpresa.Name = "NombreEmpresa";
             this.NombreEmpresa.Size = new System.Drawing.Size(324, 17);
             this.NombreEmpresa.TabIndex = 17;
@@ -265,7 +258,7 @@
             // NombreEmpresaInput
             // 
             this.NombreEmpresaInput.FormattingEnabled = true;
-            this.NombreEmpresaInput.Location = new System.Drawing.Point(22, 368);
+            this.NombreEmpresaInput.Location = new System.Drawing.Point(122, 456);
             this.NombreEmpresaInput.Name = "NombreEmpresaInput";
             this.NombreEmpresaInput.Size = new System.Drawing.Size(620, 21);
             this.NombreEmpresaInput.Sorted = true;
@@ -281,9 +274,9 @@
             this.Cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancelar.Location = new System.Drawing.Point(462, 621);
+            this.Cancelar.Location = new System.Drawing.Point(614, 791);
             this.Cancelar.Name = "Cancelar";
-            this.Cancelar.Size = new System.Drawing.Size(95, 39);
+            this.Cancelar.Size = new System.Drawing.Size(103, 39);
             this.Cancelar.TabIndex = 8;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = false;
@@ -293,11 +286,30 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(370, 581);
+            this.label1.Location = new System.Drawing.Point(470, 679);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(268, 13);
             this.label1.TabIndex = 18;
             this.label1.Text = "(*) Como mínimo debe haber una competencia";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(30, 40);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(94, 92);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            // 
+            // BordeFotoCapitalHumano
+            // 
+            this.BordeFotoCapitalHumano.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.BordeFotoCapitalHumano.Location = new System.Drawing.Point(19, 30);
+            this.BordeFotoCapitalHumano.Name = "BordeFotoCapitalHumano";
+            this.BordeFotoCapitalHumano.Size = new System.Drawing.Size(117, 114);
+            this.BordeFotoCapitalHumano.TabIndex = 20;
+            this.BordeFotoCapitalHumano.TabStop = false;
             // 
             // CDU009
             // 
@@ -305,12 +317,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Aquamarine;
-            this.ClientSize = new System.Drawing.Size(667, 661);
+            this.ClientSize = new System.Drawing.Size(870, 861);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.BordeFotoCapitalHumano);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Cancelar);
             this.Controls.Add(this.NombreEmpresaInput);
             this.Controls.Add(this.NombreEmpresa);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.CerrarSesion);
             this.Controls.Add(this.Salir);
             this.Controls.Add(this.TablaCaracterísticasDelPuesto);
@@ -333,6 +346,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TablaCaracterísticasDelPuesto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,14 +366,15 @@
         private System.Windows.Forms.DataGridView TablaCaracterísticasDelPuesto;
         private System.Windows.Forms.Button Salir;
         private System.Windows.Forms.Button CerrarSesion;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label NombreEmpresa;
         private System.Windows.Forms.ComboBox NombreEmpresaInput;
         private System.Windows.Forms.Button Cancelar;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewComboBoxColumn Competencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ponderación;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox BordeFotoCapitalHumano;
     }
 }
 

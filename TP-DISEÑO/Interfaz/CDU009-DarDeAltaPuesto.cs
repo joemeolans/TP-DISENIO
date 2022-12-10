@@ -47,6 +47,16 @@ namespace TP_DISEÑO
             this.Hide();
         }
 
+        private void limpiarCampos()
+        {
+            CodigoDelPuestoInput.Text = "";
+            NombreDelPuestoInput.Text = "";
+            DescripcionInput.Text = "";
+            NombreEmpresaInput.Text = "";
+            TablaCaracterísticasDelPuesto.Rows.Clear();
+
+        }
+
         private void Cancelar_Click(object sender, EventArgs e)
         {
             Form volverAGestionarPuesto = new CDU008();
@@ -251,10 +261,16 @@ namespace TP_DISEÑO
                 }
                 else
                 {
-                    Form volverAGestionarPuesto = new CDU008();
-                    MessageBox.Show("Puesto creado correctamente.");
-                    volverAGestionarPuesto.Show();
-                    this.Hide();
+                    if (MessageBox.Show("El puesto se ha creado correctamente ¿Desea cargar otro?", "Capital Humano", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                        {
+                        Form volverAlMenuPrincipal = new MenuPrincipal();
+                        volverAlMenuPrincipal.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        limpiarCampos();
+                    }
                 }
             }
         }

@@ -8,7 +8,7 @@ namespace TP_DISEÑO.DAO
 {
     interface IEmpresaDAO
     {
-        List<string> GetAllEmpresas(CapitalHumanoEntities context);
-        empresa GetEmpresaByNombre(string nombre, CapitalHumanoEntities context);
+        List<string> GetAllEmpresas(CapitalHumano2Entities context);
+        empresa GetEmpresaByNombre(string nombre, CapitalHumano2Entities context);
     }
 }

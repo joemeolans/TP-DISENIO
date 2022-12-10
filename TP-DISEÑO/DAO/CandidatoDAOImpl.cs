@@ -11,12 +11,12 @@ namespace TP_DISEÑO.DAO
 {
     class CandidatoDAOImpl : ICandidatoDAO
     {
-        public candidato GetCandidatoByDoc(int numDoc, string TipoDoc, CapitalHumanoEntities context)
+        public candidato GetCandidatoByDoc(int numDoc, string TipoDoc, CapitalHumano2Entities context)
         {
             candidato candidato = null;
             try
             {
-                candidato = context.candidato.Where(c => c.numDoc == numDoc & c.TipoDoc == TipoDoc).FirstOrDefault();
+                candidato = context.candidato.Where(c => c.NumDocumento == numDoc & c.Tipo == TipoDoc).FirstOrDefault();
             }
             catch (Exception e)
             {
@@ -25,13 +25,18 @@ namespace TP_DISEÑO.DAO
             return candidato;
         }
 
+<<<<<<< HEAD
         public cuestionario GetUltimoCuestionarioActivo(candidato candidato)
+=======
+        public cuestionario GetUltimoCuestionarioActivo(int numDoc, CapitalHumano2Entities context)
+>>>>>>> ee74cc5a3caf8367d2a53f7affdf4c20d4f99383
         {
 
             cuestionario cuestionario = null;
 
             try
             {
+<<<<<<< HEAD
                 
                 foreach (cuestionario oCuestionario in candidato.cuestionario)
                 {
@@ -41,6 +46,9 @@ namespace TP_DISEÑO.DAO
                     }
                 }
                 
+=======
+                (context.candidato.Where(c => c.NumDocumento == numDoc).FirstOrDefault()).cuestionario.Estado = "Activo";
+>>>>>>> ee74cc5a3caf8367d2a53f7affdf4c20d4f99383
             }
             catch (Exception e)
             {

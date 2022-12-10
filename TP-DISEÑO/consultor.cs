@@ -12,20 +12,19 @@ namespace TP_DISEÑO
     using System;
     using System.Collections.Generic;
     
-    public partial class empresa
+    public partial class consultor
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public empresa()
+        public consultor()
         {
-            this.puestobuscado = new HashSet<puestobuscado>();
+            this.evaluacion = new HashSet<evaluacion>();
         }
     
-        public int IdEmpresa { get; set; }
-        public string Nombre { get; set; }
-        public string Direccion { get; set; }
-        public int TelefonoEmpresa { get; set; }
+        public int IdConsultor { get; set; }
+        public string Usuario { get; set; }
+        public string Contrasenia { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<puestobuscado> puestobuscado { get; set; }
+        public virtual ICollection<evaluacion> evaluacion { get; set; }
     }
 }

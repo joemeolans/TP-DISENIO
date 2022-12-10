@@ -21,7 +21,7 @@ namespace TP_DISEÑO
         }
     
         public int IdFactorCuestionario { get; set; }
-        public double ValorObtenido { get; set; }
+        public int ValorObtenido { get; set; }
         public string NombreFactor { get; set; }
         public int IdCompetenciaCuestionario { get; set; }
     

@@ -16,7 +16,7 @@ namespace TP_DISEÑO
     {
         public int IdPuesto { get; set; }
         public int IdCompetencia { get; set; }
-        public double PuntajeMinimo { get; set; }
+        public int PuntajeMinimo { get; set; }
     
         public virtual competencia competencia { get; set; }
         public virtual puestobuscado puestobuscado { get; set; }

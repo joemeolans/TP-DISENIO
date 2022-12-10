@@ -16,9 +16,9 @@ namespace TP_DISEÑO
     {
         public int IdRespuestaCuestionario { get; set; }
         public int OrdenRespuesta { get; set; }
-        public string Descripción { get; set; }
-        public int RespuestaSeleccionada { get; set; }
-        public double Ponderación { get; set; }
+        public string Descripcion { get; set; }
+        public bool RespuestaSeleccionada { get; set; }
+        public int Ponderacion { get; set; }
         public int IdPreguntaCuestionario { get; set; }
     
         public virtual preguntacuestionario preguntacuestionario { get; set; }

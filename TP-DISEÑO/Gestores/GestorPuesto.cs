@@ -18,7 +18,7 @@ namespace TP_DISEÑO.Gestores
             this.competenciaDAO = new DAO.CompetenciaDAOImpl();
             this.puestoBuscadoDAO = new DAO.PuestoBuscadoDAOImpl();
         }
-        public List<int> validarNuevoPuesto(DTO.PuestoBuscadoDTO pbDTO, CapitalHumanoEntities context)
+        public List<int> validarNuevoPuesto(DTO.PuestoBuscadoDTO pbDTO, CapitalHumano2Entities context)
         {
             List<int> errores = new List<int>();
 
@@ -53,7 +53,7 @@ namespace TP_DISEÑO.Gestores
                     empresa empresa = empresaDAO.GetEmpresaByNombre(pbDTO.nombreEmpresa, context);
                     foreach (var oPuesto in empresa.puestobuscado)
                     {
-                        if (oPuesto.NombrePuesto == pbDTO.nombre)
+                        if (oPuesto.Nombre == pbDTO.nombre)
                         {
                             errores.Add(9); // ERROR 9: Ya existe ese nombre de puesto para la empresa seleccionada
                             if (oPuesto.CodigoPuesto == pbDTO.codigo)
@@ -159,20 +159,20 @@ namespace TP_DISEÑO.Gestores
 
         public List<string> GetAllEmpresas()
         {
-            using (CapitalHumanoEntities context = new CapitalHumanoEntities())
+            using (CapitalHumano2Entities context = new CapitalHumano2Entities())
             {
                 return this.empresaDAO.GetAllEmpresas(context);
             }
         }
         public List<string> GetAllCompetencias()
         {
-            using (CapitalHumanoEntities context = new CapitalHumanoEntities())
+            using (CapitalHumano2Entities context = new CapitalHumano2Entities())
             {
                 return this.competenciaDAO.GetAllCompetencias(context);
             }
         }
         public void addCompetencia(
-            puestobuscado puesto, string nombreCompetencia, int puntajeminimo, DAO.ICompetenciaDAO comDAO, CapitalHumanoEntities context)
+            puestobuscado puesto, string nombreCompetencia, int puntajeminimo, DAO.ICompetenciaDAO comDAO, CapitalHumano2Entities context)
         {
             puestobuscadocompetencia pbc = new puestobuscadocompetencia();
             pbc.PuntajeMinimo = puntajeminimo;
@@ -183,14 +183,14 @@ namespace TP_DISEÑO.Gestores
         }
         public List<int> AltaPuesto(DTO.PuestoBuscadoDTO pbDTO)
         {
-            using (CapitalHumanoEntities context = new CapitalHumanoEntities())
+            using (CapitalHumano2Entities context = new CapitalHumano2Entities())
             {
                 List<int> errores = validarNuevoPuesto(pbDTO, context);
                 if (errores.Count == 0)
                 {
                     puestobuscado puestobuscado = new puestobuscado();
                     puestobuscado.CodigoPuesto = pbDTO.codigo;
-                    puestobuscado.NombrePuesto = pbDTO.nombre;
+                    puestobuscado.Nombre = pbDTO.nombre;
                     puestobuscado.Descripcion = pbDTO.descripcion;
                     // Asignar empresa
                     puestobuscado.empresa = this.empresaDAO.GetEmpresaByNombre(pbDTO.nombreEmpresa, context);
@@ -205,7 +205,7 @@ namespace TP_DISEÑO.Gestores
                 return errores;
             }
         }
-        public List<int> validarBuscaPuesto(DTO.PuestoBuscadoDTO pbDTO, CapitalHumanoEntities context)
+        public List<int> validarBuscaPuesto(DTO.PuestoBuscadoDTO pbDTO, CapitalHumano2Entities context)
         {
             List<int> resultado = new List<int>();
 
@@ -237,7 +237,7 @@ namespace TP_DISEÑO.Gestores
         }
         public List<DTO.PuestoBuscadoDTO> BuscarPuesto(DTO.PuestoBuscadoDTO pbDTO)
         {
-            using (CapitalHumanoEntities context = new CapitalHumanoEntities())
+            using (CapitalHumano2Entities context = new CapitalHumano2Entities())
             {
                 List<int> parametros = this.validarBuscaPuesto(pbDTO, context);
                 // Falta: en validar ver que parametros te pasaron y con esa informacion saber como hacer la consulta.
@@ -247,9 +247,9 @@ namespace TP_DISEÑO.Gestores
                 foreach(puestobuscado oPuesto in puestos)
                 {
                     DTO.PuestoBuscadoDTO oPuestoBuscadoDTO = new DTO.PuestoBuscadoDTO();
-                    oPuestoBuscadoDTO.nombre = oPuesto.NombrePuesto;
+                    oPuestoBuscadoDTO.nombre = oPuesto.Nombre;
                     oPuestoBuscadoDTO.codigo = oPuesto.CodigoPuesto;
-                    oPuestoBuscadoDTO.nombreEmpresa = oPuesto.empresa.NombreEmpresa;
+                    oPuestoBuscadoDTO.nombreEmpresa = oPuesto.empresa.Nombre;
                 }
                 return puestosDTO;
             }
