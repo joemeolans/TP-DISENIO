@@ -24,18 +24,5 @@ namespace TP_DISEÑO.DAO
             return consultor;
         }
 
-        public int checkPassword(consultor oconsultor, string contra)
-        {
-            if (oconsultor.Contrasenia == contra)
-            {
-                return 1;
-            }
-            else
-            {
-                return 0;
-            }
-
-        }
-
     }
 }
