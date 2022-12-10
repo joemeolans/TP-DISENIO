@@ -5,6 +5,7 @@ using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using TP_DISEÑO.DAO;
+using TP_DISEÑO.DTO;
 
 namespace TP_DISEÑO.Gestores
 {
@@ -16,7 +17,7 @@ namespace TP_DISEÑO.Gestores
         {
             this.candidatoDAO = new DAO.CandidatoDAOImpl();
         }
-        public List<int> validarUsuario(DTO.UsuarioDTO UDTO, CapitalHumanoEntities context)
+        public List<int> validarUsuario(DTO.UsuarioDTO UDTO, CapitalHumano2Entities context)
         {
             List<int> errores = new List<int>();
 
@@ -61,11 +62,57 @@ namespace TP_DISEÑO.Gestores
             return errores;
         }
 
-        public void realizarCuestionario(DTO.UsuarioDTO UDTO, CapitalHumanoEntities context)
+        public ResultadoCuestionarioDTO realizarCuestionario(DTO.UsuarioDTO UDTO)
         {
-            this.validarUsuario(UDTO, context);
-            candidatoDAO.GetCandidatoByDoc(UDTO.numDocumento, UDTO.Tipo, context);
-            candidatoDAO.GetUltimoCuestionarioActivo();
+            List<int> resultado = new List<int>();
+
+            using (CapitalHumano2Entities context = new CapitalHumano2Entities())
+            {
+
+                resultado = this.validarUsuario(UDTO, context);
+                cuestionario resultadoCuestionario = new cuestionario();
+
+                if (resultado.Count == 0)
+                {
+                    candidato candidato = this.candidatoDAO.GetCandidatoByDoc(UDTO.numDocumento, UDTO.Tipo, context);
+                    
+                    resultadoCuestionario = this.GetUltimoCuestionarioActivo(candidato, context);
+                    if (resultadoCuestionario == null)
+                    {
+                        resultado.Add(7); //El error numero 7 indica que no existe un usuario para tal cuestionario.
+                    }
+
+                }
+
+                ResultadoCuestionarioDTO ResCuestionarioDTO = new ResultadoCuestionarioDTO();
+                ResCuestionarioDTO.Errores.Concat(resultado);
+                ResCuestionarioDTO.idCuestionario = resultadoCuestionario.IdCuestionario;
+
+                return ResCuestionarioDTO;
+            }
+
+        }
+
+        public cuestionario GetUltimoCuestionarioActivo(candidato candidato, CapitalHumano2Entities context)
+        {
+
+            cuestionario cuestionario = null;
+
+            try
+            {
+                foreach (cuestionario oCuestionario in candidato.cuestionario)
+                {
+                    if (oCuestionario.Estado == "Activo")
+                    {
+                        cuestionario = oCuestionario;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("{0} Exception caught.", e);
+            }
+            return cuestionario;
 
         }
 

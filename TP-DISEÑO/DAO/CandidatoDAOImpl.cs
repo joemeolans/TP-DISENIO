@@ -25,29 +25,6 @@ namespace TP_DISEÑO.DAO
             return candidato;
         }
 
-        public cuestionario GetUltimoCuestionarioActivo(candidato candidato, CapitalHumano2Entities context)
-        {
-
-            cuestionario cuestionario = null;
-
-            try
-            {
-                foreach (cuestionario oCuestionario in candidato.cuestionario)
-                {
-                    if (oCuestionario.Estado == "Activo")
-                    {
-                        cuestionario = oCuestionario;
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("{0} Exception caught.", e);
-            }
-            return cuestionario;
-
-        }
-
     }
 
 }

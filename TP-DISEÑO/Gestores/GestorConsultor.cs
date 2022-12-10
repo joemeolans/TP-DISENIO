@@ -14,7 +14,7 @@ namespace TP_DISEÑO.Gestores
         {
             this.consultorDAO = new DAO.ConsultorDAOImpl();
         }
-        public List<int> validarConsultor(DTO.UsuarioDTO UDTO, CapitalHumanoEntities context)
+        public List<int> validarConsultor(DTO.UsuarioDTO UDTO, CapitalHumano2Entities context)
         {
             List<int> errores = new List<int>();
 

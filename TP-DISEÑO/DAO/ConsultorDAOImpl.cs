@@ -24,15 +24,9 @@ namespace TP_DISEÑO.DAO
             return consultor;
         }
 
-<<<<<<< HEAD
         public int checkPassword(consultor oconsultor, string contra)
         {
-            if (oconsultor.contraseña = contra)
-=======
-        public consultor checkPassword(string contra, CapitalHumano2Entities context)
-        {
-            if (context.consultor.Contrasenia = contra)
->>>>>>> ee74cc5a3caf8367d2a53f7affdf4c20d4f99383
+            if (oconsultor.Contrasenia == contra)
             {
                 return 1;
             }
