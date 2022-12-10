@@ -39,8 +39,9 @@
             this.ocho = new System.Windows.Forms.Button();
             this.nueve = new System.Windows.Forms.Button();
             this.Menu = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.diez = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.CerrarSesion = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -209,17 +210,6 @@
             this.Menu.TabIndex = 10;
             this.Menu.Text = "Menú principal";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(376, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(134, 131);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
             // diez
             // 
             this.diez.BackColor = System.Drawing.Color.MediumTurquoise;
@@ -237,6 +227,35 @@
             this.diez.Text = "Exportar resultados";
             this.diez.UseVisualStyleBackColor = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(376, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(134, 131);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
+            // CerrarSesion
+            // 
+            this.CerrarSesion.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.CerrarSesion.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.CerrarSesion.FlatAppearance.BorderSize = 3;
+            this.CerrarSesion.FlatAppearance.CheckedBackColor = System.Drawing.Color.PaleTurquoise;
+            this.CerrarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
+            this.CerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.CerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CerrarSesion.Location = new System.Drawing.Point(727, 12);
+            this.CerrarSesion.Name = "CerrarSesion";
+            this.CerrarSesion.Size = new System.Drawing.Size(131, 39);
+            this.CerrarSesion.TabIndex = 27;
+            this.CerrarSesion.Text = "Cerrar Sesión";
+            this.CerrarSesion.UseVisualStyleBackColor = false;
+            this.CerrarSesion.Click += new System.EventHandler(this.CerrarSesion_Click);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,6 +263,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Aquamarine;
             this.ClientSize = new System.Drawing.Size(870, 861);
+            this.Controls.Add(this.CerrarSesion);
             this.Controls.Add(this.diez);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Menu);
@@ -278,5 +298,6 @@
         private System.Windows.Forms.Label Menu;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button diez;
+        private System.Windows.Forms.Button CerrarSesion;
     }
 }
