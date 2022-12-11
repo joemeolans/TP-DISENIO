@@ -107,7 +107,6 @@
             this.CodigoDelPuestoInput.Name = "CodigoDelPuestoInput";
             this.CodigoDelPuestoInput.Size = new System.Drawing.Size(209, 20);
             this.CodigoDelPuestoInput.TabIndex = 21;
-            this.CodigoDelPuestoInput.Text = "Ingrese un apellido";
             // 
             // BotonAgregar
             // 
@@ -178,7 +177,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(207, 20);
             this.textBox1.TabIndex = 32;
-            this.textBox1.Text = "Ingrese un nombre";
             // 
             // textNumCand
             // 
@@ -196,7 +194,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(185, 20);
             this.textBox2.TabIndex = 34;
-            this.textBox2.Text = "Ingrese un número de candidato";
             // 
             // botonFiltrar
             // 

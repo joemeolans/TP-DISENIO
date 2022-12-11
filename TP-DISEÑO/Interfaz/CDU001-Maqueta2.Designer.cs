@@ -47,7 +47,6 @@
             this.ContraseñaInput.Name = "ContraseñaInput";
             this.ContraseñaInput.Size = new System.Drawing.Size(466, 20);
             this.ContraseñaInput.TabIndex = 6;
-            this.ContraseñaInput.Text = "Ingrese una contraseña";
             // 
             // textContrasenia
             // 
@@ -75,7 +74,6 @@
             this.NombreUsuarioInput.Name = "NombreUsuarioInput";
             this.NombreUsuarioInput.Size = new System.Drawing.Size(466, 20);
             this.NombreUsuarioInput.TabIndex = 5;
-            this.NombreUsuarioInput.Text = "Ingrese un nombre de usuario";
             // 
             // botonAceptar
             // 

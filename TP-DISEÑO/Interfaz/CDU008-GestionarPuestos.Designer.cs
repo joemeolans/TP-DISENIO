@@ -123,7 +123,6 @@
             this.EmpresaInput.Name = "EmpresaInput";
             this.EmpresaInput.Size = new System.Drawing.Size(185, 20);
             this.EmpresaInput.TabIndex = 45;
-            this.EmpresaInput.Text = "Ingrese una empresa";
             // 
             // textNombreDelPuesto
             // 
@@ -141,7 +140,6 @@
             this.NombreDelPuestoInput.Name = "NombreDelPuestoInput";
             this.NombreDelPuestoInput.Size = new System.Drawing.Size(207, 20);
             this.NombreDelPuestoInput.TabIndex = 43;
-            this.NombreDelPuestoInput.Text = "Ingrese un nombre de puesto";
             // 
             // CerrarSesion
             // 
@@ -188,7 +186,6 @@
             this.CodigoDelPuestoInput.Name = "CodigoDelPuestoInput";
             this.CodigoDelPuestoInput.Size = new System.Drawing.Size(209, 20);
             this.CodigoDelPuestoInput.TabIndex = 37;
-            this.CodigoDelPuestoInput.Text = "Ingrese un código";
             // 
             // dataGridViewCandidatosAEvaluar
             // 

@@ -65,7 +65,6 @@ namespace TP_DISEÑO
             this.CodigoDelPuestoInput.Name = "CodigoDelPuestoInput";
             this.CodigoDelPuestoInput.Size = new System.Drawing.Size(620, 20);
             this.CodigoDelPuestoInput.TabIndex = 1;
-            this.CodigoDelPuestoInput.Text = "Ingrese un código para el puesto";
             // 
             // CompletarLosSigDatos
             // 
@@ -104,7 +103,6 @@ namespace TP_DISEÑO
             this.NombreDelPuestoInput.Name = "NombreDelPuestoInput";
             this.NombreDelPuestoInput.Size = new System.Drawing.Size(620, 20);
             this.NombreDelPuestoInput.TabIndex = 2;
-            this.NombreDelPuestoInput.Text = "Ingrese un nombre para el puesto";
             // 
             // labelDescripcion
             // 
@@ -123,7 +121,6 @@ namespace TP_DISEÑO
             this.DescripcionInput.Name = "DescripcionInput";
             this.DescripcionInput.Size = new System.Drawing.Size(620, 89);
             this.DescripcionInput.TabIndex = 3;
-            this.DescripcionInput.Text = "Ingrese una descripción para el puesto";
             // 
             // labelCaracteristicaDelPuesto
             // 

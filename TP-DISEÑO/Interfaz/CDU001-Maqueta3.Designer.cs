@@ -85,7 +85,6 @@
             this.ClaveInput.Name = "ClaveInput";
             this.ClaveInput.Size = new System.Drawing.Size(509, 20);
             this.ClaveInput.TabIndex = 15;
-            this.ClaveInput.Text = "Ingrese una clave";
             // 
             // textClave
             // 
@@ -113,7 +112,6 @@
             this.NroDocumentoInput.Name = "NroDocumentoInput";
             this.NroDocumentoInput.Size = new System.Drawing.Size(282, 20);
             this.NroDocumentoInput.TabIndex = 14;
-            this.NroDocumentoInput.Text = "Ingrese un número de documento";
             // 
             // textNumDoc
             // 
