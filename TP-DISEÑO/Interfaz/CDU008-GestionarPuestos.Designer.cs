@@ -36,8 +36,6 @@
             this.EmpresaInput = new System.Windows.Forms.TextBox();
             this.textNombreDelPuesto = new System.Windows.Forms.Label();
             this.NombreDelPuestoInput = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BordeFotoCapitalHumano = new System.Windows.Forms.PictureBox();
             this.CerrarSesion = new System.Windows.Forms.Button();
             this.textCodigo = new System.Windows.Forms.Label();
             this.CompletarLosSigDatos = new System.Windows.Forms.Label();
@@ -49,9 +47,11 @@
             this.botonModificarPuesto = new System.Windows.Forms.Button();
             this.botonEliminarPuesto = new System.Windows.Forms.Button();
             this.textoListaCandidatosAEvaluar = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BordeFotoCapitalHumano = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidatosAEvaluar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidatosAEvaluar)).BeginInit();
             this.SuspendLayout();
             // 
             // NuevoPuesto
@@ -123,6 +123,7 @@
             this.EmpresaInput.Name = "EmpresaInput";
             this.EmpresaInput.Size = new System.Drawing.Size(185, 20);
             this.EmpresaInput.TabIndex = 45;
+            this.EmpresaInput.Text = "Ingrese una empresa";
             // 
             // textNombreDelPuesto
             // 
@@ -140,25 +141,7 @@
             this.NombreDelPuestoInput.Name = "NombreDelPuestoInput";
             this.NombreDelPuestoInput.Size = new System.Drawing.Size(207, 20);
             this.NombreDelPuestoInput.TabIndex = 43;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(33, 31);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(94, 92);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 41;
-            this.pictureBox1.TabStop = false;
-            // 
-            // BordeFotoCapitalHumano
-            // 
-            this.BordeFotoCapitalHumano.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.BordeFotoCapitalHumano.Location = new System.Drawing.Point(22, 21);
-            this.BordeFotoCapitalHumano.Name = "BordeFotoCapitalHumano";
-            this.BordeFotoCapitalHumano.Size = new System.Drawing.Size(117, 114);
-            this.BordeFotoCapitalHumano.TabIndex = 42;
-            this.BordeFotoCapitalHumano.TabStop = false;
+            this.NombreDelPuestoInput.Text = "Ingrese un nombre de puesto";
             // 
             // CerrarSesion
             // 
@@ -205,6 +188,7 @@
             this.CodigoDelPuestoInput.Name = "CodigoDelPuestoInput";
             this.CodigoDelPuestoInput.Size = new System.Drawing.Size(209, 20);
             this.CodigoDelPuestoInput.TabIndex = 37;
+            this.CodigoDelPuestoInput.Text = "Ingrese un código";
             // 
             // dataGridViewCandidatosAEvaluar
             // 
@@ -283,6 +267,25 @@
             this.textoListaCandidatosAEvaluar.Text = "Lista de candidatos a evaluar:";
             this.textoListaCandidatosAEvaluar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(33, 31);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(94, 92);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 41;
+            this.pictureBox1.TabStop = false;
+            // 
+            // BordeFotoCapitalHumano
+            // 
+            this.BordeFotoCapitalHumano.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.BordeFotoCapitalHumano.Location = new System.Drawing.Point(22, 21);
+            this.BordeFotoCapitalHumano.Name = "BordeFotoCapitalHumano";
+            this.BordeFotoCapitalHumano.Size = new System.Drawing.Size(117, 114);
+            this.BordeFotoCapitalHumano.TabIndex = 42;
+            this.BordeFotoCapitalHumano.TabStop = false;
+            // 
             // CDU008
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,9 +312,9 @@
             this.Name = "CDU008";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CDU008-GestionarPuestos";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidatosAEvaluar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidatosAEvaluar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

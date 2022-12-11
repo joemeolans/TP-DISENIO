@@ -122,6 +122,7 @@
             this.comboBoxNombreEmpresa.Name = "comboBoxNombreEmpresa";
             this.comboBoxNombreEmpresa.Size = new System.Drawing.Size(247, 21);
             this.comboBoxNombreEmpresa.TabIndex = 48;
+            this.comboBoxNombreEmpresa.Text = "Seleccione una empresa";
             // 
             // comboBoxFuncionOPuesto
             // 
@@ -130,6 +131,7 @@
             this.comboBoxFuncionOPuesto.Name = "comboBoxFuncionOPuesto";
             this.comboBoxFuncionOPuesto.Size = new System.Drawing.Size(247, 21);
             this.comboBoxFuncionOPuesto.TabIndex = 49;
+            this.comboBoxFuncionOPuesto.Text = "Seleccione una función o puesto";
             // 
             // dataGridViewListaCompetencias
             // 

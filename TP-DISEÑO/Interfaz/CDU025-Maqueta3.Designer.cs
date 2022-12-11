@@ -119,7 +119,7 @@
             // 
             this.textoListaDeCandidatos.AutoSize = true;
             this.textoListaDeCandidatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoListaDeCandidatos.Location = new System.Drawing.Point(107, 169);
+            this.textoListaDeCandidatos.Location = new System.Drawing.Point(95, 169);
             this.textoListaDeCandidatos.Name = "textoListaDeCandidatos";
             this.textoListaDeCandidatos.Size = new System.Drawing.Size(265, 25);
             this.textoListaDeCandidatos.TabIndex = 55;
@@ -132,10 +132,10 @@
             this.dataGridViewListaCandidatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NombreCompetencia,
             this.PonderacionMinima});
-            this.dataGridViewListaCandidatos.Location = new System.Drawing.Point(112, 197);
+            this.dataGridViewListaCandidatos.Location = new System.Drawing.Point(100, 197);
             this.dataGridViewListaCandidatos.Name = "dataGridViewListaCandidatos";
             this.dataGridViewListaCandidatos.RowHeadersVisible = false;
-            this.dataGridViewListaCandidatos.Size = new System.Drawing.Size(677, 550);
+            this.dataGridViewListaCandidatos.Size = new System.Drawing.Size(673, 550);
             this.dataGridViewListaCandidatos.TabIndex = 54;
             // 
             // NombreCompetencia
