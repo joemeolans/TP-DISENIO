@@ -10,24 +10,17 @@ using System.Windows.Forms;
 
 namespace TP_DISEÑO.Interfaz
 {
-    public partial class MenuPrincipal : Form
+    public partial class CDU025_Maqueta2 : Form
     {
-        public MenuPrincipal()
+        public CDU025_Maqueta2()
         {
             InitializeComponent();
         }
 
-        private void GestionarPuestos_Click(object sender, EventArgs e)
+        private void botonVolver_Click(object sender, EventArgs e)
         {
-            Form gestionarPuestos = new CDU008();
-            gestionarPuestos.Show();
-            this.Hide();
-        }
-
-        private void EvaluarCandidatos_Click(object sender, EventArgs e)
-        {
-            Form evaluarCandidatos = new CDU0025_Maqueta1();
-            evaluarCandidatos.Show();
+            Form volverAMaqueta1 = new CDU0025_Maqueta1();
+            volverAMaqueta1.Show();
             this.Hide();
         }
 
@@ -37,6 +30,13 @@ namespace TP_DISEÑO.Interfaz
             {
                 this.Close();
             }
+        }
+
+        private void BotonSig_Click(object sender, EventArgs e)
+        {
+            Form irAMaqueta3 = new CDU025_Maqueta3();
+            irAMaqueta3.Show();
+            this.Hide();
         }
     }
 }

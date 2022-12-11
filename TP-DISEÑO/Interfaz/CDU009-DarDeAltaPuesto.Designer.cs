@@ -44,15 +44,16 @@ namespace TP_DISEÑO
             this.TablaCaracterísticasDelPuesto = new System.Windows.Forms.DataGridView();
             this.Competencia = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Ponderación = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Salir = new System.Windows.Forms.Button();
             this.CerrarSesion = new System.Windows.Forms.Button();
             this.NombreEmpresa = new System.Windows.Forms.Label();
             this.NombreEmpresaInput = new System.Windows.Forms.ComboBox();
             this.Cancelar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BordeFotoCapitalHumano = new System.Windows.Forms.PictureBox();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TablaCaracterísticasDelPuesto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).BeginInit();
@@ -202,13 +203,6 @@ namespace TP_DISEÑO
             this.Ponderación.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Ponderación.Width = 230;
             // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Image = global::TP_DISEÑO.Properties.Resources.tachitodebasura;
-            this.Eliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Eliminar.Name = "Eliminar";
-            // 
             // Salir
             // 
             this.Salir.BackColor = System.Drawing.Color.MediumTurquoise;
@@ -263,6 +257,7 @@ namespace TP_DISEÑO
             this.NombreEmpresaInput.Size = new System.Drawing.Size(620, 21);
             this.NombreEmpresaInput.Sorted = true;
             this.NombreEmpresaInput.TabIndex = 4;
+            this.NombreEmpresaInput.Text = "Seleccione una empresa";
             // 
             // Cancelar
             // 
@@ -292,6 +287,13 @@ namespace TP_DISEÑO
             this.label1.TabIndex = 18;
             this.label1.Text = "(*) Como mínimo debe haber una competencia";
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Eliminar";
+            this.dataGridViewImageColumn1.Image = global::TP_DISEÑO.Properties.Resources.tachitodebasura;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -310,6 +312,13 @@ namespace TP_DISEÑO
             this.BordeFotoCapitalHumano.Size = new System.Drawing.Size(117, 114);
             this.BordeFotoCapitalHumano.TabIndex = 20;
             this.BordeFotoCapitalHumano.TabStop = false;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Image = global::TP_DISEÑO.Properties.Resources.tachitodebasura;
+            this.Eliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Eliminar.Name = "Eliminar";
             // 
             // CDU009
             // 
@@ -375,6 +384,7 @@ namespace TP_DISEÑO
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox BordeFotoCapitalHumano;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }
 

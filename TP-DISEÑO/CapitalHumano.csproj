@@ -85,6 +85,7 @@
     <Compile Include="DAO\PuestoBuscadoDAOImpl.cs" />
     <Compile Include="DTO\PuestoBuscadoDTO.cs" />
     <Compile Include="DTO\ResultadoCuestionarioDTO.cs" />
+    <Compile Include="DTO\ResultadoIngresoDTO.cs" />
     <Compile Include="DTO\UsuarioDTO.cs" />
     <Compile Include="empresa.cs">
       <DependentUpon>EntityFramework.tt</DependentUpon>
@@ -140,11 +141,11 @@
     <Compile Include="Interfaz\CDU001-Maqueta3.Designer.cs">
       <DependentUpon>CDU001-Maqueta3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\CDU0025-Maqueta1.cs">
+    <Compile Include="Interfaz\CDU025-Maqueta1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\CDU0025-Maqueta1.Designer.cs">
-      <DependentUpon>CDU0025-Maqueta1.cs</DependentUpon>
+    <Compile Include="Interfaz\CDU025-Maqueta1.Designer.cs">
+      <DependentUpon>CDU025-Maqueta1.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\CDU009-DarDeAltaPuesto.cs">
       <SubType>Form</SubType>
@@ -157,6 +158,24 @@
     </Compile>
     <Compile Include="Interfaz\CDU008-GestionarPuestos.Designer.cs">
       <DependentUpon>CDU008-GestionarPuestos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\CDU025-Maqueta2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\CDU025-Maqueta2.Designer.cs">
+      <DependentUpon>CDU025-Maqueta2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\CDU025-Maqueta3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\CDU025-Maqueta3.Designer.cs">
+      <DependentUpon>CDU025-Maqueta3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\CDU026-Maqueta1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\CDU026-Maqueta1.Designer.cs">
+      <DependentUpon>CDU026-Maqueta1.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\MenuPrincipal.cs">
       <SubType>Form</SubType>
@@ -210,14 +229,23 @@
     <EmbeddedResource Include="Interfaz\CDU001-Maqueta3.resx">
       <DependentUpon>CDU001-Maqueta3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\CDU0025-Maqueta1.resx">
-      <DependentUpon>CDU0025-Maqueta1.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaz\CDU025-Maqueta1.resx">
+      <DependentUpon>CDU025-Maqueta1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\CDU008-GestionarPuestos.resx">
       <DependentUpon>CDU008-GestionarPuestos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\CDU009-DarDeAltaPuesto.resx">
       <DependentUpon>CDU009-DarDeAltaPuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\CDU025-Maqueta2.resx">
+      <DependentUpon>CDU025-Maqueta2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\CDU025-Maqueta3.resx">
+      <DependentUpon>CDU025-Maqueta3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\CDU026-Maqueta1.resx">
+      <DependentUpon>CDU026-Maqueta1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>

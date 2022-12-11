@@ -26,8 +26,8 @@ namespace TP_DISEÑO.Interfaz
 
         private void Aceptar_Click(object sender, EventArgs e)
         {
-            Form responderCuestionario = new CDU001_Maqueta1();
-            responderCuestionario.Show();
+            Form irAlMenuPrincipal = new MenuPrincipal();
+            irAlMenuPrincipal.Show();
             this.Hide();
         }
     }

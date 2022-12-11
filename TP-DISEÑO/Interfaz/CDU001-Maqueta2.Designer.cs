@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CDU001_Maqueta2));
-            this.NombreDelPuestoInput = new System.Windows.Forms.TextBox();
+            this.ContraseñaInput = new System.Windows.Forms.TextBox();
             this.textContrasenia = new System.Windows.Forms.Label();
             this.textNombreUsuario = new System.Windows.Forms.Label();
-            this.CodigoDelPuestoInput = new System.Windows.Forms.TextBox();
-            this.Aceptar = new System.Windows.Forms.Button();
+            this.NombreUsuarioInput = new System.Windows.Forms.TextBox();
+            this.botonAceptar = new System.Windows.Forms.Button();
             this.botonVolver = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BordeFotoCapitalHumano = new System.Windows.Forms.PictureBox();
@@ -41,12 +41,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).BeginInit();
             this.SuspendLayout();
             // 
-            // NombreDelPuestoInput
+            // ContraseñaInput
             // 
-            this.NombreDelPuestoInput.Location = new System.Drawing.Point(201, 370);
-            this.NombreDelPuestoInput.Name = "NombreDelPuestoInput";
-            this.NombreDelPuestoInput.Size = new System.Drawing.Size(466, 20);
-            this.NombreDelPuestoInput.TabIndex = 6;
+            this.ContraseñaInput.Location = new System.Drawing.Point(201, 370);
+            this.ContraseñaInput.Name = "ContraseñaInput";
+            this.ContraseñaInput.Size = new System.Drawing.Size(466, 20);
+            this.ContraseñaInput.TabIndex = 6;
             // 
             // textContrasenia
             // 
@@ -68,29 +68,30 @@
             this.textNombreUsuario.TabIndex = 7;
             this.textNombreUsuario.Text = "Nombre de usuario (campo obligatorio*)";
             // 
-            // CodigoDelPuestoInput
+            // NombreUsuarioInput
             // 
-            this.CodigoDelPuestoInput.Location = new System.Drawing.Point(201, 317);
-            this.CodigoDelPuestoInput.Name = "CodigoDelPuestoInput";
-            this.CodigoDelPuestoInput.Size = new System.Drawing.Size(466, 20);
-            this.CodigoDelPuestoInput.TabIndex = 5;
+            this.NombreUsuarioInput.Location = new System.Drawing.Point(201, 317);
+            this.NombreUsuarioInput.Name = "NombreUsuarioInput";
+            this.NombreUsuarioInput.Size = new System.Drawing.Size(466, 20);
+            this.NombreUsuarioInput.TabIndex = 5;
             // 
-            // Aceptar
+            // botonAceptar
             // 
-            this.Aceptar.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.Aceptar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.Aceptar.FlatAppearance.BorderSize = 3;
-            this.Aceptar.FlatAppearance.CheckedBackColor = System.Drawing.Color.PaleTurquoise;
-            this.Aceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
-            this.Aceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
-            this.Aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Aceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Aceptar.Location = new System.Drawing.Point(737, 498);
-            this.Aceptar.Name = "Aceptar";
-            this.Aceptar.Size = new System.Drawing.Size(103, 39);
-            this.Aceptar.TabIndex = 9;
-            this.Aceptar.Text = "Aceptar";
-            this.Aceptar.UseVisualStyleBackColor = false;
+            this.botonAceptar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.botonAceptar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.botonAceptar.FlatAppearance.BorderSize = 3;
+            this.botonAceptar.FlatAppearance.CheckedBackColor = System.Drawing.Color.PaleTurquoise;
+            this.botonAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
+            this.botonAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.botonAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonAceptar.Location = new System.Drawing.Point(737, 498);
+            this.botonAceptar.Name = "botonAceptar";
+            this.botonAceptar.Size = new System.Drawing.Size(103, 39);
+            this.botonAceptar.TabIndex = 9;
+            this.botonAceptar.Text = "Aceptar";
+            this.botonAceptar.UseVisualStyleBackColor = false;
+            this.botonAceptar.Click += new System.EventHandler(this.Aceptar_Click);
             // 
             // botonVolver
             // 
@@ -136,11 +137,11 @@
             this.BackColor = System.Drawing.Color.Aquamarine;
             this.ClientSize = new System.Drawing.Size(870, 561);
             this.Controls.Add(this.botonVolver);
-            this.Controls.Add(this.Aceptar);
-            this.Controls.Add(this.NombreDelPuestoInput);
+            this.Controls.Add(this.botonAceptar);
+            this.Controls.Add(this.ContraseñaInput);
             this.Controls.Add(this.textContrasenia);
             this.Controls.Add(this.textNombreUsuario);
-            this.Controls.Add(this.CodigoDelPuestoInput);
+            this.Controls.Add(this.NombreUsuarioInput);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BordeFotoCapitalHumano);
             this.Name = "CDU001_Maqueta2";
@@ -157,11 +158,11 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox BordeFotoCapitalHumano;
-        private System.Windows.Forms.TextBox NombreDelPuestoInput;
+        private System.Windows.Forms.TextBox ContraseñaInput;
         private System.Windows.Forms.Label textContrasenia;
         private System.Windows.Forms.Label textNombreUsuario;
-        private System.Windows.Forms.TextBox CodigoDelPuestoInput;
-        private System.Windows.Forms.Button Aceptar;
+        private System.Windows.Forms.TextBox NombreUsuarioInput;
+        private System.Windows.Forms.Button botonAceptar;
         private System.Windows.Forms.Button botonVolver;
     }
 }

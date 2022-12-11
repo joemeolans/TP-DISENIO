@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CDU0025_Maqueta1));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BordeFotoCapitalHumano = new System.Windows.Forms.PictureBox();
             this.CerrarSesion = new System.Windows.Forms.Button();
             this.textApellido = new System.Windows.Forms.Label();
-            this.CompletarLosSigDatos = new System.Windows.Forms.Label();
+            this.textoCompletarLosSigDatos = new System.Windows.Forms.Label();
             this.CodigoDelPuestoInput = new System.Windows.Forms.TextBox();
             this.BotonAgregar = new System.Windows.Forms.Button();
             this.BotonVolver = new System.Windows.Forms.Button();
@@ -44,28 +42,25 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.botonFiltrar = new System.Windows.Forms.Button();
             this.BotonQuitar = new System.Windows.Forms.Button();
+            this.textoListaCandidatos = new System.Windows.Forms.Label();
+            this.dataGridViewListaCandidatos = new System.Windows.Forms.DataGridView();
+            this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.NumeroCandidato = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textoCandidatosAEvaluar = new System.Windows.Forms.Label();
+            this.dataGridViewCandidatosAEvaluar = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BordeFotoCapitalHumano = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaCandidatos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidatosAEvaluar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(29, 36);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(94, 92);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 26;
-            this.pictureBox1.TabStop = false;
-            // 
-            // BordeFotoCapitalHumano
-            // 
-            this.BordeFotoCapitalHumano.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.BordeFotoCapitalHumano.Location = new System.Drawing.Point(18, 26);
-            this.BordeFotoCapitalHumano.Name = "BordeFotoCapitalHumano";
-            this.BordeFotoCapitalHumano.Size = new System.Drawing.Size(117, 114);
-            this.BordeFotoCapitalHumano.TabIndex = 27;
-            this.BordeFotoCapitalHumano.TabStop = false;
             // 
             // CerrarSesion
             // 
@@ -83,6 +78,7 @@
             this.CerrarSesion.TabIndex = 25;
             this.CerrarSesion.Text = "Cerrar Sesión";
             this.CerrarSesion.UseVisualStyleBackColor = false;
+            this.CerrarSesion.Click += new System.EventHandler(this.CerrarSesion_Click);
             // 
             // textApellido
             // 
@@ -94,16 +90,16 @@
             this.textApellido.TabIndex = 23;
             this.textApellido.Text = "Apellido";
             // 
-            // CompletarLosSigDatos
+            // textoCompletarLosSigDatos
             // 
-            this.CompletarLosSigDatos.AutoSize = true;
-            this.CompletarLosSigDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CompletarLosSigDatos.Location = new System.Drawing.Point(115, 151);
-            this.CompletarLosSigDatos.Name = "CompletarLosSigDatos";
-            this.CompletarLosSigDatos.Size = new System.Drawing.Size(393, 31);
-            this.CompletarLosSigDatos.TabIndex = 22;
-            this.CompletarLosSigDatos.Text = "Completar los siguientes datos:";
-            this.CompletarLosSigDatos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.textoCompletarLosSigDatos.AutoSize = true;
+            this.textoCompletarLosSigDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textoCompletarLosSigDatos.Location = new System.Drawing.Point(115, 151);
+            this.textoCompletarLosSigDatos.Name = "textoCompletarLosSigDatos";
+            this.textoCompletarLosSigDatos.Size = new System.Drawing.Size(393, 31);
+            this.textoCompletarLosSigDatos.TabIndex = 22;
+            this.textoCompletarLosSigDatos.Text = "Completar los siguientes datos:";
+            this.textoCompletarLosSigDatos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CodigoDelPuestoInput
             // 
@@ -145,6 +141,7 @@
             this.BotonVolver.TabIndex = 31;
             this.BotonVolver.Text = "Volver";
             this.BotonVolver.UseVisualStyleBackColor = false;
+            this.BotonVolver.Click += new System.EventHandler(this.BotonVolver_Click);
             // 
             // BotonSig
             // 
@@ -162,6 +159,7 @@
             this.BotonSig.TabIndex = 29;
             this.BotonSig.Text = "Siguiente";
             this.BotonSig.UseVisualStyleBackColor = false;
+            this.BotonSig.Click += new System.EventHandler(this.BotonSig_Click);
             // 
             // textNombre
             // 
@@ -231,12 +229,135 @@
             this.BotonQuitar.Text = "Quitar";
             this.BotonQuitar.UseVisualStyleBackColor = false;
             // 
+            // textoListaCandidatos
+            // 
+            this.textoListaCandidatos.AutoSize = true;
+            this.textoListaCandidatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textoListaCandidatos.Location = new System.Drawing.Point(24, 327);
+            this.textoListaCandidatos.Name = "textoListaCandidatos";
+            this.textoListaCandidatos.Size = new System.Drawing.Size(180, 25);
+            this.textoListaCandidatos.TabIndex = 38;
+            this.textoListaCandidatos.Text = "Lista de candidatos";
+            this.textoListaCandidatos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dataGridViewListaCandidatos
+            // 
+            this.dataGridViewListaCandidatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewListaCandidatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Seleccionar,
+            this.NumeroCandidato,
+            this.Nombre,
+            this.Apellido});
+            this.dataGridViewListaCandidatos.Location = new System.Drawing.Point(29, 355);
+            this.dataGridViewListaCandidatos.Name = "dataGridViewListaCandidatos";
+            this.dataGridViewListaCandidatos.RowHeadersVisible = false;
+            this.dataGridViewListaCandidatos.Size = new System.Drawing.Size(385, 402);
+            this.dataGridViewListaCandidatos.TabIndex = 39;
+            // 
+            // Seleccionar
+            // 
+            this.Seleccionar.HeaderText = "Seleccionar";
+            this.Seleccionar.Name = "Seleccionar";
+            this.Seleccionar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Seleccionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Seleccionar.Width = 70;
+            // 
+            // NumeroCandidato
+            // 
+            this.NumeroCandidato.HeaderText = "Número de candidato";
+            this.NumeroCandidato.Name = "NumeroCandidato";
+            this.NumeroCandidato.Width = 90;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 105;
+            // 
+            // Apellido
+            // 
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            // 
+            // textoCandidatosAEvaluar
+            // 
+            this.textoCandidatosAEvaluar.AutoSize = true;
+            this.textoCandidatosAEvaluar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textoCandidatosAEvaluar.Location = new System.Drawing.Point(443, 327);
+            this.textoCandidatosAEvaluar.Name = "textoCandidatosAEvaluar";
+            this.textoCandidatosAEvaluar.Size = new System.Drawing.Size(197, 25);
+            this.textoCandidatosAEvaluar.TabIndex = 40;
+            this.textoCandidatosAEvaluar.Text = "Candidatos a evaluar";
+            this.textoCandidatosAEvaluar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dataGridViewCandidatosAEvaluar
+            // 
+            this.dataGridViewCandidatosAEvaluar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCandidatosAEvaluar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCheckBoxColumn1,
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.dataGridViewCandidatosAEvaluar.Location = new System.Drawing.Point(448, 355);
+            this.dataGridViewCandidatosAEvaluar.Name = "dataGridViewCandidatosAEvaluar";
+            this.dataGridViewCandidatosAEvaluar.RowHeadersVisible = false;
+            this.dataGridViewCandidatosAEvaluar.Size = new System.Drawing.Size(385, 402);
+            this.dataGridViewCandidatosAEvaluar.TabIndex = 41;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Seleccionar";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCheckBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewCheckBoxColumn1.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Número de candidato";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 90;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 105;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Apellido";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(29, 30);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(94, 92);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 26;
+            this.pictureBox1.TabStop = false;
+            // 
+            // BordeFotoCapitalHumano
+            // 
+            this.BordeFotoCapitalHumano.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.BordeFotoCapitalHumano.Location = new System.Drawing.Point(18, 20);
+            this.BordeFotoCapitalHumano.Name = "BordeFotoCapitalHumano";
+            this.BordeFotoCapitalHumano.Size = new System.Drawing.Size(117, 114);
+            this.BordeFotoCapitalHumano.TabIndex = 27;
+            this.BordeFotoCapitalHumano.TabStop = false;
+            // 
             // CDU0025_Maqueta1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aquamarine;
             this.ClientSize = new System.Drawing.Size(870, 861);
+            this.Controls.Add(this.dataGridViewCandidatosAEvaluar);
+            this.Controls.Add(this.textoCandidatosAEvaluar);
+            this.Controls.Add(this.dataGridViewListaCandidatos);
+            this.Controls.Add(this.textoListaCandidatos);
             this.Controls.Add(this.BotonQuitar);
             this.Controls.Add(this.botonFiltrar);
             this.Controls.Add(this.textNumCand);
@@ -250,10 +371,13 @@
             this.Controls.Add(this.BordeFotoCapitalHumano);
             this.Controls.Add(this.CerrarSesion);
             this.Controls.Add(this.textApellido);
-            this.Controls.Add(this.CompletarLosSigDatos);
+            this.Controls.Add(this.textoCompletarLosSigDatos);
             this.Controls.Add(this.CodigoDelPuestoInput);
             this.Name = "CDU0025_Maqueta1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CDU0025_Maqueta1";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaCandidatos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidatosAEvaluar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).EndInit();
             this.ResumeLayout(false);
@@ -267,7 +391,7 @@
         private System.Windows.Forms.PictureBox BordeFotoCapitalHumano;
         private System.Windows.Forms.Button CerrarSesion;
         private System.Windows.Forms.Label textApellido;
-        private System.Windows.Forms.Label CompletarLosSigDatos;
+        private System.Windows.Forms.Label textoCompletarLosSigDatos;
         private System.Windows.Forms.TextBox CodigoDelPuestoInput;
         private System.Windows.Forms.Button BotonAgregar;
         private System.Windows.Forms.Button BotonVolver;
@@ -278,5 +402,17 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button botonFiltrar;
         private System.Windows.Forms.Button BotonQuitar;
+        private System.Windows.Forms.Label textoListaCandidatos;
+        private System.Windows.Forms.DataGridView dataGridViewListaCandidatos;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Seleccionar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroCandidato;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+        private System.Windows.Forms.Label textoCandidatosAEvaluar;
+        private System.Windows.Forms.DataGridView dataGridViewCandidatosAEvaluar;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }
