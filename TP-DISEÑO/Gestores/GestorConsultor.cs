@@ -63,6 +63,7 @@ namespace TP_DISEÑO.Gestores
         public int checkPassword(consultor consultorIngresado)
         {
             UsuarioDTO UDTO = new UsuarioDTO();
+
             int valor = new int();
 
 
