@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace TP_DISEÑO.Interfaz
 {
-    public partial class CDU0025_Maqueta1 : Form
+    public partial class CDU025_Maqueta2 : Form
     {
-        public CDU0025_Maqueta1()
+        public CDU025_Maqueta2()
         {
             InitializeComponent();
         }
 
-        private void BotonVolver_Click(object sender, EventArgs e)
+        private void botonVolver_Click(object sender, EventArgs e)
         {
             Form volverAlMenu = new MenuPrincipal();
             volverAlMenu.Show();
