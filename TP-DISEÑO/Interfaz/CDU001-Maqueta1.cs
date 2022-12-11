@@ -31,5 +31,19 @@ namespace TP_DISEÑO.Interfaz
             ingresoConsultor.Show();
             this.Hide();
         }
+
+        private void RealizarCuestionarioBOTON_Click(object sender, EventArgs e)
+        {
+            Form realizarCuestionario = new CDU001_Maqueta3();
+            realizarCuestionario.Show();
+            this.Hide();
+        }
+
+        private void RealizarCuestionarioLOGO_Click(object sender, EventArgs e)
+        {
+            Form realizarCuestionario = new CDU001_Maqueta3();
+            realizarCuestionario.Show();
+            this.Hide();
+        }
     }
 }
