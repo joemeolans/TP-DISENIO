@@ -72,7 +72,7 @@
             this.CerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.CerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CerrarSesion.Location = new System.Drawing.Point(712, 21);
+            this.CerrarSesion.Location = new System.Drawing.Point(712, 20);
             this.CerrarSesion.Name = "CerrarSesion";
             this.CerrarSesion.Size = new System.Drawing.Size(131, 39);
             this.CerrarSesion.TabIndex = 25;
