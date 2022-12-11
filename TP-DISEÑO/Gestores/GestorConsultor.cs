@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using TP_DISEÑO.DTO;
@@ -64,14 +65,14 @@ namespace TP_DISEÑO.Gestores
         {
             UsuarioDTO UDTO = new UsuarioDTO();
             int valor = new int();
+            List<String> Contraseñas = this.GetAllContraseñas();
 
-
-            foreach (consultor consultor in UDTO.contraseña)
+            foreach (var consultor in Contraseñas)
             {
-                if (consultorIngresado.Contrasenia == UDTO.contraseña)
+                if (consultorIngresado.Contrasenia == consultor) //Esta parte no me queda claro
                 {
                     valor = 1; //Existe un usuario con tal contraseña.
-                } 
+                }
                 else
                 {
                     valor = 0; //No existe un usuario con tal contraseña.
@@ -79,6 +80,14 @@ namespace TP_DISEÑO.Gestores
             }
 
             return valor;
+        }
+
+        public List<string> GetAllContraseñas()
+        {
+            using (CapitalHumano2Entities context = new CapitalHumano2Entities())
+            {
+                return this.consultorDAO.GetAllContraseñas(context);
+            }
         }
 
         public DTO.ResultadoIngresoDTO ingresarUsuario(DTO.UsuarioDTO UDTO)
