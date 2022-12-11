@@ -49,6 +49,7 @@
             this.textoListaCandidatosAEvaluar = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BordeFotoCapitalHumano = new System.Windows.Forms.PictureBox();
+            this.textoAdvertencia = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidatosAEvaluar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).BeginInit();
@@ -64,7 +65,7 @@
             this.NuevoPuesto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.NuevoPuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NuevoPuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NuevoPuesto.Location = new System.Drawing.Point(679, 271);
+            this.NuevoPuesto.Location = new System.Drawing.Point(678, 259);
             this.NuevoPuesto.Name = "NuevoPuesto";
             this.NuevoPuesto.Size = new System.Drawing.Size(130, 30);
             this.NuevoPuesto.TabIndex = 0;
@@ -100,7 +101,7 @@
             this.botonBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.botonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botonBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonBuscar.Location = new System.Drawing.Point(559, 271);
+            this.botonBuscar.Location = new System.Drawing.Point(558, 259);
             this.botonBuscar.Name = "botonBuscar";
             this.botonBuscar.Size = new System.Drawing.Size(103, 30);
             this.botonBuscar.TabIndex = 47;
@@ -283,12 +284,24 @@
             this.BordeFotoCapitalHumano.TabIndex = 42;
             this.BordeFotoCapitalHumano.TabStop = false;
             // 
+            // textoAdvertencia
+            // 
+            this.textoAdvertencia.AutoSize = true;
+            this.textoAdvertencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textoAdvertencia.Location = new System.Drawing.Point(30, 250);
+            this.textoAdvertencia.Name = "textoAdvertencia";
+            this.textoAdvertencia.Size = new System.Drawing.Size(260, 17);
+            this.textoAdvertencia.TabIndex = 52;
+            this.textoAdvertencia.Text = "Como mínimo debe completar un campo";
+            this.textoAdvertencia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // CDU008
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aquamarine;
             this.ClientSize = new System.Drawing.Size(870, 861);
+            this.Controls.Add(this.textoAdvertencia);
             this.Controls.Add(this.textoListaCandidatosAEvaluar);
             this.Controls.Add(this.botonEliminarPuesto);
             this.Controls.Add(this.botonModificarPuesto);
@@ -339,5 +352,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Código;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreDelPuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Empresa;
+        private System.Windows.Forms.Label textoAdvertencia;
     }
 }
