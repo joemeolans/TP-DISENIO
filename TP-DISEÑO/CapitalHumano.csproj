@@ -165,6 +165,12 @@
     <Compile Include="Interfaz\CDU025-Maqueta2.Designer.cs">
       <DependentUpon>CDU025-Maqueta2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\CDU025-Maqueta3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\CDU025-Maqueta3.Designer.cs">
+      <DependentUpon>CDU025-Maqueta3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\CDU026-Maqueta1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\CDU025-Maqueta2.resx">
       <DependentUpon>CDU025-Maqueta2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\CDU025-Maqueta3.resx">
+      <DependentUpon>CDU025-Maqueta3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\CDU026-Maqueta1.resx">
       <DependentUpon>CDU026-Maqueta1.cs</DependentUpon>

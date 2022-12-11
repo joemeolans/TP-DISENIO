@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CDU025_Maqueta2));
             this.botonFiltrar = new System.Windows.Forms.Button();
             this.textFuncionOPuesto = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BordeFotoCapitalHumano = new System.Windows.Forms.PictureBox();
             this.CerrarSesion = new System.Windows.Forms.Button();
             this.textNombreEmpresa = new System.Windows.Forms.Label();
             this.textoCompletarLosSigDatos = new System.Windows.Forms.Label();
@@ -44,9 +42,11 @@
             this.textoListaCompetencia = new System.Windows.Forms.Label();
             this.botonVolver = new System.Windows.Forms.Button();
             this.BotonSig = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BordeFotoCapitalHumano = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaCompetencias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaCompetencias)).BeginInit();
             this.SuspendLayout();
             // 
             // botonFiltrar
@@ -75,25 +75,6 @@
             this.textFuncionOPuesto.Size = new System.Drawing.Size(133, 17);
             this.textFuncionOPuesto.TabIndex = 44;
             this.textFuncionOPuesto.Text = "Función o puesto";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(33, 34);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(94, 92);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 41;
-            this.pictureBox1.TabStop = false;
-            // 
-            // BordeFotoCapitalHumano
-            // 
-            this.BordeFotoCapitalHumano.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.BordeFotoCapitalHumano.Location = new System.Drawing.Point(22, 24);
-            this.BordeFotoCapitalHumano.Name = "BordeFotoCapitalHumano";
-            this.BordeFotoCapitalHumano.Size = new System.Drawing.Size(117, 114);
-            this.BordeFotoCapitalHumano.TabIndex = 42;
-            this.BordeFotoCapitalHumano.TabStop = false;
             // 
             // CerrarSesion
             // 
@@ -219,6 +200,26 @@
             this.BotonSig.TabIndex = 53;
             this.BotonSig.Text = "Siguiente";
             this.BotonSig.UseVisualStyleBackColor = false;
+            this.BotonSig.Click += new System.EventHandler(this.BotonSig_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(33, 34);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(94, 92);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 41;
+            this.pictureBox1.TabStop = false;
+            // 
+            // BordeFotoCapitalHumano
+            // 
+            this.BordeFotoCapitalHumano.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.BordeFotoCapitalHumano.Location = new System.Drawing.Point(22, 24);
+            this.BordeFotoCapitalHumano.Name = "BordeFotoCapitalHumano";
+            this.BordeFotoCapitalHumano.Size = new System.Drawing.Size(117, 114);
+            this.BordeFotoCapitalHumano.TabIndex = 42;
+            this.BordeFotoCapitalHumano.TabStop = false;
             // 
             // CDU025_Maqueta2
             // 
@@ -242,9 +243,9 @@
             this.Name = "CDU025_Maqueta2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CDU025_Maqueta2";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaCompetencias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaCompetencias)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace TP_DISEÑO.Interfaz
 {
-    public partial class CDU025_Maqueta2 : Form
+    public partial class CDU025_Maqueta3 : Form
     {
-        public CDU025_Maqueta2()
+        public CDU025_Maqueta3()
         {
             InitializeComponent();
         }
 
         private void botonVolver_Click(object sender, EventArgs e)
         {
-            Form volverAMaqueta1 = new CDU0025_Maqueta1();
-            volverAMaqueta1.Show();
+            Form volverAMaqueta2 = new CDU025_Maqueta2();
+            volverAMaqueta2.Show();
             this.Hide();
         }
 
@@ -30,13 +30,6 @@ namespace TP_DISEÑO.Interfaz
             {
                 this.Close();
             }
-        }
-
-        private void BotonSig_Click(object sender, EventArgs e)
-        {
-            Form irAMaqueta3 = new CDU025_Maqueta3();
-            irAMaqueta3.Show();
-            this.Hide();
         }
     }
 }
