@@ -43,7 +43,7 @@ namespace TP_DISEÑO.DAO
                     switch (oParametro)
                     {
                         case 1:
-                            puestos.Concat(context.puestobuscado.Where(p => p.Nombre == nombre).ToList());
+                            puestos.Concat(context.puestobuscado.Where(p => p.Nombre.Contains(nombre)).ToList());
                             break;
                         case 2:
                             puestos.Concat(context.puestobuscado.Where(p => p.CodigoPuesto == codigo).ToList());
