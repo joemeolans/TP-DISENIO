@@ -32,14 +32,14 @@
             this.CerrarSesion = new System.Windows.Forms.Button();
             this.textApellido = new System.Windows.Forms.Label();
             this.textoCompletarLosSigDatos = new System.Windows.Forms.Label();
-            this.CodigoDelPuestoInput = new System.Windows.Forms.TextBox();
+            this.ApellidoInput = new System.Windows.Forms.TextBox();
             this.BotonAgregar = new System.Windows.Forms.Button();
             this.BotonVolver = new System.Windows.Forms.Button();
             this.BotonSig = new System.Windows.Forms.Button();
             this.textNombre = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NombreInput = new System.Windows.Forms.TextBox();
             this.textNumCand = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.NroCandidatoInput = new System.Windows.Forms.TextBox();
             this.botonFiltrar = new System.Windows.Forms.Button();
             this.BotonQuitar = new System.Windows.Forms.Button();
             this.textoListaCandidatos = new System.Windows.Forms.Label();
@@ -56,6 +56,7 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BordeFotoCapitalHumano = new System.Windows.Forms.PictureBox();
+            this.textoAdvertencia = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaCandidatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidatosAEvaluar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -101,12 +102,12 @@
             this.textoCompletarLosSigDatos.Text = "Completar los siguientes datos:";
             this.textoCompletarLosSigDatos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // CodigoDelPuestoInput
+            // ApellidoInput
             // 
-            this.CodigoDelPuestoInput.Location = new System.Drawing.Point(121, 221);
-            this.CodigoDelPuestoInput.Name = "CodigoDelPuestoInput";
-            this.CodigoDelPuestoInput.Size = new System.Drawing.Size(209, 20);
-            this.CodigoDelPuestoInput.TabIndex = 21;
+            this.ApellidoInput.Location = new System.Drawing.Point(121, 221);
+            this.ApellidoInput.Name = "ApellidoInput";
+            this.ApellidoInput.Size = new System.Drawing.Size(209, 20);
+            this.ApellidoInput.TabIndex = 21;
             // 
             // BotonAgregar
             // 
@@ -171,12 +172,12 @@
             this.textNombre.TabIndex = 33;
             this.textNombre.Text = "Nombre";
             // 
-            // textBox1
+            // NombreInput
             // 
-            this.textBox1.Location = new System.Drawing.Point(336, 221);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(207, 20);
-            this.textBox1.TabIndex = 32;
+            this.NombreInput.Location = new System.Drawing.Point(336, 221);
+            this.NombreInput.Name = "NombreInput";
+            this.NombreInput.Size = new System.Drawing.Size(207, 20);
+            this.NombreInput.TabIndex = 32;
             // 
             // textNumCand
             // 
@@ -188,12 +189,12 @@
             this.textNumCand.TabIndex = 35;
             this.textNumCand.Text = "N° de candidato";
             // 
-            // textBox2
+            // NroCandidatoInput
             // 
-            this.textBox2.Location = new System.Drawing.Point(549, 221);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(185, 20);
-            this.textBox2.TabIndex = 34;
+            this.NroCandidatoInput.Location = new System.Drawing.Point(549, 221);
+            this.NroCandidatoInput.Name = "NroCandidatoInput";
+            this.NroCandidatoInput.Size = new System.Drawing.Size(185, 20);
+            this.NroCandidatoInput.TabIndex = 34;
             // 
             // botonFiltrar
             // 
@@ -211,6 +212,7 @@
             this.botonFiltrar.TabIndex = 36;
             this.botonFiltrar.Text = "Filtrar";
             this.botonFiltrar.UseVisualStyleBackColor = false;
+            this.botonFiltrar.Click += new System.EventHandler(this.botonFiltrar_Click);
             // 
             // BotonQuitar
             // 
@@ -348,12 +350,24 @@
             this.BordeFotoCapitalHumano.TabIndex = 27;
             this.BordeFotoCapitalHumano.TabStop = false;
             // 
+            // textoAdvertencia
+            // 
+            this.textoAdvertencia.AutoSize = true;
+            this.textoAdvertencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textoAdvertencia.Location = new System.Drawing.Point(118, 244);
+            this.textoAdvertencia.Name = "textoAdvertencia";
+            this.textoAdvertencia.Size = new System.Drawing.Size(260, 17);
+            this.textoAdvertencia.TabIndex = 53;
+            this.textoAdvertencia.Text = "Como mínimo debe completar un campo";
+            this.textoAdvertencia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // CDU0025_Maqueta1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aquamarine;
             this.ClientSize = new System.Drawing.Size(870, 861);
+            this.Controls.Add(this.textoAdvertencia);
             this.Controls.Add(this.dataGridViewCandidatosAEvaluar);
             this.Controls.Add(this.textoCandidatosAEvaluar);
             this.Controls.Add(this.dataGridViewListaCandidatos);
@@ -361,9 +375,9 @@
             this.Controls.Add(this.BotonQuitar);
             this.Controls.Add(this.botonFiltrar);
             this.Controls.Add(this.textNumCand);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.NroCandidatoInput);
             this.Controls.Add(this.textNombre);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.NombreInput);
             this.Controls.Add(this.BotonAgregar);
             this.Controls.Add(this.BotonVolver);
             this.Controls.Add(this.BotonSig);
@@ -372,7 +386,7 @@
             this.Controls.Add(this.CerrarSesion);
             this.Controls.Add(this.textApellido);
             this.Controls.Add(this.textoCompletarLosSigDatos);
-            this.Controls.Add(this.CodigoDelPuestoInput);
+            this.Controls.Add(this.ApellidoInput);
             this.Name = "CDU0025_Maqueta1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CDU0025_Maqueta1";
@@ -392,14 +406,14 @@
         private System.Windows.Forms.Button CerrarSesion;
         private System.Windows.Forms.Label textApellido;
         private System.Windows.Forms.Label textoCompletarLosSigDatos;
-        private System.Windows.Forms.TextBox CodigoDelPuestoInput;
+        private System.Windows.Forms.TextBox ApellidoInput;
         private System.Windows.Forms.Button BotonAgregar;
         private System.Windows.Forms.Button BotonVolver;
         private System.Windows.Forms.Button BotonSig;
         private System.Windows.Forms.Label textNombre;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox NombreInput;
         private System.Windows.Forms.Label textNumCand;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox NroCandidatoInput;
         private System.Windows.Forms.Button botonFiltrar;
         private System.Windows.Forms.Button BotonQuitar;
         private System.Windows.Forms.Label textoListaCandidatos;
@@ -414,5 +428,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.Label textoAdvertencia;
     }
 }

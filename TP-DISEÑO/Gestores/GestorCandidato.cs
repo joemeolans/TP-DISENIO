@@ -40,7 +40,7 @@ namespace TP_DISEÑO.Gestores
                 resultado = true;
             }
             // el Tipo debe ser uno de los tipos posibles
-            if( (CDTO.Tipo != "DNI") && (CDTO.Tipo != "Libreta cívica(LC)") && (CDTO.Tipo != "Libreta de enrolamiento(LR)"))
+            if( (CDTO.Tipo != "DNI") && (CDTO.Tipo != "Libreta cívica(LC)") && (CDTO.Tipo != "Libreta de enrolamiento(LE)"))
             {
                 resultado = true;
             }

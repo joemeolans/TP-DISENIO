@@ -45,6 +45,22 @@ namespace TP_DISEÑO.Interfaz
             {
                 MessageBox.Show("Debe completar como mínimo un campo.");
             }
+            else
+            {
+                Gestores.GestorPuesto gestorPuesto = new Gestores.GestorPuesto();
+                DTO.PuestoBuscadoDTO puestodto = new DTO.PuestoBuscadoDTO();
+                puestodto.nombre = NombreDelPuestoInput.Text;
+                puestodto.codigo = CodigoDelPuestoInput.Text;
+                puestodto.nombreEmpresa = EmpresaInput.Text;
+                List <DTO.PuestoBuscadoDTO> puestos = gestorPuesto.BuscarPuesto(puestodto);
+                for (int i=0; i<=puestos.Count(); i++)
+                {
+                    dataGridViewCandidatosAEvaluar.Rows.Add();
+                    dataGridViewCandidatosAEvaluar.Rows[i].Cells[0].Value = puestos[i].codigo;
+                    dataGridViewCandidatosAEvaluar.Rows[i].Cells[1].Value = puestos[i].nombre;
+                    dataGridViewCandidatosAEvaluar.Rows[i].Cells[2].Value = puestos[i].nombreEmpresa;
+                }
+            }
         }
     }
 }
