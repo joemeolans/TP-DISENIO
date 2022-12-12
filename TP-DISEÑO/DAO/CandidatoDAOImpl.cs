@@ -52,10 +52,10 @@ namespace TP_DISEÑO.DAO
                     switch (oParametro)
                     {
                         case 1:
-                            candidatos.Concat(context.candidato.Where(c => c.Nombre == nombre).ToList());
+                            candidatos.Concat(context.candidato.Where(c => c.Nombre.Contains(nombre)).ToList());
                             break;
                         case 2:
-                            candidatos.Concat(context.candidato.Where(c => c.Apellido == apellido).ToList());
+                            candidatos.Concat(context.candidato.Where(c => c.Apellido.Contains(apellido)).ToList());
                             break;
                         case 3:
                             candidatos.Add(context.candidato.Find(id));

@@ -49,7 +49,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BordeFotoCapitalHumano = new System.Windows.Forms.PictureBox();
             this.textoAdvertencia = new System.Windows.Forms.Label();
-            this.EmpresaInput = new System.Windows.Forms.ComboBox();
+            this.EmpresaInput = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidatosAEvaluar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).BeginInit();
@@ -292,10 +292,9 @@
             // 
             // EmpresaInput
             // 
-            this.EmpresaInput.FormattingEnabled = true;
             this.EmpresaInput.Location = new System.Drawing.Point(461, 227);
             this.EmpresaInput.Name = "EmpresaInput";
-            this.EmpresaInput.Size = new System.Drawing.Size(219, 21);
+            this.EmpresaInput.Size = new System.Drawing.Size(207, 20);
             this.EmpresaInput.TabIndex = 53;
             // 
             // CDU008
@@ -355,6 +354,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreDelPuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Empresa;
         private System.Windows.Forms.Label textoAdvertencia;
-        private System.Windows.Forms.ComboBox EmpresaInput;
+        private System.Windows.Forms.TextBox EmpresaInput;
     }
 }

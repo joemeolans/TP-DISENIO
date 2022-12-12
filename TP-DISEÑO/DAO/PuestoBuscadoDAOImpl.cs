@@ -49,7 +49,7 @@ namespace TP_DISEÑO.DAO
                             puestos.Concat(context.puestobuscado.Where(p => p.CodigoPuesto == codigo).ToList());
                             break;
                         case 3:
-                            puestos.Concat(context.empresa.Where(e => e.Nombre == nombreEmpresa).SelectMany(p => p.puestobuscado).ToList());
+                            puestos.Concat(context.empresa.Where(e => e.Nombre.Contains(nombreEmpresa)).SelectMany(p => p.puestobuscado).ToList());
                             break;
                     }
                 }

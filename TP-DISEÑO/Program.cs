@@ -17,7 +17,7 @@ namespace TP_DISEÑO
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CDU001_Maqueta1());
+            Application.Run(new MenuPrincipal());
         }
     }
 }
