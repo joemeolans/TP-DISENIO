@@ -93,18 +93,10 @@ namespace TP_DISEÑO.Gestores
 
         public cuestionario GetUltimoCuestionarioActivo(candidato candidato, CapitalHumano3Entities context)
         {
-
-            cuestionario cuestionario = null;
-
+            cuestionario cuestionario = new cuestionario();
             try
             {
-                foreach (cuestionario oCuestionario in candidato.cuestionario)
-                {
-                    if (oCuestionario.estado1.Estado1 == "Activo")
-                    {
-                        cuestionario = oCuestionario;
-                    }
-                }
+                cuestionario = candidato.cuestionario.Where(x => x.estado1.Estado1 == "Activo").FirstOrDefault();
             }
             catch (Exception e)
             {
@@ -122,7 +114,8 @@ namespace TP_DISEÑO.Gestores
         {
             List<int> parametros = new List<int>();
 
-            if(candidatoDTO.Nombre != null)
+            List<DTO.CandidatoDTO> resultado = new List<DTO.CandidatoDTO>();
+            if (candidatoDTO.Nombre != null)
             {
                 parametros.Add(1);
             }
@@ -135,7 +128,23 @@ namespace TP_DISEÑO.Gestores
                 parametros.Add(3);
             }
 
-            return this.candidatoDAO.GetCandidatos(candidatoDTO.Nombre, candidatoDTO.Apellido, candidatoDTO.IdCandidato, parametros, context);
+            if (parametros.Count != 0)
+            {
+                using (CapitalHumano3Entities context = new CapitalHumano3Entities())
+                {
+                    List<candidato> candidatos = this.candidatoDAO.GetCandidatos(candidatoDTO.Nombre, candidatoDTO.Apellido, candidatoDTO.IdCandidato, parametros, context);
+                    foreach (candidato oCandidato in candidatos)
+                    {
+                        DTO.CandidatoDTO oCandidatoDTO = new DTO.CandidatoDTO();
+                        oCandidatoDTO.Nombre = oCandidato.Nombre;
+                        oCandidatoDTO.Apellido = oCandidato.Apellido;
+                        oCandidatoDTO.IdCandidato = oCandidato.IdCandidato;
+                        resultado.Add(oCandidatoDTO);
+                    }
+                }
+            }
+
+            return resultado;
         }
 
     }

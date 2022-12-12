@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
@@ -16,20 +17,13 @@ namespace TP_DISEÑO.DAO
             candidato candidato = null;
             try
             {
-                candidato = context.candidato.Where(c => c.NumDocumento == numDoc).FirstOrDefault();
+                candidato = context.candidato.Where(c => c.NumDocumento == numDoc && c.tipodocumento.Tipo == TipoDoc).FirstOrDefault();
             }
             catch (Exception e)
             {
                 Console.WriteLine("{0} Exception caught.", e);
             }
-            if(candidato != null)
-            {
-                if(!(candidato.tipodocumento.Tipo == TipoDoc))
-                {
-                    candidato = null;
-                }
-            }
-
+        
             return candidato;
         }
         public candidato GetCandidatoById(int idCandidato, CapitalHumano3Entities context)
@@ -46,10 +40,10 @@ namespace TP_DISEÑO.DAO
             return candidato;
         }
 
-        public List<DTO.CandidatoDTO> GetCandidatos
+        public List<candidato> GetCandidatos
             (string nombre, string apellido, int id, List<int> parametros, CapitalHumano3Entities context)
         {
-            List<DTO.CandidatoDTO> candidatos = new List<CandidatoDTO>();
+            List<candidato> candidatos = new List<candidato>();
 
             try
             {
@@ -61,14 +55,14 @@ namespace TP_DISEÑO.DAO
                             candidatos.Concat(context.candidato.Where(c => c.Nombre == nombre).ToList());
                             break;
                         case 2:
-                            candidato.Concat(context.candidato.Where(c => c.Apellido == apellido).ToList());
+                            candidatos.Concat(context.candidato.Where(c => c.Apellido == apellido).ToList());
                             break;
                         case 3:
-                            puestos.Concat(context.candidato.Find(id));
+                            candidatos.Add(context.candidato.Find(id));
                             break;
                     }
                 }
-                puestos.Distinct().ToList();
+                candidatos.Distinct().ToList();
             }
             catch (DbEntityValidationException dbEx)
             {
