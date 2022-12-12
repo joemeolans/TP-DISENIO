@@ -97,5 +97,19 @@ namespace TP_DISEÑO.DAO
             }
             return competencias;
         }
+
+        public List<puestobuscado> GetPuestosByEmpresa(string nombreEmpresa)
+        {
+            List<puestobuscado> puestos = new List<puestobuscado>();
+            try
+            {
+                puestos.Concat(context.empresa.Where(e => e.Nombre == nombreEmpresa).SelectMany(p => p.puestobuscado).ToList())
+            }
+             catch (Exception e)
+            {
+                Console.WriteLine("{0} Exception caught.", e);
+            }
+            return puestos;
+        }
     }
 }
