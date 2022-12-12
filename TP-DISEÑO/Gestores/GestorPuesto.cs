@@ -282,5 +282,21 @@ namespace TP_DISEÑO.Gestores
             }
             return pbDTO;
         }
+
+        public List<DTO.CompetenciaDTO> GetCompetenciasByEmpresaPuesto(string nombreEmpresa, string nombrePuesto)
+        {
+            List<DTO.CompetenciaDTO> compDTO = new List<DTO.CompetenciaDTO>();
+
+            using (CapitalHumano3Entities context = new CapitalHumano3Entities())
+            {
+                List<puestobuscadocompetencia> pbCompetencias = ;
+                foreach(var oCompetencia in pbCompetencias)
+                {
+                    DTO.PuestoBuscadoDTO oCompetenciaDTO = new DTO.PuestoBuscadoDTO();
+                    oCompetenciaDTO.NombreCompetencia = oCompetencia.competencia.NombreCompetencia;
+                    oCompetenciaDTO.PonderacionMinima = oCompetencia.PuntajeMinimo;
+                }
+            }
+        }
     }
 }
