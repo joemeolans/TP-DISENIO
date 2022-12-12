@@ -74,24 +74,24 @@ namespace TP_DISEÑO.DAO
             {
                 puestobuscado = context.puestobuscado.Find(idPuesto);
             }
-            catch
+            catch (Exception e)
             {
                 Console.WriteLine("{0} Exception caught.", e);
             }
             return puestobuscado;
         }
-        public List<competencia> GetAllCompetencias(int idPuesto, CapitalHumano3Entitites context)
+        public List<competencia> GetAllCompetencias(int idPuesto, CapitalHumano3Entities context)
         {
             List<competencia> competencias = new List<competencia>();
             try
             {
-                puestobuscado puestobuscado = context.puestobuscad.Find(idPuesto);
+                puestobuscado puestobuscado = context.puestobuscado.Find(idPuesto);
                 foreach(var pbCompetencias in puestobuscado.puestobuscadocompetencia)
                 {
-                    competencias.Add(puestobuscadocompetencia.competencia);
+                    competencias.Add(pbCompetencias.competencia);
                 }
             }
-            catch
+            catch (Exception e)
             {
                 Console.WriteLine("{0} Exception caught.", e);
             }

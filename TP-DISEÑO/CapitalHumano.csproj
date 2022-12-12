@@ -92,12 +92,15 @@
     <Compile Include="DAO\CompetenciaDAOImpl.cs" />
     <Compile Include="DAO\ConsultorDAOImpl.cs" />
     <Compile Include="DAO\EmpresaDAOImpl.cs" />
+    <Compile Include="DAO\EvaluacionDAOImpl.cs" />
     <Compile Include="DAO\ICandidatoDAO.cs" />
     <Compile Include="DAO\ICompetenciaDAO.cs" />
     <Compile Include="DAO\IConsultorDAO.cs" />
     <Compile Include="DAO\IEmpresaDAO.cs" />
+    <Compile Include="DAO\IEvaluacionDAO.cs" />
     <Compile Include="DAO\IPuestoBuscadoDAO.cs" />
     <Compile Include="DAO\PuestoBuscadoDAOImpl.cs" />
+    <Compile Include="DTO\CandidatoDTO.cs" />
     <Compile Include="DTO\PuestoBuscadoDTO.cs" />
     <Compile Include="DTO\ResultadoCuestionarioDTO.cs" />
     <Compile Include="DTO\ResultadoIngresoDTO.cs" />
@@ -122,6 +125,7 @@
     </Compile>
     <Compile Include="Gestores\GestorCandidato.cs" />
     <Compile Include="Gestores\GestorConsultor.cs" />
+    <Compile Include="Gestores\GestorEvaluacion.cs" />
     <Compile Include="Gestores\GestorPuesto.cs" />
     <Compile Include="Interfaz\CDU001-Maqueta1.cs">
       <SubType>Form</SubType>
