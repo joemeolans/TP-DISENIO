@@ -12,7 +12,7 @@ namespace TP_DISEÑO.DAO
 
         consultor GetUsuarioByNombre(string nombreUsuarioConsultor, CapitalHumano3Entities context);
 
-        List<string> GetAllContraseñas(CapitalHumano2Entities context);
+        List<string> GetAllContraseñas(CapitalHumano3Entities context);
 
     }
 }

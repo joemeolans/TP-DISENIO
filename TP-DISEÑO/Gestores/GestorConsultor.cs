@@ -85,7 +85,7 @@ namespace TP_DISEÑO.Gestores
 
         public List<string> GetAllContraseñas()
         {
-            using (CapitalHumano2Entities context = new CapitalHumano2Entities())
+            using (CapitalHumano3Entities context = new CapitalHumano3Entities())
             {
                 return this.consultorDAO.GetAllContraseñas(context);
             }
