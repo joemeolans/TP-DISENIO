@@ -24,5 +24,16 @@ namespace TP_DISEÑO.DAO
             return consultor;
         }
 
+        public List<string> GetAllContraseñas(CapitalHumano2Entities context)
+        {
+            List<string> nombreContraseñas = new List<string>();
+            var consultores = context.consultor; 
+            foreach (consultor oConsultor in consultores)
+            {
+                nombreContraseñas.Add(oConsultor.Contrasenia);
+            }
+            return nombreContraseñas;
+        }
+
     }
 }
