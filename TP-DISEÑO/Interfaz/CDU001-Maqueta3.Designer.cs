@@ -167,6 +167,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BordeFotoCapitalHumano);
             this.Name = "CDU001_Maqueta3";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CDU001_Maqueta3";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).EndInit();

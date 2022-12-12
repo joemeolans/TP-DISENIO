@@ -67,16 +67,16 @@ namespace TP_DISEÑO.Gestores
             int valor = new int();
             List<String> Contraseñas = this.GetAllContraseñas();
 
-            foreach (var consultor in Contraseñas)
+            foreach (var contra in Contraseñas)
             {
-                if (consultorIngresado.Contrasenia == consultor) //Esta parte no me queda claro
+                if (consultorIngresado.Contrasenia == contra) //Esta parte no me queda claro
                 {
                     valor = 1; //Existe un usuario con tal contraseña.
                 }
                 else
                 {
                     valor = 0; //No existe un usuario con tal contraseña.
-                } 
+                }
             }
 
             return valor;

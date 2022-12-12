@@ -91,6 +91,7 @@
             this.Aceptar.TabIndex = 9;
             this.Aceptar.Text = "Aceptar";
             this.Aceptar.UseVisualStyleBackColor = false;
+            this.Aceptar.Click += new System.EventHandler(this.Aceptar_Click);
             // 
             // botonVolver
             // 

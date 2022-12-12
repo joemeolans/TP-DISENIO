@@ -73,6 +73,7 @@
             this.RealizarCuestionarioBOTON.Text = "Realizar cuestionario";
             this.RealizarCuestionarioBOTON.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.RealizarCuestionarioBOTON.UseVisualStyleBackColor = false;
+            this.RealizarCuestionarioBOTON.Click += new System.EventHandler(this.RealizarCuestionarioBOTON_Click);
             // 
             // IngresarComoUsuarioConsultorLOGO
             // 
@@ -114,6 +115,7 @@
             this.RealizarCuestionarioLOGO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.RealizarCuestionarioLOGO.TabIndex = 5;
             this.RealizarCuestionarioLOGO.TabStop = false;
+            this.RealizarCuestionarioLOGO.Click += new System.EventHandler(this.RealizarCuestionarioLOGO_Click);
             // 
             // CDU001_Maqueta1
             // 

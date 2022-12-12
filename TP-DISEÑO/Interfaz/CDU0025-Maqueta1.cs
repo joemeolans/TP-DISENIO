@@ -16,5 +16,20 @@ namespace TP_DISEÑO.Interfaz
         {
             InitializeComponent();
         }
+
+        private void BotonVolver_Click(object sender, EventArgs e)
+        {
+            Form volverAlMenu = new MenuPrincipal();
+            volverAlMenu.Show();
+            this.Hide();
+        }
+
+        private void CerrarSesion_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea Salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
     }
 }
