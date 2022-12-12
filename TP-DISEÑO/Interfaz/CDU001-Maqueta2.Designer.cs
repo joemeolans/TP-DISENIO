@@ -47,6 +47,7 @@
             this.ContraseñaInput.Name = "ContraseñaInput";
             this.ContraseñaInput.Size = new System.Drawing.Size(466, 20);
             this.ContraseñaInput.TabIndex = 6;
+            this.ContraseñaInput.UseSystemPasswordChar = true;
             // 
             // textContrasenia
             // 
