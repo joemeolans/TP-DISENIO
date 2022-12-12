@@ -8,8 +8,8 @@ namespace TP_DISEÑO.DAO
 {
     interface ICompetenciaDAO
     {
-        competencia GetCompetencia(int id, CapitalHumano2Entities context);
-        competencia GetCompetenciaByNombre(string nombre, CapitalHumano2Entities context);
-        List<string> GetAllCompetencias(CapitalHumano2Entities context);
+        competencia GetCompetencia(int id, CapitalHumano3Entities context);
+        competencia GetCompetenciaByNombre(string nombre, CapitalHumano3Entities context);
+        List<string> GetAllCompetencias(CapitalHumano3Entities context);
     }
 }

@@ -22,8 +22,8 @@ namespace TP_DISEÑO
         }
     
         public int IdCuestionario { get; set; }
-        public string EstadoDeAprobacion { get; set; }
-        public string Estado { get; set; }
+        public int EstadoDeAprobacion { get; set; }
+        public int Estado { get; set; }
         public System.DateTime FechaFin { get; set; }
         public System.DateTime FechaInicio { get; set; }
         public int Resultado { get; set; }
@@ -38,5 +38,8 @@ namespace TP_DISEÑO
         public virtual candidato candidato { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<competenciacuestionario> competenciacuestionario { get; set; }
+        public virtual estadodeaprobacion estadodeaprobacion1 { get; set; }
+        public virtual estado estado1 { get; set; }
+        public virtual evaluacion evaluacion { get; set; }
     }
 }

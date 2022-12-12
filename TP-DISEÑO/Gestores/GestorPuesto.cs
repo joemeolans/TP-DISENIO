@@ -18,7 +18,7 @@ namespace TP_DISEÑO.Gestores
             this.competenciaDAO = new DAO.CompetenciaDAOImpl();
             this.puestoBuscadoDAO = new DAO.PuestoBuscadoDAOImpl();
         }
-        public List<int> validarNuevoPuesto(DTO.PuestoBuscadoDTO pbDTO, CapitalHumano2Entities context)
+        public List<int> validarNuevoPuesto(DTO.PuestoBuscadoDTO pbDTO, CapitalHumano3Entities context)
         {
             List<int> errores = new List<int>();
 
@@ -159,20 +159,20 @@ namespace TP_DISEÑO.Gestores
 
         public List<string> GetAllEmpresas()
         {
-            using (CapitalHumano2Entities context = new CapitalHumano2Entities())
+            using (CapitalHumano3Entities context = new CapitalHumano3Entities())
             {
                 return this.empresaDAO.GetAllEmpresas(context);
             }
         }
         public List<string> GetAllCompetencias()
         {
-            using (CapitalHumano2Entities context = new CapitalHumano2Entities())
+            using (CapitalHumano3Entities context = new CapitalHumano3Entities())
             {
                 return this.competenciaDAO.GetAllCompetencias(context);
             }
         }
         public void addCompetencia(
-            puestobuscado puesto, string nombreCompetencia, int puntajeminimo, DAO.ICompetenciaDAO comDAO, CapitalHumano2Entities context)
+            puestobuscado puesto, string nombreCompetencia, int puntajeminimo, DAO.ICompetenciaDAO comDAO, CapitalHumano3Entities context)
         {
             puestobuscadocompetencia pbc = new puestobuscadocompetencia();
             pbc.PuntajeMinimo = puntajeminimo;
@@ -183,7 +183,7 @@ namespace TP_DISEÑO.Gestores
         }
         public List<int> AltaPuesto(DTO.PuestoBuscadoDTO pbDTO)
         {
-            using (CapitalHumano2Entities context = new CapitalHumano2Entities())
+            using (CapitalHumano3Entities context = new CapitalHumano3Entities())
             {
                 List<int> errores = validarNuevoPuesto(pbDTO, context);
                 if (errores.Count == 0)
@@ -205,7 +205,7 @@ namespace TP_DISEÑO.Gestores
                 return errores;
             }
         }
-        public List<int> validarBuscaPuesto(DTO.PuestoBuscadoDTO pbDTO, CapitalHumano2Entities context)
+        public List<int> validarBuscaPuesto(DTO.PuestoBuscadoDTO pbDTO, CapitalHumano3Entities context)
         {
             List<int> resultado = new List<int>();
 
@@ -237,7 +237,7 @@ namespace TP_DISEÑO.Gestores
         }
         public List<DTO.PuestoBuscadoDTO> BuscarPuesto(DTO.PuestoBuscadoDTO pbDTO)
         {
-            using (CapitalHumano2Entities context = new CapitalHumano2Entities())
+            using (CapitalHumano3Entities context = new CapitalHumano3Entities())
             {
                 List<int> parametros = this.validarBuscaPuesto(pbDTO, context);
                 List<DTO.PuestoBuscadoDTO> puestosDTO = new List<DTO.PuestoBuscadoDTO>();

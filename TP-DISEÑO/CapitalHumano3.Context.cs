@@ -13,10 +13,10 @@ namespace TP_DISEÑO
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CapitalHumano2Entities : DbContext
+    public partial class CapitalHumano3Entities : DbContext
     {
-        public CapitalHumano2Entities()
-            : base("name=CapitalHumano2Entities")
+        public CapitalHumano3Entities()
+            : base("name=CapitalHumano3Entities")
         {
         }
     

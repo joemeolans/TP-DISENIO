@@ -25,10 +25,11 @@ namespace TP_DISEÑO
         public string Apellido { get; set; }
         public string Contrasenia { get; set; }
         public string NombreUsuario { get; set; }
-        public string Tipo { get; set; }
+        public int Tipo { get; set; }
         public int NumDocumento { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<cuestionario> cuestionario { get; set; }
+        public virtual tipodocumento tipodocumento { get; set; }
     }
 }

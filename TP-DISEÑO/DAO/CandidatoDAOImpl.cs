@@ -11,12 +11,16 @@ namespace TP_DISEÑO.DAO
 {
     class CandidatoDAOImpl : ICandidatoDAO
     {
-        public candidato GetCandidatoByDoc(int numDoc, string TipoDoc, CapitalHumano2Entities context)
+        public candidato GetCandidatoByDoc(int numDoc, string TipoDoc, CapitalHumano3Entities context)
         {
             candidato candidato = null;
             try
             {
-                candidato = context.candidato.Where(c => c.NumDocumento == numDoc & c.Tipo == TipoDoc).FirstOrDefault();
+                candidato = context.candidato.Where(c => c.NumDocumento == numDoc).FirstOrDefault();
+                if(!(candidato.tipodocumento.Tipo == TipoDoc))
+                {
+                    candidato = null;
+                }
             }
             catch (Exception e)
             {

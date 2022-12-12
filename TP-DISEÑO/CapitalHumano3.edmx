@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CapitalHumano2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="CapitalHumano3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="bloque">
           <Key>
             <PropertyRef Name="IdBloque" />
@@ -22,7 +22,7 @@
           <Property Name="Apellido" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="Contrasenia" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="NombreUsuario" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="Tipo" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Tipo" Type="int" Nullable="false" />
           <Property Name="NumDocumento" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="competencia">
@@ -31,7 +31,7 @@
           </Key>
           <Property Name="IdCompetencia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NombreCompetencia" Type="varchar" MaxLength="40" Nullable="false" />
-          <Property Name="TipoCompetencia" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TipoCompetencia" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="competenciacuestionario">
           <Key>
@@ -55,8 +55,8 @@
             <PropertyRef Name="IdCuestionario" />
           </Key>
           <Property Name="IdCuestionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="EstadoDeAprobacion" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="Estado" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="EstadoDeAprobacion" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="int" Nullable="false" />
           <Property Name="FechaFin" Type="date" Nullable="false" />
           <Property Name="FechaInicio" Type="date" Nullable="false" />
           <Property Name="Resultado" Type="int" Nullable="false" />
@@ -229,12 +229,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Errores durante la generación:
-advertencia 6035: La relación 'fk_cuestionario_estado' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
-        <Association Name="fk_cuestionario_estado" />-->
-        <!--Errores durante la generación:
-advertencia 6035: La relación 'fk_cuestionario_estado2' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
-        <Association Name="fk_cuestionario_estado2" />-->
+        <Association Name="fk_cuestionario_estado">
+          <End Role="estadodeaprobacion" Type="Self.estadodeaprobacion" Multiplicity="1" />
+          <End Role="cuestionario" Type="Self.cuestionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estadodeaprobacion">
+              <PropertyRef Name="IdEstadoDeAprobacion" />
+            </Principal>
+            <Dependent Role="cuestionario">
+              <PropertyRef Name="EstadoDeAprobacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_cuestionario_estado2">
+          <End Role="estado" Type="Self.estado" Multiplicity="1" />
+          <End Role="cuestionario" Type="Self.cuestionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estado">
+              <PropertyRef Name="IdEstado" />
+            </Principal>
+            <Dependent Role="cuestionario">
+              <PropertyRef Name="Estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_cuestionario_evaluacion">
+          <End Role="evaluacion" Type="Self.evaluacion" Multiplicity="1" />
+          <End Role="cuestionario" Type="Self.cuestionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="evaluacion">
+              <PropertyRef Name="IdEvaluacion" />
+            </Principal>
+            <Dependent Role="cuestionario">
+              <PropertyRef Name="IdEvaluacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_cuestionario_usuario">
           <End Role="candidato" Type="Self.candidato" Multiplicity="1" />
           <End Role="cuestionario" Type="Self.cuestionario" Multiplicity="*" />
@@ -295,6 +325,18 @@ advertencia 6035: La relación 'fk_cuestionario_estado2' tiene columnas que no f
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_itemrespuesta_opcionrespuesta">
+          <End Role="opcionrespuesta" Type="Self.opcionrespuesta" Multiplicity="1" />
+          <End Role="itemrespuesta" Type="Self.itemrespuesta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="opcionrespuesta">
+              <PropertyRef Name="IdOpcionRespuesta" />
+            </Principal>
+            <Dependent Role="itemrespuesta">
+              <PropertyRef Name="NumeroOpcion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_itemrespuestapregunta_itemrespuesta">
           <End Role="itemrespuesta" Type="Self.itemrespuesta" Multiplicity="1" />
           <End Role="itemrespuestapregunta" Type="Self.itemrespuestapregunta" Multiplicity="*" />
@@ -328,6 +370,18 @@ advertencia 6035: La relación 'fk_cuestionario_estado2' tiene columnas que no f
             </Principal>
             <Dependent Role="pregunta">
               <PropertyRef Name="IdFactor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_pregunta_numeroopcion">
+          <End Role="opcionrespuesta" Type="Self.opcionrespuesta" Multiplicity="1" />
+          <End Role="pregunta" Type="Self.pregunta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="opcionrespuesta">
+              <PropertyRef Name="IdOpcionRespuesta" />
+            </Principal>
+            <Dependent Role="pregunta">
+              <PropertyRef Name="NumeroOpcion" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -403,13 +457,31 @@ advertencia 6035: La relación 'fk_cuestionario_estado2' tiene columnas que no f
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Errores durante la generación:
-advertencia 6035: La relación 'fk_tipocompetencia' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
-        <Association Name="fk_tipocompetencia" />-->
-        <!--Errores durante la generación:
-advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
-        <Association Name="fk_tipodocumento" />-->
-        <EntityContainer Name="CapitalHumano2ModelStoreContainer">
+        <Association Name="fk_tipocompetencia">
+          <End Role="tipocompetencia" Type="Self.tipocompetencia" Multiplicity="1" />
+          <End Role="competencia" Type="Self.competencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipocompetencia">
+              <PropertyRef Name="IdTipoCompetencia" />
+            </Principal>
+            <Dependent Role="competencia">
+              <PropertyRef Name="TipoCompetencia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tipodocumento">
+          <End Role="tipodocumento" Type="Self.tipodocumento" Multiplicity="1" />
+          <End Role="candidato" Type="Self.candidato" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipodocumento">
+              <PropertyRef Name="IdTipoDocumento" />
+            </Principal>
+            <Dependent Role="candidato">
+              <PropertyRef Name="Tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CapitalHumano3ModelStoreContainer">
           <EntitySet Name="bloque" EntityType="Self.bloque" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="candidato" EntityType="Self.candidato" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="competencia" EntityType="Self.competencia" Schema="dbo" store:Type="Tables" />
@@ -440,6 +512,18 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             <End Role="cuestionario" EntitySet="cuestionario" />
             <End Role="bloque" EntitySet="bloque" />
           </AssociationSet>
+          <AssociationSet Name="fk_cuestionario_estado" Association="Self.fk_cuestionario_estado">
+            <End Role="estadodeaprobacion" EntitySet="estadodeaprobacion" />
+            <End Role="cuestionario" EntitySet="cuestionario" />
+          </AssociationSet>
+          <AssociationSet Name="fk_cuestionario_estado2" Association="Self.fk_cuestionario_estado2">
+            <End Role="estado" EntitySet="estado" />
+            <End Role="cuestionario" EntitySet="cuestionario" />
+          </AssociationSet>
+          <AssociationSet Name="fk_cuestionario_evaluacion" Association="Self.fk_cuestionario_evaluacion">
+            <End Role="evaluacion" EntitySet="evaluacion" />
+            <End Role="cuestionario" EntitySet="cuestionario" />
+          </AssociationSet>
           <AssociationSet Name="fk_cuestionario_usuario" Association="Self.fk_cuestionario_usuario">
             <End Role="candidato" EntitySet="candidato" />
             <End Role="cuestionario" EntitySet="cuestionario" />
@@ -460,6 +544,10 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             <End Role="competenciacuestionario" EntitySet="competenciacuestionario" />
             <End Role="factorcuestionario" EntitySet="factorcuestionario" />
           </AssociationSet>
+          <AssociationSet Name="fk_itemrespuesta_opcionrespuesta" Association="Self.fk_itemrespuesta_opcionrespuesta">
+            <End Role="opcionrespuesta" EntitySet="opcionrespuesta" />
+            <End Role="itemrespuesta" EntitySet="itemrespuesta" />
+          </AssociationSet>
           <AssociationSet Name="fk_itemrespuestapregunta_itemrespuesta" Association="Self.fk_itemrespuestapregunta_itemrespuesta">
             <End Role="itemrespuesta" EntitySet="itemrespuesta" />
             <End Role="itemrespuestapregunta" EntitySet="itemrespuestapregunta" />
@@ -470,6 +558,10 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
           </AssociationSet>
           <AssociationSet Name="fk_pregunta_factor" Association="Self.fk_pregunta_factor">
             <End Role="factor" EntitySet="factor" />
+            <End Role="pregunta" EntitySet="pregunta" />
+          </AssociationSet>
+          <AssociationSet Name="fk_pregunta_numeroopcion" Association="Self.fk_pregunta_numeroopcion">
+            <End Role="opcionrespuesta" EntitySet="opcionrespuesta" />
             <End Role="pregunta" EntitySet="pregunta" />
           </AssociationSet>
           <AssociationSet Name="fk_preguntacuestionario_bloque" Association="Self.fk_preguntacuestionario_bloque">
@@ -496,12 +588,20 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             <End Role="preguntacuestionario" EntitySet="preguntacuestionario" />
             <End Role="respuestacuestionario" EntitySet="respuestacuestionario" />
           </AssociationSet>
+          <AssociationSet Name="fk_tipocompetencia" Association="Self.fk_tipocompetencia">
+            <End Role="tipocompetencia" EntitySet="tipocompetencia" />
+            <End Role="competencia" EntitySet="competencia" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tipodocumento" Association="Self.fk_tipodocumento">
+            <End Role="tipodocumento" EntitySet="tipodocumento" />
+            <End Role="candidato" EntitySet="candidato" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="CapitalHumano2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="CapitalHumano3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="bloque">
           <Key>
             <PropertyRef Name="IdBloque" />
@@ -521,9 +621,10 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
           <Property Name="Apellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Contrasenia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="NombreUsuario" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Tipo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tipo" Type="Int32" Nullable="false" />
           <Property Name="NumDocumento" Type="Int32" Nullable="false" />
           <NavigationProperty Name="cuestionario" Relationship="Self.fk_cuestionario_usuario" FromRole="candidato" ToRole="cuestionario" />
+          <NavigationProperty Name="tipodocumento" Relationship="Self.fk_tipodocumento" FromRole="candidato" ToRole="tipodocumento" />
         </EntityType>
         <EntityType Name="competencia">
           <Key>
@@ -531,9 +632,10 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
           </Key>
           <Property Name="IdCompetencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NombreCompetencia" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TipoCompetencia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TipoCompetencia" Type="Int32" Nullable="false" />
           <NavigationProperty Name="factor" Relationship="Self.fk_factor_competencia" FromRole="competencia" ToRole="factor" />
           <NavigationProperty Name="puestobuscadocompetencia" Relationship="Self.fk_puestobuscadocompetencia_competencia" FromRole="competencia" ToRole="puestobuscadocompetencia" />
+          <NavigationProperty Name="tipocompetencia1" Relationship="Self.fk_tipocompetencia" FromRole="competencia" ToRole="tipocompetencia" />
         </EntityType>
         <EntityType Name="competenciacuestionario">
           <Key>
@@ -560,8 +662,8 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             <PropertyRef Name="IdCuestionario" />
           </Key>
           <Property Name="IdCuestionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EstadoDeAprobacion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Estado" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EstadoDeAprobacion" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="Int32" Nullable="false" />
           <Property Name="FechaFin" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="FechaInicio" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Resultado" Type="Int32" Nullable="false" />
@@ -573,6 +675,9 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
           <NavigationProperty Name="bloque" Relationship="Self.fk_cuestionario" FromRole="cuestionario" ToRole="bloque" />
           <NavigationProperty Name="candidato" Relationship="Self.fk_cuestionario_usuario" FromRole="cuestionario" ToRole="candidato" />
           <NavigationProperty Name="competenciacuestionario" Relationship="Self.fk_competencia_cuestionario" FromRole="cuestionario" ToRole="competenciacuestionario" />
+          <NavigationProperty Name="estadodeaprobacion1" Relationship="Self.fk_cuestionario_estado" FromRole="cuestionario" ToRole="estadodeaprobacion" />
+          <NavigationProperty Name="estado1" Relationship="Self.fk_cuestionario_estado2" FromRole="cuestionario" ToRole="estado" />
+          <NavigationProperty Name="evaluacion" Relationship="Self.fk_cuestionario_evaluacion" FromRole="cuestionario" ToRole="evaluacion" />
         </EntityType>
         <EntityType Name="empresa">
           <Key>
@@ -590,6 +695,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
           </Key>
           <Property Name="IdEstado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Estado1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="cuestionario" Relationship="Self.fk_cuestionario_estado2" FromRole="estado" ToRole="cuestionario" />
         </EntityType>
         <EntityType Name="estadodeaprobacion">
           <Key>
@@ -597,6 +703,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
           </Key>
           <Property Name="IdEstadoDeAprobacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="EstadoDeAprobacion1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="cuestionario" Relationship="Self.fk_cuestionario_estado" FromRole="estadodeaprobacion" ToRole="cuestionario" />
         </EntityType>
         <EntityType Name="evaluacion">
           <Key>
@@ -607,6 +714,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
           <Property Name="IdPuesto" Type="Int32" Nullable="false" />
           <Property Name="IdConsultor" Type="Int32" Nullable="false" />
           <NavigationProperty Name="consultor" Relationship="Self.fk_evaluacion_consultor" FromRole="evaluacion" ToRole="consultor" />
+          <NavigationProperty Name="cuestionario" Relationship="Self.fk_cuestionario_evaluacion" FromRole="evaluacion" ToRole="cuestionario" />
           <NavigationProperty Name="puestobuscado" Relationship="Self.fk_evaluacion_puesto" FromRole="evaluacion" ToRole="puestobuscado" />
         </EntityType>
         <EntityType Name="factor">
@@ -639,6 +747,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
           <Property Name="OrdenRespuesta" Type="Int32" Nullable="false" />
           <Property Name="Descripcion" Type="String" MaxLength="280" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="NumeroOpcion" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="opcionrespuesta" Relationship="Self.fk_itemrespuesta_opcionrespuesta" FromRole="itemrespuesta" ToRole="opcionrespuesta" />
           <NavigationProperty Name="itemrespuestapregunta" Relationship="Self.fk_itemrespuestapregunta_itemrespuesta" FromRole="itemrespuesta" ToRole="itemrespuestapregunta" />
         </EntityType>
         <EntityType Name="itemrespuestapregunta">
@@ -658,6 +767,8 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
           </Key>
           <Property Name="IdOpcionRespuesta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NumeroOpcion" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="itemrespuesta" Relationship="Self.fk_itemrespuesta_opcionrespuesta" FromRole="opcionrespuesta" ToRole="itemrespuesta" />
+          <NavigationProperty Name="pregunta" Relationship="Self.fk_pregunta_numeroopcion" FromRole="opcionrespuesta" ToRole="pregunta" />
         </EntityType>
         <EntityType Name="pregunta">
           <Key>
@@ -669,6 +780,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
           <Property Name="IdFactor" Type="Int32" Nullable="false" />
           <NavigationProperty Name="factor" Relationship="Self.fk_pregunta_factor" FromRole="pregunta" ToRole="factor" />
           <NavigationProperty Name="itemrespuestapregunta" Relationship="Self.fk_itemrespuestapregunta_pregunta" FromRole="pregunta" ToRole="itemrespuestapregunta" />
+          <NavigationProperty Name="opcionrespuesta" Relationship="Self.fk_pregunta_numeroopcion" FromRole="pregunta" ToRole="opcionrespuesta" />
         </EntityType>
         <EntityType Name="preguntacuestionario">
           <Key>
@@ -726,6 +838,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
           </Key>
           <Property Name="IdTipoCompetencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TipoCompetencia1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="competencia" Relationship="Self.fk_tipocompetencia" FromRole="tipocompetencia" ToRole="competencia" />
         </EntityType>
         <EntityType Name="tipodocumento">
           <Key>
@@ -733,6 +846,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
           </Key>
           <Property Name="IdTipoDocumento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Tipo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="candidato" Relationship="Self.fk_tipodocumento" FromRole="tipodocumento" ToRole="candidato" />
         </EntityType>
         <Association Name="fk_cuestionario">
           <End Role="cuestionario" Type="Self.cuestionario" Multiplicity="1" />
@@ -770,6 +884,18 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_tipodocumento">
+          <End Role="tipodocumento" Type="Self.tipodocumento" Multiplicity="1" />
+          <End Role="candidato" Type="Self.candidato" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipodocumento">
+              <PropertyRef Name="IdTipoDocumento" />
+            </Principal>
+            <Dependent Role="candidato">
+              <PropertyRef Name="Tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_factor_competencia">
           <End Role="competencia" Type="Self.competencia" Multiplicity="1" />
           <End Role="factor" Type="Self.factor" Multiplicity="*" />
@@ -791,6 +917,18 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             </Principal>
             <Dependent Role="puestobuscadocompetencia">
               <PropertyRef Name="IdCompetencia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tipocompetencia">
+          <End Role="tipocompetencia" Type="Self.tipocompetencia" Multiplicity="1" />
+          <End Role="competencia" Type="Self.competencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipocompetencia">
+              <PropertyRef Name="IdTipoCompetencia" />
+            </Principal>
+            <Dependent Role="competencia">
+              <PropertyRef Name="TipoCompetencia" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -827,6 +965,42 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             </Principal>
             <Dependent Role="evaluacion">
               <PropertyRef Name="IdConsultor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_cuestionario_estado">
+          <End Role="estadodeaprobacion" Type="Self.estadodeaprobacion" Multiplicity="1" />
+          <End Role="cuestionario" Type="Self.cuestionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estadodeaprobacion">
+              <PropertyRef Name="IdEstadoDeAprobacion" />
+            </Principal>
+            <Dependent Role="cuestionario">
+              <PropertyRef Name="EstadoDeAprobacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_cuestionario_estado2">
+          <End Role="estado" Type="Self.estado" Multiplicity="1" />
+          <End Role="cuestionario" Type="Self.cuestionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estado">
+              <PropertyRef Name="IdEstado" />
+            </Principal>
+            <Dependent Role="cuestionario">
+              <PropertyRef Name="Estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_cuestionario_evaluacion">
+          <End Role="evaluacion" Type="Self.evaluacion" Multiplicity="1" />
+          <End Role="cuestionario" Type="Self.cuestionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="evaluacion">
+              <PropertyRef Name="IdEvaluacion" />
+            </Principal>
+            <Dependent Role="cuestionario">
+              <PropertyRef Name="IdEvaluacion" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -878,6 +1052,18 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_itemrespuesta_opcionrespuesta">
+          <End Role="opcionrespuesta" Type="Self.opcionrespuesta" Multiplicity="1" />
+          <End Role="itemrespuesta" Type="Self.itemrespuesta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="opcionrespuesta">
+              <PropertyRef Name="IdOpcionRespuesta" />
+            </Principal>
+            <Dependent Role="itemrespuesta">
+              <PropertyRef Name="NumeroOpcion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_itemrespuestapregunta_itemrespuesta">
           <End Role="itemrespuesta" Type="Self.itemrespuesta" Multiplicity="1" />
           <End Role="itemrespuestapregunta" Type="Self.itemrespuestapregunta" Multiplicity="*" />
@@ -899,6 +1085,18 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             </Principal>
             <Dependent Role="itemrespuestapregunta">
               <PropertyRef Name="IdPregunta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_pregunta_numeroopcion">
+          <End Role="opcionrespuesta" Type="Self.opcionrespuesta" Multiplicity="1" />
+          <End Role="pregunta" Type="Self.pregunta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="opcionrespuesta">
+              <PropertyRef Name="IdOpcionRespuesta" />
+            </Principal>
+            <Dependent Role="pregunta">
+              <PropertyRef Name="NumeroOpcion" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -926,7 +1124,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="CapitalHumano2Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="CapitalHumano3Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="bloque" EntityType="Self.bloque" />
           <EntitySet Name="candidato" EntityType="Self.candidato" />
           <EntitySet Name="competencia" EntityType="Self.competencia" />
@@ -961,6 +1159,10 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             <End Role="candidato" EntitySet="candidato" />
             <End Role="cuestionario" EntitySet="cuestionario" />
           </AssociationSet>
+          <AssociationSet Name="fk_tipodocumento" Association="Self.fk_tipodocumento">
+            <End Role="tipodocumento" EntitySet="tipodocumento" />
+            <End Role="candidato" EntitySet="candidato" />
+          </AssociationSet>
           <AssociationSet Name="fk_factor_competencia" Association="Self.fk_factor_competencia">
             <End Role="competencia" EntitySet="competencia" />
             <End Role="factor" EntitySet="factor" />
@@ -968,6 +1170,10 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
           <AssociationSet Name="fk_puestobuscadocompetencia_competencia" Association="Self.fk_puestobuscadocompetencia_competencia">
             <End Role="competencia" EntitySet="competencia" />
             <End Role="puestobuscadocompetencia" EntitySet="puestobuscadocompetencia" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tipocompetencia" Association="Self.fk_tipocompetencia">
+            <End Role="tipocompetencia" EntitySet="tipocompetencia" />
+            <End Role="competencia" EntitySet="competencia" />
           </AssociationSet>
           <AssociationSet Name="fk_competencia_cuestionario" Association="Self.fk_competencia_cuestionario">
             <End Role="cuestionario" EntitySet="cuestionario" />
@@ -980,6 +1186,18 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
           <AssociationSet Name="fk_evaluacion_consultor" Association="Self.fk_evaluacion_consultor">
             <End Role="consultor" EntitySet="consultor" />
             <End Role="evaluacion" EntitySet="evaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_cuestionario_estado" Association="Self.fk_cuestionario_estado">
+            <End Role="estadodeaprobacion" EntitySet="estadodeaprobacion" />
+            <End Role="cuestionario" EntitySet="cuestionario" />
+          </AssociationSet>
+          <AssociationSet Name="fk_cuestionario_estado2" Association="Self.fk_cuestionario_estado2">
+            <End Role="estado" EntitySet="estado" />
+            <End Role="cuestionario" EntitySet="cuestionario" />
+          </AssociationSet>
+          <AssociationSet Name="fk_cuestionario_evaluacion" Association="Self.fk_cuestionario_evaluacion">
+            <End Role="evaluacion" EntitySet="evaluacion" />
+            <End Role="cuestionario" EntitySet="cuestionario" />
           </AssociationSet>
           <AssociationSet Name="fk_puestobuscado_empresa" Association="Self.fk_puestobuscado_empresa">
             <End Role="empresa" EntitySet="empresa" />
@@ -997,6 +1215,10 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             <End Role="factorcuestionario" EntitySet="factorcuestionario" />
             <End Role="preguntacuestionario" EntitySet="preguntacuestionario" />
           </AssociationSet>
+          <AssociationSet Name="fk_itemrespuesta_opcionrespuesta" Association="Self.fk_itemrespuesta_opcionrespuesta">
+            <End Role="opcionrespuesta" EntitySet="opcionrespuesta" />
+            <End Role="itemrespuesta" EntitySet="itemrespuesta" />
+          </AssociationSet>
           <AssociationSet Name="fk_itemrespuestapregunta_itemrespuesta" Association="Self.fk_itemrespuestapregunta_itemrespuesta">
             <End Role="itemrespuesta" EntitySet="itemrespuesta" />
             <End Role="itemrespuestapregunta" EntitySet="itemrespuestapregunta" />
@@ -1004,6 +1226,10 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
           <AssociationSet Name="fk_itemrespuestapregunta_pregunta" Association="Self.fk_itemrespuestapregunta_pregunta">
             <End Role="pregunta" EntitySet="pregunta" />
             <End Role="itemrespuestapregunta" EntitySet="itemrespuestapregunta" />
+          </AssociationSet>
+          <AssociationSet Name="fk_pregunta_numeroopcion" Association="Self.fk_pregunta_numeroopcion">
+            <End Role="opcionrespuesta" EntitySet="opcionrespuesta" />
+            <End Role="pregunta" EntitySet="pregunta" />
           </AssociationSet>
           <AssociationSet Name="fk_respuestacuestionario" Association="Self.fk_respuestacuestionario">
             <End Role="preguntacuestionario" EntitySet="preguntacuestionario" />
@@ -1019,9 +1245,9 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="CapitalHumano2ModelStoreContainer" CdmEntityContainer="CapitalHumano2Entities">
+        <EntityContainerMapping StorageEntityContainer="CapitalHumano3ModelStoreContainer" CdmEntityContainer="CapitalHumano3Entities">
           <EntitySetMapping Name="bloque">
-            <EntityTypeMapping TypeName="CapitalHumano2Model.bloque">
+            <EntityTypeMapping TypeName="CapitalHumano3Model.bloque">
               <MappingFragment StoreEntitySet="bloque">
                 <ScalarProperty Name="IdBloque" ColumnName="IdBloque" />
                 <ScalarProperty Name="NumeroBloque" ColumnName="NumeroBloque" />
@@ -1030,7 +1256,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="candidato">
-            <EntityTypeMapping TypeName="CapitalHumano2Model.candidato">
+            <EntityTypeMapping TypeName="CapitalHumano3Model.candidato">
               <MappingFragment StoreEntitySet="candidato">
                 <ScalarProperty Name="IdCandidato" ColumnName="IdCandidato" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -1043,7 +1269,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="competencia">
-            <EntityTypeMapping TypeName="CapitalHumano2Model.competencia">
+            <EntityTypeMapping TypeName="CapitalHumano3Model.competencia">
               <MappingFragment StoreEntitySet="competencia">
                 <ScalarProperty Name="IdCompetencia" ColumnName="IdCompetencia" />
                 <ScalarProperty Name="NombreCompetencia" ColumnName="NombreCompetencia" />
@@ -1052,7 +1278,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="competenciacuestionario">
-            <EntityTypeMapping TypeName="CapitalHumano2Model.competenciacuestionario">
+            <EntityTypeMapping TypeName="CapitalHumano3Model.competenciacuestionario">
               <MappingFragment StoreEntitySet="competenciacuestionario">
                 <ScalarProperty Name="IdCompetenciaCuestionario" ColumnName="IdCompetenciaCuestionario" />
                 <ScalarProperty Name="NombreCompetencia" ColumnName="NombreCompetencia" />
@@ -1062,7 +1288,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="consultor">
-            <EntityTypeMapping TypeName="CapitalHumano2Model.consultor">
+            <EntityTypeMapping TypeName="CapitalHumano3Model.consultor">
               <MappingFragment StoreEntitySet="consultor">
                 <ScalarProperty Name="IdConsultor" ColumnName="IdConsultor" />
                 <ScalarProperty Name="Usuario" ColumnName="Usuario" />
@@ -1071,7 +1297,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="cuestionario">
-            <EntityTypeMapping TypeName="CapitalHumano2Model.cuestionario">
+            <EntityTypeMapping TypeName="CapitalHumano3Model.cuestionario">
               <MappingFragment StoreEntitySet="cuestionario">
                 <ScalarProperty Name="IdCuestionario" ColumnName="IdCuestionario" />
                 <ScalarProperty Name="EstadoDeAprobacion" ColumnName="EstadoDeAprobacion" />
@@ -1088,7 +1314,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="empresa">
-            <EntityTypeMapping TypeName="CapitalHumano2Model.empresa">
+            <EntityTypeMapping TypeName="CapitalHumano3Model.empresa">
               <MappingFragment StoreEntitySet="empresa">
                 <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -1098,7 +1324,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="estado">
-            <EntityTypeMapping TypeName="CapitalHumano2Model.estado">
+            <EntityTypeMapping TypeName="CapitalHumano3Model.estado">
               <MappingFragment StoreEntitySet="estado">
                 <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
                 <ScalarProperty Name="Estado1" ColumnName="Estado" />
@@ -1106,7 +1332,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="estadodeaprobacion">
-            <EntityTypeMapping TypeName="CapitalHumano2Model.estadodeaprobacion">
+            <EntityTypeMapping TypeName="CapitalHumano3Model.estadodeaprobacion">
               <MappingFragment StoreEntitySet="estadodeaprobacion">
                 <ScalarProperty Name="IdEstadoDeAprobacion" ColumnName="IdEstadoDeAprobacion" />
                 <ScalarProperty Name="EstadoDeAprobacion1" ColumnName="EstadoDeAprobacion" />
@@ -1114,7 +1340,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="evaluacion">
-            <EntityTypeMapping TypeName="CapitalHumano2Model.evaluacion">
+            <EntityTypeMapping TypeName="CapitalHumano3Model.evaluacion">
               <MappingFragment StoreEntitySet="evaluacion">
                 <ScalarProperty Name="IdEvaluacion" ColumnName="IdEvaluacion" />
                 <ScalarProperty Name="FechaEvaluacion" ColumnName="FechaEvaluacion" />
@@ -1124,7 +1350,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="factor">
-            <EntityTypeMapping TypeName="CapitalHumano2Model.factor">
+            <EntityTypeMapping TypeName="CapitalHumano3Model.factor">
               <MappingFragment StoreEntitySet="factor">
                 <ScalarProperty Name="IdFactor" ColumnName="IdFactor" />
                 <ScalarProperty Name="NombreFactor" ColumnName="NombreFactor" />
@@ -1134,7 +1360,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="factorcuestionario">
-            <EntityTypeMapping TypeName="CapitalHumano2Model.factorcuestionario">
+            <EntityTypeMapping TypeName="CapitalHumano3Model.factorcuestionario">
               <MappingFragment StoreEntitySet="factorcuestionario">
                 <ScalarProperty Name="IdFactorCuestionario" ColumnName="IdFactorCuestionario" />
                 <ScalarProperty Name="ValorObtenido" ColumnName="ValorObtenido" />
@@ -1144,7 +1370,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="itemrespuesta">
-            <EntityTypeMapping TypeName="CapitalHumano2Model.itemrespuesta">
+            <EntityTypeMapping TypeName="CapitalHumano3Model.itemrespuesta">
               <MappingFragment StoreEntitySet="itemrespuesta">
                 <ScalarProperty Name="IdItemRespuesta" ColumnName="IdItemRespuesta" />
                 <ScalarProperty Name="OrdenRespuesta" ColumnName="OrdenRespuesta" />
@@ -1154,7 +1380,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="itemrespuestapregunta">
-            <EntityTypeMapping TypeName="CapitalHumano2Model.itemrespuestapregunta">
+            <EntityTypeMapping TypeName="CapitalHumano3Model.itemrespuestapregunta">
               <MappingFragment StoreEntitySet="itemrespuestapregunta">
                 <ScalarProperty Name="IdItemRespuesta" ColumnName="IdItemRespuesta" />
                 <ScalarProperty Name="IdPregunta" ColumnName="IdPregunta" />
@@ -1163,7 +1389,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="opcionrespuesta">
-            <EntityTypeMapping TypeName="CapitalHumano2Model.opcionrespuesta">
+            <EntityTypeMapping TypeName="CapitalHumano3Model.opcionrespuesta">
               <MappingFragment StoreEntitySet="opcionrespuesta">
                 <ScalarProperty Name="IdOpcionRespuesta" ColumnName="IdOpcionRespuesta" />
                 <ScalarProperty Name="NumeroOpcion" ColumnName="NumeroOpcion" />
@@ -1171,7 +1397,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="pregunta">
-            <EntityTypeMapping TypeName="CapitalHumano2Model.pregunta">
+            <EntityTypeMapping TypeName="CapitalHumano3Model.pregunta">
               <MappingFragment StoreEntitySet="pregunta">
                 <ScalarProperty Name="IdPregunta" ColumnName="IdPregunta" />
                 <ScalarProperty Name="TextoPregunta" ColumnName="TextoPregunta" />
@@ -1181,7 +1407,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="preguntacuestionario">
-            <EntityTypeMapping TypeName="CapitalHumano2Model.preguntacuestionario">
+            <EntityTypeMapping TypeName="CapitalHumano3Model.preguntacuestionario">
               <MappingFragment StoreEntitySet="preguntacuestionario">
                 <ScalarProperty Name="IdPreguntaCuestionario" ColumnName="IdPreguntaCuestionario" />
                 <ScalarProperty Name="OrdenPregunta" ColumnName="OrdenPregunta" />
@@ -1192,7 +1418,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="puestobuscado">
-            <EntityTypeMapping TypeName="CapitalHumano2Model.puestobuscado">
+            <EntityTypeMapping TypeName="CapitalHumano3Model.puestobuscado">
               <MappingFragment StoreEntitySet="puestobuscado">
                 <ScalarProperty Name="IdPuesto" ColumnName="IdPuesto" />
                 <ScalarProperty Name="CodigoPuesto" ColumnName="CodigoPuesto" />
@@ -1204,7 +1430,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="puestobuscadocompetencia">
-            <EntityTypeMapping TypeName="CapitalHumano2Model.puestobuscadocompetencia">
+            <EntityTypeMapping TypeName="CapitalHumano3Model.puestobuscadocompetencia">
               <MappingFragment StoreEntitySet="puestobuscadocompetencia">
                 <ScalarProperty Name="IdPuesto" ColumnName="IdPuesto" />
                 <ScalarProperty Name="IdCompetencia" ColumnName="IdCompetencia" />
@@ -1213,7 +1439,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="respuestacuestionario">
-            <EntityTypeMapping TypeName="CapitalHumano2Model.respuestacuestionario">
+            <EntityTypeMapping TypeName="CapitalHumano3Model.respuestacuestionario">
               <MappingFragment StoreEntitySet="respuestacuestionario">
                 <ScalarProperty Name="IdRespuestaCuestionario" ColumnName="IdRespuestaCuestionario" />
                 <ScalarProperty Name="OrdenRespuesta" ColumnName="OrdenRespuesta" />
@@ -1225,7 +1451,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tipocompetencia">
-            <EntityTypeMapping TypeName="CapitalHumano2Model.tipocompetencia">
+            <EntityTypeMapping TypeName="CapitalHumano3Model.tipocompetencia">
               <MappingFragment StoreEntitySet="tipocompetencia">
                 <ScalarProperty Name="IdTipoCompetencia" ColumnName="IdTipoCompetencia" />
                 <ScalarProperty Name="TipoCompetencia1" ColumnName="TipoCompetencia" />
@@ -1233,7 +1459,7 @@ advertencia 6035: La relación 'fk_tipodocumento' tiene columnas que no forman p
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tipodocumento">
-            <EntityTypeMapping TypeName="CapitalHumano2Model.tipodocumento">
+            <EntityTypeMapping TypeName="CapitalHumano3Model.tipodocumento">
               <MappingFragment StoreEntitySet="tipodocumento">
                 <ScalarProperty Name="IdTipoDocumento" ColumnName="IdTipoDocumento" />
                 <ScalarProperty Name="Tipo" ColumnName="Tipo" />

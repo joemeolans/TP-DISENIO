@@ -14,7 +14,16 @@ namespace TP_DISEÑO
     
     public partial class estadodeaprobacion
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public estadodeaprobacion()
+        {
+            this.cuestionario = new HashSet<cuestionario>();
+        }
+    
         public int IdEstadoDeAprobacion { get; set; }
         public string EstadoDeAprobacion1 { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<cuestionario> cuestionario { get; set; }
     }
 }

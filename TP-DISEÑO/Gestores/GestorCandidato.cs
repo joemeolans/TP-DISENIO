@@ -17,7 +17,7 @@ namespace TP_DISEÑO.Gestores
         {
             this.candidatoDAO = new DAO.CandidatoDAOImpl();
         }
-        public List<int> validarUsuario(DTO.UsuarioDTO UDTO, CapitalHumano2Entities context)
+        public List<int> validarUsuario(DTO.UsuarioDTO UDTO, CapitalHumano3Entities context)
         {
             List<int> errores = new List<int>();
 
@@ -66,7 +66,7 @@ namespace TP_DISEÑO.Gestores
         {
             List<int> resultado = new List<int>();
 
-            using (CapitalHumano2Entities context = new CapitalHumano2Entities())
+            using (CapitalHumano3Entities context = new CapitalHumano3Entities())
             {
 
                 resultado = this.validarUsuario(UDTO, context);
@@ -93,7 +93,7 @@ namespace TP_DISEÑO.Gestores
 
         }
 
-        public cuestionario GetUltimoCuestionarioActivo(candidato candidato, CapitalHumano2Entities context)
+        public cuestionario GetUltimoCuestionarioActivo(candidato candidato, CapitalHumano3Entities context)
         {
 
             cuestionario cuestionario = null;
@@ -102,7 +102,7 @@ namespace TP_DISEÑO.Gestores
             {
                 foreach (cuestionario oCuestionario in candidato.cuestionario)
                 {
-                    if (oCuestionario.Estado == "Activo")
+                    if (oCuestionario.estado1.Estado1 == "Activo")
                     {
                         cuestionario = oCuestionario;
                     }

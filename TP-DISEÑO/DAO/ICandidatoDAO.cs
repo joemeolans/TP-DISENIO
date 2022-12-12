@@ -9,7 +9,7 @@ namespace TP_DISEÑO.DAO
 {
     interface ICandidatoDAO
     {
-        candidato GetCandidatoByDoc(int numDoc, string TipoDoc, CapitalHumano2Entities context);
+        candidato GetCandidatoByDoc(int numDoc, string TipoDoc, CapitalHumano3Entities context);
     }
 
 }

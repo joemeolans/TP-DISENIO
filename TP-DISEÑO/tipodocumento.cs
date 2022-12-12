@@ -14,7 +14,16 @@ namespace TP_DISEÑO
     
     public partial class tipodocumento
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tipodocumento()
+        {
+            this.candidato = new HashSet<candidato>();
+        }
+    
         public int IdTipoDocumento { get; set; }
         public string Tipo { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<candidato> candidato { get; set; }
     }
 }

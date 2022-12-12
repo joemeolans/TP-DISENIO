@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b5e304bdebd84de3aa0f13b33f176e97" Name="Diagram1">
+        <EntityTypeShape EntityType="CapitalHumano3Model.bloque" Width="1.5" PointX="9.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano3Model.candidato" Width="1.5" PointX="5.25" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano3Model.competencia" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano3Model.competenciacuestionario" Width="1.5" PointX="9.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano3Model.consultor" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano3Model.cuestionario" Width="1.5" PointX="7.5" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano3Model.empresa" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano3Model.estado" Width="1.5" PointX="5.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano3Model.estadodeaprobacion" Width="1.5" PointX="5.25" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano3Model.evaluacion" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano3Model.factor" Width="1.5" PointX="7.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano3Model.factorcuestionario" Width="1.5" PointX="12" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano3Model.itemrespuesta" Width="1.5" PointX="10" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano3Model.itemrespuestapregunta" Width="1.5" PointX="12.25" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano3Model.opcionrespuesta" Width="1.5" PointX="7.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano3Model.pregunta" Width="1.5" PointX="10" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano3Model.preguntacuestionario" Width="1.5" PointX="14.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano3Model.puestobuscado" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano3Model.puestobuscadocompetencia" Width="1.5" PointX="5.25" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano3Model.respuestacuestionario" Width="1.5" PointX="16.5" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano3Model.tipocompetencia" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CapitalHumano3Model.tipodocumento" Width="1.5" PointX="3" PointY="12.75" IsExpanded="true" />
+        <AssociationConnector Association="CapitalHumano3Model.fk_cuestionario" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano3Model.fk_preguntacuestionario_bloque" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano3Model.fk_cuestionario_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano3Model.fk_tipodocumento" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano3Model.fk_factor_competencia" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano3Model.fk_puestobuscadocompetencia_competencia" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano3Model.fk_tipocompetencia" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano3Model.fk_competencia_cuestionario" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano3Model.fk_factorcuestionario_competenciacuestionario" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano3Model.fk_evaluacion_consultor" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano3Model.fk_cuestionario_estado" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano3Model.fk_cuestionario_estado2" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano3Model.fk_cuestionario_evaluacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano3Model.fk_puestobuscado_empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano3Model.fk_evaluacion_puesto" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano3Model.fk_pregunta_factor" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano3Model.fk_preguntacuestionario_factorcuestionario" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano3Model.fk_itemrespuesta_opcionrespuesta" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano3Model.fk_itemrespuestapregunta_itemrespuesta" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano3Model.fk_itemrespuestapregunta_pregunta" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano3Model.fk_pregunta_numeroopcion" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano3Model.fk_respuestacuestionario" ManuallyRouted="false" />
+        <AssociationConnector Association="CapitalHumano3Model.fk_puestobuscadocompetencia_puestobuscado" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
