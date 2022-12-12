@@ -111,5 +111,27 @@ namespace TP_DISEÑO.DAO
             }
             return puestos;
         }
+
+        public List<puestobuscadocompetencia> GetPBCByEmpresaPuesto
+               (string nombreEmpresa, string nombrePuesto, CapitalHumano3Entities context)
+        {
+            List<puestobuscadocompetencia> pbc = new List<puestobuscadocompetencia>();
+            try
+            {
+                empresa empresa = context.empresa.Where(e => e.Nombre == nombreEmpresa).FirstOrDefault();
+                foreach(var puestobuscado in empresa.puestobuscado)
+                {
+                    if(puestobuscado.Nombre == nombrePuesto)
+                    {
+                        pbc.Concat(puestobuscado.puestobuscadocompetencia.ToList());
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("{0} Exception caught.", e);
+            }
+            return pbc;
+        }
     }
 }
