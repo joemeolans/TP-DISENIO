@@ -115,6 +115,10 @@ namespace TP_DISEÑO.Gestores
             return cuestionario;
 
         }
+        public candidato GetCandidatoById(int idCandidato)
+        {
+            return this.candidatoDAO.GetCandidatoById(idCandidato);
+        }
 
     }
 }

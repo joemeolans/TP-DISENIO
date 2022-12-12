@@ -24,7 +24,19 @@ namespace TP_DISEÑO.DAO
             }
             return candidato;
         }
-
+        public candidato GetCandidatoById(int idCandidato, CapitalHumano2Entities context)
+        {
+            candidato candidato = null;
+            try
+            {
+                candidato = context.candidato.Find(idCandidato);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("{0} Exception caught.", e);
+            }
+            return candidato;
+        }
     }
 
 }
