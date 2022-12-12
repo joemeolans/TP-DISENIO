@@ -98,7 +98,7 @@ namespace TP_DISEÑO.DAO
             return competencias;
         }
 
-        public List<puestobuscado> GetPuestosByEmpresa(string nombreEmpresa)
+        public List<puestobuscado> GetPuestosByEmpresa(string nombreEmpresa, CapitalHumano3Entities context)
         {
             List<puestobuscado> puestos = new List<puestobuscado>();
             try
