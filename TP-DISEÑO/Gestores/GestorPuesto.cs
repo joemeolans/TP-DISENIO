@@ -257,5 +257,9 @@ namespace TP_DISEÑO.Gestores
         {
             return this.puestoBuscadoDAO.GetPuestobuscado(idPuesto, context);
         }
+        public List<competencia> GetAllCompetencias(int idPuesto, CapitalHumano3Entities context)
+        {
+            return this.puestoBuscadoDAO.GetAllCompetencias(idPuesto, context);
+        }
     }
 }

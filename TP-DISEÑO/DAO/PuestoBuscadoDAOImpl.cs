@@ -80,5 +80,22 @@ namespace TP_DISEÑO.DAO
             }
             return puestobuscado;
         }
+        public List<competencia> GetAllCompetencias(int idPuesto, CapitalHumano3Entitites context)
+        {
+            List<competencia> competencias = new List<competencia>();
+            try
+            {
+                puestobuscado puestobuscado = context.puestobuscad.Find(idPuesto);
+                foreach(var pbCompetencias in puestobuscado.puestobuscadocompetencia)
+                {
+                    competencias.Add(puestobuscadocompetencia.competencia);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("{0} Exception caught.", e);
+            }
+            return competencias;
+        }
     }
 }
