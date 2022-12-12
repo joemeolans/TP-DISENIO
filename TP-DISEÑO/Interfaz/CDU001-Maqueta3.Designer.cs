@@ -130,7 +130,7 @@
             this.TipoInput.Items.AddRange(new object[] {
             "DNI",
             "Libreta cívica (LC)",
-            "Libreta de enrolamiento (LR)"});
+            "Libreta de enrolamiento (LE)"});
             this.TipoInput.Location = new System.Drawing.Point(187, 311);
             this.TipoInput.Name = "TipoInput";
             this.TipoInput.Size = new System.Drawing.Size(221, 21);
