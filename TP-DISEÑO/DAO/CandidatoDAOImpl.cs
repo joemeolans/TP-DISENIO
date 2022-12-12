@@ -17,10 +17,12 @@ namespace TP_DISEÑO.DAO
             try
             {
                 candidato = context.candidato.Where(c => c.NumDocumento == numDoc).FirstOrDefault();
+                /*
                 if(!(candidato.tipodocumento.Tipo == TipoDoc))
                 {
                     candidato = null;
                 }
+                */
             }
             catch (Exception e)
             {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,56 +18,43 @@ namespace TP_DISEÑO.Gestores
         {
             this.candidatoDAO = new DAO.CandidatoDAOImpl();
         }
-        public bool validarUsuario(DTO.UsuarioDTO UDTO, CapitalHumano3Entities context)
+        public bool validarUsuario(DTO.CandidatoDTO CDTO, CapitalHumano3Entities context)
         {
             bool resultado = false;
 
             // CODIGO DE VALIDACION.
-            // nombreUsuario debe ser un string de longitud aceptable.
-            if (!(UDTO.nombreUsuario is string) || UDTO.nombre.Length <= 0)
-            {
-                resultado = true; // ERROR: nombre del puesto es invalido.
-            }
-
+           
             // contraseña debe ser un string de longitud aceptable.
-            if (!(UDTO.contraseña is string) || UDTO.contraseña.Length <= 0)
+            if (!(CDTO.Clave is string) || CDTO.Clave.Length <= 0)
             {
-                resultado = true;// ERROR: descripcion es invalido.
+                resultado = true;
             }
-
-            // Nombre del usuario con logitud mayor a 15
-            if (UDTO.nombreUsuario.Length > 15)
-            {
-                resultado = true; // ERROR: nombre del puesto con logitud mayor a 15.
-            }
-
             // Contraseña del usuario con logitud mayor a 20
-            if (UDTO.contraseña.Length > 20)
+            if (CDTO.Clave.Length > 20)
             {
-                resultado = true; // ERROR: codigo del puesto con logitud mayor a 10.
+                resultado = true;
+            }
+            // NumDocumento debe ser un int y mayor a 0
+            if(!(CDTO.NumDocumento is int) || CDTO.NumDocumento < 0)
+            {
+                resultado = true;
+            }
+            // el Tipo debe ser uno de los tipos posibles
+            if( (CDTO.Tipo != "DNI") && (CDTO.Tipo != "Libreta cívica(LC)") && (CDTO.Tipo != "Libreta de enrolamiento(LR)"))
+            {
+                resultado = true;
             }
 
-            // Contraseña nula
-            if (UDTO.nombreUsuario.Length == 0)
-            {
-                resultado = true; // ERROR: codigo del puesto con logitud mayor a 10.
-            }
-
-            // Usuario nulo
-            if (UDTO.contraseña.Length == 0)
-            {
-                resultado = true; // ERROR: codigo del puesto con logitud mayor a 10.
-            }
             if (!resultado)
             {
-                candidato candidato = this.candidatoDAO.GetCandidatoByDoc(UDTO.numDocumento, UDTO.Tipo, context);
+                candidato candidato = this.candidatoDAO.GetCandidatoByDoc(CDTO.NumDocumento, CDTO.Tipo, context);
                 if (candidato == null)
                 {
                     resultado = true;
                 }
                 else
                 {
-                    if (candidato.Contrasenia != UDTO.contraseña)
+                    if (candidato.Contrasenia != CDTO.Clave)
                     {
                         resultado = true;
                     }
@@ -76,7 +64,7 @@ namespace TP_DISEÑO.Gestores
             return resultado;
         }
 
-        public int realizarCuestionario(DTO.UsuarioDTO UDTO)
+        public int realizarCuestionario(DTO.CandidatoDTO CDTO)
         {
             int resultado = 0;
 
@@ -84,13 +72,20 @@ namespace TP_DISEÑO.Gestores
             {
                 cuestionario resultadoCuestionario = new cuestionario();
                 
-                candidato candidato = this.candidatoDAO.GetCandidatoByDoc(UDTO.numDocumento, UDTO.Tipo, context);
-                    
+                candidato candidato = this.candidatoDAO.GetCandidatoByDoc(CDTO.NumDocumento, CDTO.Tipo, context);
+                bool validacion = this.validarUsuario(CDTO, context);
+                if (validacion)
+                {
+                    resultado = -1;
+                }
+                else
+                {
                     resultadoCuestionario = this.GetUltimoCuestionarioActivo(candidato, context);
                     if (resultadoCuestionario != null)
                     {
-                    resultado = resultadoCuestionario.IdCuestionario;
+                        resultado = resultadoCuestionario.IdCuestionario;
                     }
+                }
                 return resultado;
             }
 

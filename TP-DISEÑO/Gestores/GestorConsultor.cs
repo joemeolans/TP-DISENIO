@@ -16,43 +16,43 @@ namespace TP_DISEÑO.Gestores
         {
             this.consultorDAO = new DAO.ConsultorDAOImpl();
         }
-        public bool validarConsultor(DTO.UsuarioDTO UDTO, CapitalHumano3Entities context)
+        public bool validarConsultor(DTO.ConsultorDTO CDTO, CapitalHumano3Entities context)
         {
             bool resultado = false;
 
             // CODIGO DE VALIDACION.
             // nombreUsuario debe ser un string de longitud aceptable.
-            if (!(UDTO.nombreUsuario is string) || UDTO.nombre.Length <= 0)
+            if (!(CDTO.nombreUsuario is string) || CDTO.nombreUsuario.Length <= 0)
             {
                 resultado = true; // ERROR: nombre del puesto es invalido.
             }
 
             // contraseña debe ser un string de longitud aceptable.
-            if (!(UDTO.contraseña is string) || UDTO.contraseña.Length <= 0)
+            if (!(CDTO.contraseña is string) || CDTO.contraseña.Length <= 0)
             {
                 resultado = true;// ERROR: descripcion es invalido.
             }
 
             // Nombre del usuario con logitud mayor a 15
-            if (UDTO.nombreUsuario.Length > 20)
+            if (CDTO.nombreUsuario.Length > 20)
             {
                 resultado = true; // ERROR: nombre del puesto con logitud mayor a 15.
             }
 
             // Contraseña del usuario con logitud mayor a 20
-            if (UDTO.contraseña.Length > 20)
+            if (CDTO.contraseña.Length > 20)
             {
                 resultado = true; // ERROR: codigo del puesto con logitud mayor a 10.
             }
 
             // Contraseña nula
-            if (UDTO.nombreUsuario.Length == 0)
+            if (CDTO.nombreUsuario.Length == 0)
             {
                 resultado = true; // ERROR: codigo del puesto con logitud mayor a 10.
             }
 
             // Usuario nulo
-            if (UDTO.contraseña.Length == 0)
+            if (CDTO.contraseña.Length == 0)
             {
                 resultado = true; // ERROR: codigo del puesto con logitud mayor a 10.
             }
@@ -60,10 +60,10 @@ namespace TP_DISEÑO.Gestores
             return resultado;
         }
 
-        public bool checkPassword(DTO.UsuarioDTO UDTO, consultor consultor)
+        public bool checkPassword(DTO.ConsultorDTO CDTO, consultor consultor)
         {
             bool valor = false;
-            if (UDTO.contraseña != consultor.Contrasenia) //Esta parte no me queda claro
+            if (CDTO.contraseña != consultor.Contrasenia) //Esta parte no me queda claro
             {
                 valor = true; //Existe un usuario con tal contraseña.
             }
@@ -71,22 +71,26 @@ namespace TP_DISEÑO.Gestores
             return valor;
         }
 
-        public bool ingresarUsuario(DTO.UsuarioDTO UDTO)
+        public bool ingresarUsuario(DTO.ConsultorDTO CDTO)
         {
             bool resultado = false;
 
             using (CapitalHumano3Entities context = new CapitalHumano3Entities())
             {
-                resultado = this.validarConsultor(UDTO, context);
+                resultado = this.validarConsultor(CDTO, context);
                 if (resultado == false)
                 {
-                    consultor consultor = this.consultorDAO.GetUsuarioByNombre(UDTO.nombreUsuario, context);
+                    consultor consultor = this.consultorDAO.GetUsuarioByNombre(CDTO.nombreUsuario, context);
                     if (consultor != null) {
-                        bool resultadocheck = this.checkPassword(UDTO, consultor);
+                        bool resultadocheck = this.checkPassword(CDTO, consultor);
                         if (resultadocheck == true)
                         {
                             resultado=true; //El error numero 7 indica que la contrasenia ingresada no es la correcta. 
                         }
+                    }
+                    else
+                    {
+                        resultado = true;
                     }
                 }
                 return resultado;

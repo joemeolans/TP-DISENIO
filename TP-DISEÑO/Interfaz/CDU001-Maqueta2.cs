@@ -26,9 +26,27 @@ namespace TP_DISEÑO.Interfaz
 
         private void Aceptar_Click(object sender, EventArgs e)
         {
-            if( (string.IsNullOrWhiteSpace(NombreUsuarioInput.Text) || (string.IsNullOrWhiteSpace(ContraseñaInput.Text))
+            if( (string.IsNullOrWhiteSpace(NombreUsuarioInput.Text)) || (string.IsNullOrWhiteSpace(ContraseñaInput.Text)) )
             {
-                MessageBox.Show("Debe completar ambos campos");
+                MessageBox.Show("Debe completar todos los campos.");
+            }
+            else
+            {
+                Gestores.GestorConsultor gestorConsultor = new Gestores.GestorConsultor();
+                DTO.ConsultorDTO consultordto = new DTO.ConsultorDTO();
+                consultordto.nombreUsuario = NombreUsuarioInput.Text;
+                consultordto.contraseña = ContraseñaInput.Text;
+                bool ingreso = gestorConsultor.ingresarUsuario(consultordto);
+                if (ingreso == true)
+                {
+                    MessageBox.Show("El nombre de usuario y/o contraseña son incorrectos.");
+                }
+                else
+                {
+                    Form ingresarMenuPrincipal = new MenuPrincipal();
+                    ingresarMenuPrincipal.Show();
+                    this.Hide();
+                }
             }
         }
     }
