@@ -241,13 +241,16 @@ namespace TP_DISEÑO.Gestores
             {
                 List<int> parametros = this.validarBuscaPuesto(pbDTO, context);
                 List<DTO.PuestoBuscadoDTO> puestosDTO = new List<DTO.PuestoBuscadoDTO>();
-                List<puestobuscado> puestos = this.puestoBuscadoDAO.GetPuestosBuscados(pbDTO.nombre, pbDTO.codigo, pbDTO.nombreEmpresa, parametros, context);
-                foreach(puestobuscado oPuesto in puestos)
+                if(parametros.Count != 0)
                 {
-                    DTO.PuestoBuscadoDTO oPuestoBuscadoDTO = new DTO.PuestoBuscadoDTO();
-                    oPuestoBuscadoDTO.nombre = oPuesto.Nombre;
-                    oPuestoBuscadoDTO.codigo = oPuesto.CodigoPuesto;
-                    oPuestoBuscadoDTO.nombreEmpresa = oPuesto.empresa.Nombre;
+                    List<puestobuscado> puestos = this.puestoBuscadoDAO.GetPuestosBuscados(pbDTO.nombre, pbDTO.codigo, pbDTO.nombreEmpresa, parametros, context);
+                    foreach (puestobuscado oPuesto in puestos)
+                    {
+                        DTO.PuestoBuscadoDTO oPuestoBuscadoDTO = new DTO.PuestoBuscadoDTO();
+                        oPuestoBuscadoDTO.nombre = oPuesto.Nombre;
+                        oPuestoBuscadoDTO.codigo = oPuesto.CodigoPuesto;
+                        oPuestoBuscadoDTO.nombreEmpresa = oPuesto.empresa.Nombre;
+                    }
                 }
                 return puestosDTO;
             }
