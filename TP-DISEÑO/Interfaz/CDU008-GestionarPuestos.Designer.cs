@@ -33,7 +33,6 @@
             this.VolverAlMenu = new System.Windows.Forms.Button();
             this.botonBuscar = new System.Windows.Forms.Button();
             this.textEmpresa = new System.Windows.Forms.Label();
-            this.EmpresaInput = new System.Windows.Forms.TextBox();
             this.textNombreDelPuesto = new System.Windows.Forms.Label();
             this.NombreDelPuestoInput = new System.Windows.Forms.TextBox();
             this.CerrarSesion = new System.Windows.Forms.Button();
@@ -50,6 +49,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BordeFotoCapitalHumano = new System.Windows.Forms.PictureBox();
             this.textoAdvertencia = new System.Windows.Forms.Label();
+            this.EmpresaInput = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidatosAEvaluar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).BeginInit();
@@ -119,13 +119,6 @@
             this.textEmpresa.TabIndex = 46;
             this.textEmpresa.Text = "Empresa";
             // 
-            // EmpresaInput
-            // 
-            this.EmpresaInput.Location = new System.Drawing.Point(461, 227);
-            this.EmpresaInput.Name = "EmpresaInput";
-            this.EmpresaInput.Size = new System.Drawing.Size(185, 20);
-            this.EmpresaInput.TabIndex = 45;
-            // 
             // textNombreDelPuesto
             // 
             this.textNombreDelPuesto.AutoSize = true;
@@ -191,6 +184,7 @@
             // 
             // dataGridViewCandidatosAEvaluar
             // 
+            this.dataGridViewCandidatosAEvaluar.AllowUserToAddRows = false;
             this.dataGridViewCandidatosAEvaluar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCandidatosAEvaluar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Código,
@@ -296,12 +290,21 @@
             this.textoAdvertencia.Text = "Como mínimo debe completar un campo";
             this.textoAdvertencia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // EmpresaInput
+            // 
+            this.EmpresaInput.FormattingEnabled = true;
+            this.EmpresaInput.Location = new System.Drawing.Point(461, 227);
+            this.EmpresaInput.Name = "EmpresaInput";
+            this.EmpresaInput.Size = new System.Drawing.Size(219, 21);
+            this.EmpresaInput.TabIndex = 53;
+            // 
             // CDU008
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aquamarine;
             this.ClientSize = new System.Drawing.Size(870, 861);
+            this.Controls.Add(this.EmpresaInput);
             this.Controls.Add(this.textoAdvertencia);
             this.Controls.Add(this.textoListaCandidatosAEvaluar);
             this.Controls.Add(this.botonEliminarPuesto);
@@ -309,7 +312,6 @@
             this.Controls.Add(this.dataGridViewCandidatosAEvaluar);
             this.Controls.Add(this.botonBuscar);
             this.Controls.Add(this.textEmpresa);
-            this.Controls.Add(this.EmpresaInput);
             this.Controls.Add(this.textNombreDelPuesto);
             this.Controls.Add(this.NombreDelPuestoInput);
             this.Controls.Add(this.pictureBox1);
@@ -322,7 +324,7 @@
             this.Controls.Add(this.NuevoPuesto);
             this.Name = "CDU008";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CDU008-GestionarPuestos";
+            this.Text = "s";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidatosAEvaluar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).EndInit();
@@ -337,7 +339,6 @@
         private System.Windows.Forms.Button VolverAlMenu;
         private System.Windows.Forms.Button botonBuscar;
         private System.Windows.Forms.Label textEmpresa;
-        private System.Windows.Forms.TextBox EmpresaInput;
         private System.Windows.Forms.Label textNombreDelPuesto;
         private System.Windows.Forms.TextBox NombreDelPuestoInput;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -354,5 +355,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreDelPuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Empresa;
         private System.Windows.Forms.Label textoAdvertencia;
+        private System.Windows.Forms.ComboBox EmpresaInput;
     }
 }

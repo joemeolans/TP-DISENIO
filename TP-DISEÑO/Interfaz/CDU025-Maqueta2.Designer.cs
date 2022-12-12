@@ -65,6 +65,7 @@
             this.botonFiltrar.TabIndex = 47;
             this.botonFiltrar.Text = "Filtrar";
             this.botonFiltrar.UseVisualStyleBackColor = false;
+            this.botonFiltrar.Click += new System.EventHandler(this.botonFiltrar_Click);
             // 
             // textFuncionOPuesto
             // 

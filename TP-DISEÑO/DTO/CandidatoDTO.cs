@@ -11,6 +11,8 @@ namespace TP_DISEÑO.DTO
         
         public int IdCandidato { get; set; }
         public string Clave { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
         public string Tipo { get; set; }
         public int NumDocumento { get; set; }
     }

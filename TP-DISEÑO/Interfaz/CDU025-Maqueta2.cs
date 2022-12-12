@@ -38,5 +38,13 @@ namespace TP_DISEÑO.Interfaz
             irAMaqueta3.Show();
             this.Hide();
         }
+
+        private void botonFiltrar_Click(object sender, EventArgs e)
+        {
+            if ((string.IsNullOrWhiteSpace(textNombreEmpresa.Text)) || (string.IsNullOrWhiteSpace(textFuncionOPuesto.Text)))
+            {
+                MessageBox.Show("Debe seleccionar todos los campos.");
+            }
+        }
     }
 }

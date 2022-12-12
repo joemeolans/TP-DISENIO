@@ -38,5 +38,29 @@ namespace TP_DISEÑO.Interfaz
             irAMaqueta2.Show();
             this.Hide();
         }
+
+        private void botonFiltrar_Click(object sender, EventArgs e)
+        {
+            if ((string.IsNullOrWhiteSpace(ApellidoInput.Text)) && (string.IsNullOrWhiteSpace(NombreInput.Text)) && (string.IsNullOrWhiteSpace(NroCandidatoInput.Text)))
+            {
+                MessageBox.Show("Debe completar como mínimo un campo.");
+            }
+            else
+            {
+                Gestores.GestorCandidato gestorCandidato = new Gestores.GestorCandidato();
+                DTO.CandidatoDTO candidatosdto = new DTO.CandidatoDTO();
+                candidatosdto.Apellido = ApellidoInput.Text;
+                candidatosdto.Nombre = NombreInput.Text;
+                candidatosdto.IdCandidato = Int32.Parse(NroCandidatoInput.Text.ToString());
+                List<DTO.CandidatoDTO> candidatos = gestorCandidato.filtrarCandidatos(candidatosdto);
+                for (int i = 0; i <= candidatos.Count(); i++)
+                {
+                    dataGridViewCandidatosAEvaluar.Rows.Add();
+                    dataGridViewCandidatosAEvaluar.Rows[i].Cells[1].Value = candidatos[i].NumDocumento;
+                    dataGridViewCandidatosAEvaluar.Rows[i].Cells[2].Value = candidatos[i].Nombre;
+                    dataGridViewCandidatosAEvaluar.Rows[i].Cells[3].Value = candidatos[i].Apellido;
+                }
+            }
+        }
     }
 }
