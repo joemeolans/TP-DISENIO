@@ -118,5 +118,25 @@ namespace TP_DISEÑO.Gestores
             return this.candidatoDAO.GetCandidatoById(idCandidato, context);
         }
 
+        public List<DTO.CandidatoDTO> filtrarCandidatos(DTO.CandidatoDTO candidatoDTO)
+        {
+            List<int> parametros = new List<int>();
+
+            if(candidatoDTO.Nombre != null)
+            {
+                parametros.Add(1);
+            }
+            if(candidatoDTO.Apellido != null)
+            {
+                parametros.Add(2);
+            }
+            if(candidatoDTO.IdCandidato != null)
+            {
+                parametros.Add(3);
+            }
+
+            return this.candidatoDAO.GetCandidatos(candidatoDTO.Nombre, candidatoDTO.Apellido, candidatoDTO.IdCandidato, parametros, context);
+        }
+
     }
 }

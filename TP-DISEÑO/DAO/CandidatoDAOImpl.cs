@@ -45,6 +45,44 @@ namespace TP_DISEÑO.DAO
             }
             return candidato;
         }
+
+        public List<DTO.CandidatoDTO> GetCandidatos
+            (string nombre, string apellido, int id, List<int> parametros, CapitalHumano3Entities context)
+        {
+            List<DTO.CandidatoDTO> candidatos = new List<CandidatoDTO>();
+
+            try
+            {
+                foreach(int oParametro in parametros)
+                {
+                    switch (oParametro)
+                    {
+                        case 1:
+                            candidatos.Concat(context.candidato.Where(c => c.Nombre == nombre).ToList());
+                            break;
+                        case 2:
+                            candidato.Concat(context.candidato.Where(c => c.Apellido == apellido).ToList());
+                            break;
+                        case 3:
+                            puestos.Concat(context.candidato.Find(id));
+                            break;
+                    }
+                }
+                puestos.Distinct().ToList();
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        System.Console.WriteLine("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
+
+            return candidatos;
+        }
     }
 
 }

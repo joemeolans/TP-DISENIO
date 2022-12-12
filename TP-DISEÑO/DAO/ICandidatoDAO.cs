@@ -10,6 +10,7 @@ namespace TP_DISEÑO.DAO
     interface ICandidatoDAO
     {
         candidato GetCandidatoByDoc(int numDoc, string TipoDoc, CapitalHumano3Entities context);
+        List<DTO.CandidatoDTO> GetCandidatos(string nombre, string apellido, int id, List<int> parametros, CapitalHumano3Entities context);
     }
 
 }
