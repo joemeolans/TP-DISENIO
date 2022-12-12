@@ -31,5 +31,12 @@ namespace TP_DISEÑO.Interfaz
                 this.Close();
             }
         }
+
+        private void BotonSig_Click(object sender, EventArgs e)
+        {
+            Form irAMaqueta2 = new CDU025_Maqueta2();
+            irAMaqueta2.Show();
+            this.Hide();
+        }
     }
 }

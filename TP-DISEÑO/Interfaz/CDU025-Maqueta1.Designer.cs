@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CDU0025_Maqueta1));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BordeFotoCapitalHumano = new System.Windows.Forms.PictureBox();
             this.CerrarSesion = new System.Windows.Forms.Button();
             this.textApellido = new System.Windows.Forms.Label();
             this.textoCompletarLosSigDatos = new System.Windows.Forms.Label();
@@ -46,40 +44,23 @@
             this.BotonQuitar = new System.Windows.Forms.Button();
             this.textoListaCandidatos = new System.Windows.Forms.Label();
             this.dataGridViewListaCandidatos = new System.Windows.Forms.DataGridView();
-            this.textoCandidatosAEvaluar = new System.Windows.Forms.Label();
             this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.NumeroCandidato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textoCandidatosAEvaluar = new System.Windows.Forms.Label();
             this.dataGridViewCandidatosAEvaluar = new System.Windows.Forms.DataGridView();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BordeFotoCapitalHumano = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaCandidatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidatosAEvaluar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(29, 30);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(94, 92);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 26;
-            this.pictureBox1.TabStop = false;
-            // 
-            // BordeFotoCapitalHumano
-            // 
-            this.BordeFotoCapitalHumano.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.BordeFotoCapitalHumano.Location = new System.Drawing.Point(18, 20);
-            this.BordeFotoCapitalHumano.Name = "BordeFotoCapitalHumano";
-            this.BordeFotoCapitalHumano.Size = new System.Drawing.Size(117, 114);
-            this.BordeFotoCapitalHumano.TabIndex = 27;
-            this.BordeFotoCapitalHumano.TabStop = false;
             // 
             // CerrarSesion
             // 
@@ -91,7 +72,7 @@
             this.CerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.CerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CerrarSesion.Location = new System.Drawing.Point(712, 21);
+            this.CerrarSesion.Location = new System.Drawing.Point(712, 20);
             this.CerrarSesion.Name = "CerrarSesion";
             this.CerrarSesion.Size = new System.Drawing.Size(131, 39);
             this.CerrarSesion.TabIndex = 25;
@@ -178,6 +159,7 @@
             this.BotonSig.TabIndex = 29;
             this.BotonSig.Text = "Siguiente";
             this.BotonSig.UseVisualStyleBackColor = false;
+            this.BotonSig.Click += new System.EventHandler(this.BotonSig_Click);
             // 
             // textNombre
             // 
@@ -272,17 +254,6 @@
             this.dataGridViewListaCandidatos.Size = new System.Drawing.Size(385, 402);
             this.dataGridViewListaCandidatos.TabIndex = 39;
             // 
-            // textoCandidatosAEvaluar
-            // 
-            this.textoCandidatosAEvaluar.AutoSize = true;
-            this.textoCandidatosAEvaluar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoCandidatosAEvaluar.Location = new System.Drawing.Point(443, 327);
-            this.textoCandidatosAEvaluar.Name = "textoCandidatosAEvaluar";
-            this.textoCandidatosAEvaluar.Size = new System.Drawing.Size(197, 25);
-            this.textoCandidatosAEvaluar.TabIndex = 40;
-            this.textoCandidatosAEvaluar.Text = "Candidatos a evaluar";
-            this.textoCandidatosAEvaluar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Seleccionar
             // 
             this.Seleccionar.HeaderText = "Seleccionar";
@@ -307,6 +278,17 @@
             // 
             this.Apellido.HeaderText = "Apellido";
             this.Apellido.Name = "Apellido";
+            // 
+            // textoCandidatosAEvaluar
+            // 
+            this.textoCandidatosAEvaluar.AutoSize = true;
+            this.textoCandidatosAEvaluar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textoCandidatosAEvaluar.Location = new System.Drawing.Point(443, 327);
+            this.textoCandidatosAEvaluar.Name = "textoCandidatosAEvaluar";
+            this.textoCandidatosAEvaluar.Size = new System.Drawing.Size(197, 25);
+            this.textoCandidatosAEvaluar.TabIndex = 40;
+            this.textoCandidatosAEvaluar.Text = "Candidatos a evaluar";
+            this.textoCandidatosAEvaluar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dataGridViewCandidatosAEvaluar
             // 
@@ -347,6 +329,25 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Apellido";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(29, 30);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(94, 92);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 26;
+            this.pictureBox1.TabStop = false;
+            // 
+            // BordeFotoCapitalHumano
+            // 
+            this.BordeFotoCapitalHumano.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.BordeFotoCapitalHumano.Location = new System.Drawing.Point(18, 20);
+            this.BordeFotoCapitalHumano.Name = "BordeFotoCapitalHumano";
+            this.BordeFotoCapitalHumano.Size = new System.Drawing.Size(117, 114);
+            this.BordeFotoCapitalHumano.TabIndex = 27;
+            this.BordeFotoCapitalHumano.TabStop = false;
+            // 
             // CDU0025_Maqueta1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -375,10 +376,10 @@
             this.Name = "CDU0025_Maqueta1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CDU0025_Maqueta1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaCandidatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidatosAEvaluar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
