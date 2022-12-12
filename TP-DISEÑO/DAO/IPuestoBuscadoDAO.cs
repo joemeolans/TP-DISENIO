@@ -11,5 +11,6 @@ namespace TP_DISEÑO.DAO
         void createPuestoBuscado(puestobuscado puestobuscado, CapitalHumano3Entities context);
         List<puestobuscado> GetPuestosBuscados(string nombre, string codigo, string nombreEmpresa, List<int> parametros, CapitalHumano3Entities context);
         List<competencia> GetAllCompetencias(int idPuesto, CapitalHumano3Entities context);
+        List<puestobuscado> GetPuestosByEmpresa(string nombreEmpresa, CapitalHumano3Entities context);
     }
 }

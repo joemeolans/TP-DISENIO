@@ -256,13 +256,25 @@ namespace TP_DISEÑO.Gestores
             }
             
         }
+
         public puestobuscado GetPuestoById(int idPuesto, CapitalHumano3Entities context)
         {
             return this.puestoBuscadoDAO.GetPuestobuscado(idPuesto, context);
         }
+
         public List<competencia> GetAllCompetencias(int idPuesto, CapitalHumano3Entities context)
         {
             return this.puestoBuscadoDAO.GetAllCompetencias(idPuesto, context);
+        }
+
+        public List<DTO.PuestoBuscadoDTO> GetPuestosByEmpresa(string nombreEmpresa)
+        {
+            List<DTO.PuestoBuscadoDTO> pbDTO = new List<DTO.PuestoBuscadoDTO>();
+            using(CapitalHumano3Entities context = new CapitalHumano3Entities())
+            {
+                pbDTO.Concat(this.puestoBuscadoDAO.GetPuestosByEmpresa(nombreEmpresa, context));
+            }
+            return pbDTO;
         }
     }
 }
