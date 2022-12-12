@@ -56,13 +56,44 @@ namespace TP_DISEÑO.Interfaz
                 List<DTO.CandidatoDTO> candidatos = gestorCandidato.filtrarCandidatos(candidatosdto);
                 for (int i = 0; i <= candidatos.Count(); i++)
                 {
-                    dataGridViewCandidatosAEvaluar.Rows.Add();
-                    dataGridViewCandidatosAEvaluar.Rows[i].Cells[1].Value = candidatos[i].NumDocumento;
-                    dataGridViewCandidatosAEvaluar.Rows[i].Cells[2].Value = candidatos[i].Nombre;
-                    dataGridViewCandidatosAEvaluar.Rows[i].Cells[3].Value = candidatos[i].Apellido;
+                    dataGridViewListaCandidatos.Rows.Add();
+                    dataGridViewListaCandidatos.Rows[i].Cells[1].Value = candidatos[i].IdCandidato;
+                    dataGridViewListaCandidatos.Rows[i].Cells[2].Value = candidatos[i].Nombre;
+                    dataGridViewListaCandidatos.Rows[i].Cells[3].Value = candidatos[i].Apellido;
                 }
             }
         }
 
+        private void BotonAgregar_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            foreach(DataGridViewRow fila in dataGridViewListaCandidatos.Rows)
+            {
+                if(fila.Cells[0].Value.ToString() == "1")
+                {
+                    dataGridViewCandidatosAEvaluar.Rows.Add();
+                    dataGridViewCandidatosAEvaluar.Rows[i].Cells[1].Value = fila.Cells[1].Value;
+                    dataGridViewCandidatosAEvaluar.Rows[i].Cells[2].Value = fila.Cells[2].Value;
+                    dataGridViewCandidatosAEvaluar.Rows[i].Cells[3].Value = fila.Cells[3].Value;
+                    i++;
+                }
+            }
+        }
+
+        private void BotonQuitar_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            foreach (DataGridViewRow fila in dataGridViewCandidatosAEvaluar.Rows)
+            {
+                if (fila.Cells[0].Value.ToString() == "1")
+                {
+                    dataGridViewListaCandidatos.Rows.Add();
+                    dataGridViewListaCandidatos.Rows[i].Cells[1].Value = fila.Cells[1].Value;
+                    dataGridViewListaCandidatos.Rows[i].Cells[2].Value = fila.Cells[2].Value;
+                    dataGridViewListaCandidatos.Rows[i].Cells[3].Value = fila.Cells[3].Value;
+                    i++;
+                }
+            }
+        }
     }
 }

@@ -125,6 +125,7 @@
             this.BotonAgregar.TabIndex = 30;
             this.BotonAgregar.Text = "Agregar";
             this.BotonAgregar.UseVisualStyleBackColor = false;
+            this.BotonAgregar.Click += new System.EventHandler(this.BotonAgregar_Click);
             // 
             // BotonVolver
             // 
@@ -230,6 +231,7 @@
             this.BotonQuitar.TabIndex = 37;
             this.BotonQuitar.Text = "Quitar";
             this.BotonQuitar.UseVisualStyleBackColor = false;
+            this.BotonQuitar.Click += new System.EventHandler(this.BotonQuitar_Click);
             // 
             // textoListaCandidatos
             // 
