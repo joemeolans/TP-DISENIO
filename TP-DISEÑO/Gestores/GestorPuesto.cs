@@ -270,9 +270,15 @@ namespace TP_DISEÑO.Gestores
         public List<DTO.PuestoBuscadoDTO> GetPuestosByEmpresa(string nombreEmpresa)
         {
             List<DTO.PuestoBuscadoDTO> pbDTO = new List<DTO.PuestoBuscadoDTO>();
+           
             using(CapitalHumano3Entities context = new CapitalHumano3Entities())
             {
-                pbDTO.Concat(this.puestoBuscadoDAO.GetPuestosByEmpresa(nombreEmpresa, context));
+                List<puestobuscado> puestos = this.puestoBuscadoDAO.GetPuestosByEmpresa(nombreEmpresa, context);
+                foreach(var oPuesto in puestos)
+                {
+                    DTO.PuestoBuscadoDTO oPuestoDTO = new DTO.PuestoBuscadoDTO();
+                    oPuestoDTO.nombre = oPuesto.Nombre;
+                }
             }
             return pbDTO;
         }
