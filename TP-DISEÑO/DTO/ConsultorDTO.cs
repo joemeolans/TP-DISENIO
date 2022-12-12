@@ -6,15 +6,9 @@ using System.Threading.Tasks;
 
 namespace TP_DISEÑO.DTO
 {
-    internal class UsuarioDTO
+    internal class ConsultorDTO
     {
-
-        public string nombre { get; set; }
-        public string apellido { get; set; }
         public string nombreUsuario { get; set; }
         public string contraseña { get; set; }
-        public int numDocumento { get; set; }
-        public string Tipo { get; set; }
-
     }
 }
