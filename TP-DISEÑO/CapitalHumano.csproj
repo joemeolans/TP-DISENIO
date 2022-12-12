@@ -102,8 +102,6 @@
     <Compile Include="DAO\PuestoBuscadoDAOImpl.cs" />
     <Compile Include="DTO\CandidatoDTO.cs" />
     <Compile Include="DTO\PuestoBuscadoDTO.cs" />
-    <Compile Include="DTO\ResultadoCuestionarioDTO.cs" />
-    <Compile Include="DTO\ResultadoIngresoDTO.cs" />
     <Compile Include="DTO\UsuarioDTO.cs" />
     <Compile Include="empresa.cs">
       <DependentUpon>CapitalHumano3.tt</DependentUpon>

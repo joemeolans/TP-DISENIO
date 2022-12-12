@@ -26,9 +26,10 @@ namespace TP_DISEÑO.Interfaz
 
         private void Aceptar_Click(object sender, EventArgs e)
         {
-            Form irAlMenuPrincipal = new MenuPrincipal();
-            irAlMenuPrincipal.Show();
-            this.Hide();
+            if( (string.IsNullOrWhiteSpace(NombreUsuarioInput.Text) || (string.IsNullOrWhiteSpace(ContraseñaInput.Text))
+            {
+                MessageBox.Show("Debe completar ambos campos");
+            }
         }
     }
 }
