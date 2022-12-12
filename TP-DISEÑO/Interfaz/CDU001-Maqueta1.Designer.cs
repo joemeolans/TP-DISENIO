@@ -35,6 +35,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BordeFotoCapitalHumano = new System.Windows.Forms.PictureBox();
             this.RealizarCuestionarioLOGO = new System.Windows.Forms.PictureBox();
+            this.textoBienvenida = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.IngresarComoUsuarioConsultorLOGO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).BeginInit();
@@ -89,7 +90,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(301, 29);
+            this.pictureBox1.Location = new System.Drawing.Point(305, 92);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(245, 245);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -99,7 +100,7 @@
             // BordeFotoCapitalHumano
             // 
             this.BordeFotoCapitalHumano.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.BordeFotoCapitalHumano.Location = new System.Drawing.Point(290, 19);
+            this.BordeFotoCapitalHumano.Location = new System.Drawing.Point(294, 82);
             this.BordeFotoCapitalHumano.Name = "BordeFotoCapitalHumano";
             this.BordeFotoCapitalHumano.Size = new System.Drawing.Size(268, 267);
             this.BordeFotoCapitalHumano.TabIndex = 1;
@@ -117,12 +118,23 @@
             this.RealizarCuestionarioLOGO.TabStop = false;
             this.RealizarCuestionarioLOGO.Click += new System.EventHandler(this.RealizarCuestionarioLOGO_Click);
             // 
+            // textoBienvenida
+            // 
+            this.textoBienvenida.AutoSize = true;
+            this.textoBienvenida.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textoBienvenida.Location = new System.Drawing.Point(235, 16);
+            this.textoBienvenida.Name = "textoBienvenida";
+            this.textoBienvenida.Size = new System.Drawing.Size(396, 63);
+            this.textoBienvenida.TabIndex = 6;
+            this.textoBienvenida.Text = "BIENVENIDOS";
+            // 
             // CDU001_Maqueta1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aquamarine;
             this.ClientSize = new System.Drawing.Size(870, 561);
+            this.Controls.Add(this.textoBienvenida);
             this.Controls.Add(this.RealizarCuestionarioLOGO);
             this.Controls.Add(this.IngresarComoUsuarioConsultorLOGO);
             this.Controls.Add(this.RealizarCuestionarioBOTON);
@@ -137,6 +149,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RealizarCuestionarioLOGO)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -148,5 +161,6 @@
         private System.Windows.Forms.Button RealizarCuestionarioBOTON;
         private System.Windows.Forms.PictureBox IngresarComoUsuarioConsultorLOGO;
         private System.Windows.Forms.PictureBox RealizarCuestionarioLOGO;
+        private System.Windows.Forms.Label textoBienvenida;
     }
 }
