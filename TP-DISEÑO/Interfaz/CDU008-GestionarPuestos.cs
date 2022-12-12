@@ -38,5 +38,13 @@ namespace TP_DISEÑO.Interfaz
                 this.Close();
             }
         }
+
+        private void botonBuscar_Click(object sender, EventArgs e)
+        {
+            if ( (string.IsNullOrWhiteSpace(CodigoDelPuestoInput.Text)) && (string.IsNullOrWhiteSpace(NombreDelPuestoInput.Text)) && (string.IsNullOrWhiteSpace(EmpresaInput.Text)) )
+            {
+                MessageBox.Show("Debe completar como mínimo un campo.");
+            }
+        }
     }
 }

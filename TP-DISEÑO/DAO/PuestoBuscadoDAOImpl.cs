@@ -67,7 +67,7 @@ namespace TP_DISEÑO.DAO
             }
             return puestos;
         }
-        public puestobuscado GetPuestobuscado(int idPuesto, CapitalHumano2Entities context)
+        public puestobuscado GetPuestobuscado(int idPuesto, CapitalHumano3Entities context)
         {
             puestobuscado puestobuscado = new puestobuscado();
             try

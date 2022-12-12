@@ -28,7 +28,7 @@ namespace TP_DISEÑO.DAO
             }
             return candidato;
         }
-        public candidato GetCandidatoById(int idCandidato, CapitalHumano2Entities context)
+        public candidato GetCandidatoById(int idCandidato, CapitalHumano3Entities context)
         {
             candidato candidato = null;
             try

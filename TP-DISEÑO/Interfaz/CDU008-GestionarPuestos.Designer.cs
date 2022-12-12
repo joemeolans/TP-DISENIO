@@ -107,6 +107,7 @@
             this.botonBuscar.TabIndex = 47;
             this.botonBuscar.Text = "Buscar";
             this.botonBuscar.UseVisualStyleBackColor = false;
+            this.botonBuscar.Click += new System.EventHandler(this.botonBuscar_Click);
             // 
             // textEmpresa
             // 

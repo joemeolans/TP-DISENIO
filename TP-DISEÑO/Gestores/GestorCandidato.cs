@@ -115,9 +115,9 @@ namespace TP_DISEÑO.Gestores
             return cuestionario;
 
         }
-        public candidato GetCandidatoById(int idCandidato)
+        public candidato GetCandidatoById(int idCandidato, CapitalHumano3Entities context)
         {
-            return this.candidatoDAO.GetCandidatoById(idCandidato);
+            return this.candidatoDAO.GetCandidatoById(idCandidato, context);
         }
 
     }
