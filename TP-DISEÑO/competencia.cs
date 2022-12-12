@@ -23,11 +23,12 @@ namespace TP_DISEÑO
     
         public int IdCompetencia { get; set; }
         public string NombreCompetencia { get; set; }
-        public string TipoCompetencia { get; set; }
+        public int TipoCompetencia { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<factor> factor { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<puestobuscadocompetencia> puestobuscadocompetencia { get; set; }
+        public virtual tipocompetencia tipocompetencia1 { get; set; }
     }
 }

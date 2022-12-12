@@ -14,7 +14,19 @@ namespace TP_DISEÑO
     
     public partial class opcionrespuesta
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public opcionrespuesta()
+        {
+            this.itemrespuesta = new HashSet<itemrespuesta>();
+            this.pregunta = new HashSet<pregunta>();
+        }
+    
         public int IdOpcionRespuesta { get; set; }
         public int NumeroOpcion { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<itemrespuesta> itemrespuesta { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<pregunta> pregunta { get; set; }
     }
 }

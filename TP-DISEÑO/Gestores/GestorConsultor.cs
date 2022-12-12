@@ -16,7 +16,7 @@ namespace TP_DISEÑO.Gestores
         {
             this.consultorDAO = new DAO.ConsultorDAOImpl();
         }
-        public List<int> validarConsultor(DTO.UsuarioDTO UDTO, CapitalHumano2Entities context)
+        public List<int> validarConsultor(DTO.UsuarioDTO UDTO, CapitalHumano3Entities context)
         {
             List<int> errores = new List<int>();
 
@@ -95,7 +95,7 @@ namespace TP_DISEÑO.Gestores
         {
             List<int> resultadoValidacion = new List<int>();
 
-            using (CapitalHumano2Entities context = new CapitalHumano2Entities())
+            using (CapitalHumano3Entities context = new CapitalHumano3Entities())
             {
 
                 resultadoValidacion = this.validarConsultor(UDTO, context);

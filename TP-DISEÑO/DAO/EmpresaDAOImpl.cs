@@ -8,7 +8,7 @@ namespace TP_DISEÑO.DAO
 {
     class EmpresaDAOImpl : IEmpresaDAO
     {
-        public empresa GetEmpresaByNombre(string nombre, CapitalHumano2Entities context)
+        public empresa GetEmpresaByNombre(string nombre, CapitalHumano3Entities context)
         {
             empresa empresa = null;
             try
@@ -21,7 +21,7 @@ namespace TP_DISEÑO.DAO
             }
             return empresa;
         }
-        public List<string> GetAllEmpresas(CapitalHumano2Entities context)
+        public List<string> GetAllEmpresas(CapitalHumano3Entities context)
         {
             List<string> nombresempresas = new List<string>();
             var empresas = context.empresa;

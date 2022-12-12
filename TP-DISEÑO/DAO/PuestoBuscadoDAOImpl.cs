@@ -10,7 +10,7 @@ namespace TP_DISEÑO.DAO
     class PuestoBuscadoDAOImpl : IPuestoBuscadoDAO
     {
 
-        public void createPuestoBuscado(puestobuscado puestobuscado, CapitalHumano2Entities context)
+        public void createPuestoBuscado(puestobuscado puestobuscado, CapitalHumano3Entities context)
         {
             try
             {
@@ -32,7 +32,7 @@ namespace TP_DISEÑO.DAO
             }
         }
 
-        public List<puestobuscado> GetPuestosBuscados(string nombre, string codigo, string nombreEmpresa, List<int> parametros, CapitalHumano2Entities context)
+        public List<puestobuscado> GetPuestosBuscados(string nombre, string codigo, string nombreEmpresa, List<int> parametros, CapitalHumano3Entities context)
         {
             List<puestobuscado> puestos = new List<puestobuscado>();
 

@@ -10,7 +10,7 @@ namespace TP_DISEÑO.DAO
     class ConsultorDAOImpl : IconsultorDAO
     {
 
-        public consultor GetUsuarioByNombre(string nombreUsuarioConsultor, CapitalHumano2Entities context)
+        public consultor GetUsuarioByNombre(string nombreUsuarioConsultor, CapitalHumano3Entities context)
         {
             consultor consultor = null;
             try

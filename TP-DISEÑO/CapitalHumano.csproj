@@ -56,22 +56,37 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="bloque.cs">
-      <DependentUpon>EntityFramework.tt</DependentUpon>
+      <DependentUpon>CapitalHumano3.tt</DependentUpon>
     </Compile>
     <Compile Include="candidato.cs">
-      <DependentUpon>EntityFramework.tt</DependentUpon>
+      <DependentUpon>CapitalHumano3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CapitalHumano3.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CapitalHumano3.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CapitalHumano3.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CapitalHumano3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CapitalHumano3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CapitalHumano3.edmx</DependentUpon>
     </Compile>
     <Compile Include="competencia.cs">
-      <DependentUpon>EntityFramework.tt</DependentUpon>
+      <DependentUpon>CapitalHumano3.tt</DependentUpon>
     </Compile>
     <Compile Include="competenciacuestionario.cs">
-      <DependentUpon>EntityFramework.tt</DependentUpon>
+      <DependentUpon>CapitalHumano3.tt</DependentUpon>
     </Compile>
     <Compile Include="consultor.cs">
-      <DependentUpon>EntityFramework.tt</DependentUpon>
+      <DependentUpon>CapitalHumano3.tt</DependentUpon>
     </Compile>
     <Compile Include="cuestionario.cs">
-      <DependentUpon>EntityFramework.tt</DependentUpon>
+      <DependentUpon>CapitalHumano3.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\CandidatoDAOImpl.cs" />
     <Compile Include="DAO\CompetenciaDAOImpl.cs" />
@@ -88,37 +103,22 @@
     <Compile Include="DTO\ResultadoIngresoDTO.cs" />
     <Compile Include="DTO\UsuarioDTO.cs" />
     <Compile Include="empresa.cs">
-      <DependentUpon>EntityFramework.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFramework.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EntityFramework.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFramework.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EntityFramework.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFramework.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EntityFramework.edmx</DependentUpon>
+      <DependentUpon>CapitalHumano3.tt</DependentUpon>
     </Compile>
     <Compile Include="estado.cs">
-      <DependentUpon>EntityFramework.tt</DependentUpon>
+      <DependentUpon>CapitalHumano3.tt</DependentUpon>
     </Compile>
     <Compile Include="estadodeaprobacion.cs">
-      <DependentUpon>EntityFramework.tt</DependentUpon>
+      <DependentUpon>CapitalHumano3.tt</DependentUpon>
     </Compile>
     <Compile Include="evaluacion.cs">
-      <DependentUpon>EntityFramework.tt</DependentUpon>
+      <DependentUpon>CapitalHumano3.tt</DependentUpon>
     </Compile>
     <Compile Include="factor.cs">
-      <DependentUpon>EntityFramework.tt</DependentUpon>
+      <DependentUpon>CapitalHumano3.tt</DependentUpon>
     </Compile>
     <Compile Include="factorcuestionario.cs">
-      <DependentUpon>EntityFramework.tt</DependentUpon>
+      <DependentUpon>CapitalHumano3.tt</DependentUpon>
     </Compile>
     <Compile Include="Gestores\GestorCandidato.cs" />
     <Compile Include="Gestores\GestorConsultor.cs" />
@@ -184,19 +184,19 @@
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="itemrespuesta.cs">
-      <DependentUpon>EntityFramework.tt</DependentUpon>
+      <DependentUpon>CapitalHumano3.tt</DependentUpon>
     </Compile>
     <Compile Include="itemrespuestapregunta.cs">
-      <DependentUpon>EntityFramework.tt</DependentUpon>
+      <DependentUpon>CapitalHumano3.tt</DependentUpon>
     </Compile>
     <Compile Include="opcionrespuesta.cs">
-      <DependentUpon>EntityFramework.tt</DependentUpon>
+      <DependentUpon>CapitalHumano3.tt</DependentUpon>
     </Compile>
     <Compile Include="pregunta.cs">
-      <DependentUpon>EntityFramework.tt</DependentUpon>
+      <DependentUpon>CapitalHumano3.tt</DependentUpon>
     </Compile>
     <Compile Include="preguntacuestionario.cs">
-      <DependentUpon>EntityFramework.tt</DependentUpon>
+      <DependentUpon>CapitalHumano3.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -206,19 +206,19 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="puestobuscado.cs">
-      <DependentUpon>EntityFramework.tt</DependentUpon>
+      <DependentUpon>CapitalHumano3.tt</DependentUpon>
     </Compile>
     <Compile Include="puestobuscadocompetencia.cs">
-      <DependentUpon>EntityFramework.tt</DependentUpon>
+      <DependentUpon>CapitalHumano3.tt</DependentUpon>
     </Compile>
     <Compile Include="respuestacuestionario.cs">
-      <DependentUpon>EntityFramework.tt</DependentUpon>
+      <DependentUpon>CapitalHumano3.tt</DependentUpon>
     </Compile>
     <Compile Include="tipocompetencia.cs">
-      <DependentUpon>EntityFramework.tt</DependentUpon>
+      <DependentUpon>CapitalHumano3.tt</DependentUpon>
     </Compile>
     <Compile Include="tipodocumento.cs">
-      <DependentUpon>EntityFramework.tt</DependentUpon>
+      <DependentUpon>CapitalHumano3.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Interfaz\CDU001-Maqueta1.resx">
       <DependentUpon>CDU001-Maqueta1.cs</DependentUpon>
@@ -255,12 +255,12 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="EntityFramework.edmx">
+    <EntityDeploy Include="CapitalHumano3.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EntityFramework.Designer.cs</LastGenOutput>
+      <LastGenOutput>CapitalHumano3.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="EntityFramework.edmx.diagram">
-      <DependentUpon>EntityFramework.edmx</DependentUpon>
+    <None Include="CapitalHumano3.edmx.diagram">
+      <DependentUpon>CapitalHumano3.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -280,15 +280,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="EntityFramework.Context.tt">
+    <Content Include="CapitalHumano3.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EntityFramework.edmx</DependentUpon>
-      <LastGenOutput>EntityFramework.Context.cs</LastGenOutput>
+      <DependentUpon>CapitalHumano3.edmx</DependentUpon>
+      <LastGenOutput>CapitalHumano3.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="EntityFramework.tt">
+    <Content Include="CapitalHumano3.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EntityFramework.edmx</DependentUpon>
-      <LastGenOutput>EntityFramework.cs</LastGenOutput>
+      <DependentUpon>CapitalHumano3.edmx</DependentUpon>
+      <LastGenOutput>CapitalHumano3.cs</LastGenOutput>
     </Content>
     <Content Include="Resources\CAPITALHUMANO1.png" />
     <Content Include="Resources\REALIZAR CUESTIONARIO.png" />

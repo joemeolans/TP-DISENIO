@@ -14,7 +14,16 @@ namespace TP_DISEÑO
     
     public partial class tipocompetencia
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tipocompetencia()
+        {
+            this.competencia = new HashSet<competencia>();
+        }
+    
         public int IdTipoCompetencia { get; set; }
         public string TipoCompetencia1 { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<competencia> competencia { get; set; }
     }
 }
