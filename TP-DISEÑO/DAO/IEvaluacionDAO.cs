@@ -7,9 +7,9 @@ using TP_DISEÑO.DTO;
 
 namespace TP_DISEÑO.DAO
 {
-    interface ICandidatoDAO
+    interface IEvaluacionDAO
     {
-        candidato GetCandidatoByDoc(int numDoc, string TipoDoc, CapitalHumano3Entities context);
+        void createEvaluacion(evaluacion evaluacion, CapitalHumano3Entities context);
     }
 
 }
