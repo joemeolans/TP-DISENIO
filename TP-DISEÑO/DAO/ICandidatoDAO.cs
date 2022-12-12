@@ -7,7 +7,7 @@ using TP_DISEÑO.DTO;
 
 namespace TP_DISEÑO.DAO
 {
-    interface ICandidatoDAO
+    interface ICandidatoDAOs
     {
         candidato GetCandidatoByDoc(int numDoc, string TipoDoc, CapitalHumano3Entities context);
     }

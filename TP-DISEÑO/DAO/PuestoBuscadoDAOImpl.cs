@@ -67,5 +67,18 @@ namespace TP_DISEÑO.DAO
             }
             return puestos;
         }
+        public puestobuscado GetPuestobuscado(int idPuesto, CapitalHumano2Entities context)
+        {
+            puestobuscado puestobuscado = new puestobuscado();
+            try
+            {
+                puestobuscado = context.puestobuscado.Find(idPuesto);
+            }
+            catch
+            {
+                Console.WriteLine("{0} Exception caught.", e);
+            }
+            return puestobuscado;
+        }
     }
 }
