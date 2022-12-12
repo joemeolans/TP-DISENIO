@@ -124,6 +124,7 @@
             this.comboBoxNombreEmpresa.Size = new System.Drawing.Size(247, 21);
             this.comboBoxNombreEmpresa.TabIndex = 48;
             this.comboBoxNombreEmpresa.Text = "Seleccione una empresa";
+            this.comboBoxNombreEmpresa.SelectedIndexChanged += new System.EventHandler(this.comboBoxNombreEmpresa_SelectedIndexChanged);
             // 
             // comboBoxFuncionOPuesto
             // 
@@ -246,6 +247,7 @@
             this.Name = "CDU025_Maqueta2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CDU025_Maqueta2";
+            this.Load += new System.EventHandler(this.CDU025_Maqueta2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaCompetencias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).EndInit();

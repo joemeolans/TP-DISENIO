@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TP_DISEÑO.Gestores;
 
 namespace TP_DISEÑO.Interfaz
 {
@@ -44,6 +45,28 @@ namespace TP_DISEÑO.Interfaz
             if ((string.IsNullOrWhiteSpace(textNombreEmpresa.Text)) || (string.IsNullOrWhiteSpace(textFuncionOPuesto.Text)))
             {
                 MessageBox.Show("Debe seleccionar todos los campos.");
+            }
+        }
+
+        private void CDU025_Maqueta2_Load(object sender, EventArgs e)
+        {
+            GestorPuesto gestor = new GestorPuesto();
+            List<String> empresas = gestor.GetAllEmpresas();
+            foreach (String r in empresas)
+            {
+                comboBoxNombreEmpresa.Items.Add(r);
+            }
+           
+        }
+
+        private void comboBoxNombreEmpresa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            GestorPuesto gestor = new GestorPuesto();
+            List<String> empresas = gestor.GetPuestosByEmpresa(comboBoxNombreEmpresa.Text);
+            foreach (String r in empresas)
+            {
+                comboBoxNombreEmpresa.Items.Add(r);
             }
         }
     }
