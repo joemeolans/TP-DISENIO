@@ -35,9 +35,16 @@ namespace TP_DISEÑO.Interfaz
 
         private void BotonSig_Click(object sender, EventArgs e)
         {
-            Form irAMaqueta2 = new CDU025_Maqueta2();
-            irAMaqueta2.Show();
-            this.Hide();
+            if(dataGridViewCandidatosAEvaluar.Rows.Count == 0)
+            {
+                MessageBox.Show("No ha agregado ningún candidato a la lista de Candidatos a Evaluar. Por favor agregue alguno.");
+            }
+            else
+            {
+                Form irAMaqueta2 = new CDU025_Maqueta2();
+                irAMaqueta2.Show();
+                this.Hide();
+            }
         }
 
         private void botonFiltrar_Click(object sender, EventArgs e)
@@ -111,6 +118,10 @@ namespace TP_DISEÑO.Interfaz
                         {
                             resultado = true;
                         }
+                        else
+                        {
+                            resultado = false;
+                        }
                     }
                     if (resultado == false)
                     {
@@ -127,16 +138,12 @@ namespace TP_DISEÑO.Interfaz
 
         private void BotonQuitar_Click(object sender, EventArgs e)
         {
-            int i = 0;
             foreach (DataGridViewRow fila in dataGridViewCandidatosAEvaluar.Rows)
             {
-                if (fila.Cells[0].Value.ToString() == "1")
+                if (fila.Cells[0].Value != null && fila.Cells[0].Value.Equals(true))
                 {
-                    dataGridViewListaCandidatos.Rows.Add();
-                    dataGridViewListaCandidatos.Rows[i].Cells[1].Value = fila.Cells[1].Value;
-                    dataGridViewListaCandidatos.Rows[i].Cells[2].Value = fila.Cells[2].Value;
-                    dataGridViewListaCandidatos.Rows[i].Cells[3].Value = fila.Cells[3].Value;
-                    i++;
+                    dataGridViewCandidatosAEvaluar.Rows.RemoveAt(fila.Index);
+                    
                 }
             }
         }

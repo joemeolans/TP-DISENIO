@@ -293,12 +293,13 @@ namespace TP_DISEÑO.Gestores
 
             using (CapitalHumano3Entities context = new CapitalHumano3Entities())
             {
-                List<puestobuscadocompetencia> pbCompetencias = new List<puestobuscadocompetencia>();
+                List<puestobuscadocompetencia> pbCompetencias = this.puestoBuscadoDAO.GetPBCByEmpresaPuesto(nombreEmpresa, nombrePuesto, context);
                 foreach(var oCompetencia in pbCompetencias)
                 {
                     DTO.CompetenciaDTO oCompetenciaDTO = new DTO.CompetenciaDTO();
                     oCompetenciaDTO.NombreCompetencia = oCompetencia.competencia.NombreCompetencia;
                     oCompetenciaDTO.PonderacionMinima = oCompetencia.PuntajeMinimo;
+                    compDTO.Add(oCompetenciaDTO);
                 }
             }
             return compDTO;

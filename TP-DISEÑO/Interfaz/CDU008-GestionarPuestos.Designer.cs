@@ -40,6 +40,10 @@
             this.CompletarLosSigDatos = new System.Windows.Forms.Label();
             this.CodigoDelPuestoInput = new System.Windows.Forms.TextBox();
             this.dataGridViewCandidatosAEvaluar = new System.Windows.Forms.DataGridView();
+            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreDelPuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.botonModificarPuesto = new System.Windows.Forms.Button();
             this.botonEliminarPuesto = new System.Windows.Forms.Button();
             this.textoListaCandidatosAEvaluar = new System.Windows.Forms.Label();
@@ -47,10 +51,6 @@
             this.BordeFotoCapitalHumano = new System.Windows.Forms.PictureBox();
             this.textoAdvertencia = new System.Windows.Forms.Label();
             this.EmpresaInput = new System.Windows.Forms.TextBox();
-            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreDelPuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidatosAEvaluar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).BeginInit();
@@ -199,6 +199,32 @@
             this.dataGridViewCandidatosAEvaluar.Size = new System.Drawing.Size(824, 318);
             this.dataGridViewCandidatosAEvaluar.TabIndex = 48;
             // 
+            // Código
+            // 
+            this.Código.HeaderText = "Código";
+            this.Código.Name = "Código";
+            this.Código.Width = 150;
+            // 
+            // NombreDelPuesto
+            // 
+            this.NombreDelPuesto.HeaderText = "Nombre del puesto";
+            this.NombreDelPuesto.Name = "NombreDelPuesto";
+            this.NombreDelPuesto.Width = 300;
+            // 
+            // Empresa
+            // 
+            this.Empresa.HeaderText = "Empresa";
+            this.Empresa.Name = "Empresa";
+            this.Empresa.Width = 204;
+            // 
+            // Seleccionar
+            // 
+            this.Seleccionar.HeaderText = "Seleccionar";
+            this.Seleccionar.Name = "Seleccionar";
+            this.Seleccionar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Seleccionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Seleccionar.Width = 150;
+            // 
             // botonModificarPuesto
             // 
             this.botonModificarPuesto.BackColor = System.Drawing.Color.MediumTurquoise;
@@ -239,9 +265,9 @@
             this.textoListaCandidatosAEvaluar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textoListaCandidatosAEvaluar.Location = new System.Drawing.Point(27, 325);
             this.textoListaCandidatosAEvaluar.Name = "textoListaCandidatosAEvaluar";
-            this.textoListaCandidatosAEvaluar.Size = new System.Drawing.Size(374, 31);
+            this.textoListaCandidatosAEvaluar.Size = new System.Drawing.Size(220, 31);
             this.textoListaCandidatosAEvaluar.TabIndex = 51;
-            this.textoListaCandidatosAEvaluar.Text = "Lista de candidatos a evaluar:";
+            this.textoListaCandidatosAEvaluar.Text = "Lista de puestos:";
             this.textoListaCandidatosAEvaluar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
@@ -280,32 +306,6 @@
             this.EmpresaInput.Name = "EmpresaInput";
             this.EmpresaInput.Size = new System.Drawing.Size(207, 20);
             this.EmpresaInput.TabIndex = 53;
-            // 
-            // Código
-            // 
-            this.Código.HeaderText = "Código";
-            this.Código.Name = "Código";
-            this.Código.Width = 150;
-            // 
-            // NombreDelPuesto
-            // 
-            this.NombreDelPuesto.HeaderText = "Nombre del puesto";
-            this.NombreDelPuesto.Name = "NombreDelPuesto";
-            this.NombreDelPuesto.Width = 300;
-            // 
-            // Empresa
-            // 
-            this.Empresa.HeaderText = "Empresa";
-            this.Empresa.Name = "Empresa";
-            this.Empresa.Width = 204;
-            // 
-            // Seleccionar
-            // 
-            this.Seleccionar.HeaderText = "Seleccionar";
-            this.Seleccionar.Name = "Seleccionar";
-            this.Seleccionar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Seleccionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Seleccionar.Width = 150;
             // 
             // CDU008
             // 

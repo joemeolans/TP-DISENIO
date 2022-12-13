@@ -144,7 +144,10 @@ namespace TP_DISEÑO.DAO
                 {
                     if(puestobuscado.Nombre == nombrePuesto)
                     {
-                        pbc.Concat(puestobuscado.puestobuscadocompetencia.ToList());
+                        foreach(var pbcompetencia in puestobuscado.puestobuscadocompetencia)
+                        {
+                            pbc.Add(pbcompetencia);
+                        }
                     }
                 }
             }

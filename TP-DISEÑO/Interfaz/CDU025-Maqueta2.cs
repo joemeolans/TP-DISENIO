@@ -43,17 +43,25 @@ namespace TP_DISEÑO.Interfaz
 
         private void botonFiltrar_Click(object sender, EventArgs e)
         {
-            if ((string.IsNullOrWhiteSpace(textNombreEmpresa.Text)) || (string.IsNullOrWhiteSpace(textFuncionOPuesto.Text)))
+            if ((comboBoxNombreEmpresa.Text.Equals("Seleccione una empresa") ) || (comboBoxFuncionOPuesto.Text.Equals("Seleccione una función o puesto")))
             {
                 MessageBox.Show("Debe seleccionar todos los campos.");
             }
             else
             {
                 GestorPuesto gestor = new GestorPuesto();
-                List<CompetenciaDTO> competencias = gestor.GetCompetenciasByEmpresaPuesto(textNombreEmpresa.Text, textFuncionOPuesto.Text);
+                List<CompetenciaDTO> competencias = gestor.GetCompetenciasByEmpresaPuesto(comboBoxNombreEmpresa.Text, comboBoxFuncionOPuesto.Text);
+                foreach(CompetenciaDTO compe in competencias)
+                {
+                    Console.WriteLine(compe.NombreCompetencia);
+                }
+
+
                 int i = 0;
 
-                foreach(CompetenciaDTO oCompetencia in competencias)
+                dataGridViewListaCompetencias.Rows.Clear();
+
+                foreach (CompetenciaDTO oCompetencia in competencias)
                 {
                     dataGridViewListaCompetencias.Rows.Add();
                     dataGridViewListaCompetencias.Rows[i].Cells[0].Value = oCompetencia.NombreCompetencia;
@@ -78,6 +86,8 @@ namespace TP_DISEÑO.Interfaz
 
         private void comboBoxNombreEmpresa_SelectedIndexChanged(object sender, EventArgs e)
         {
+            comboBoxFuncionOPuesto.Items.Clear();
+            comboBoxFuncionOPuesto.Text = "Seleccione una función o puesto"; 
             GestorPuesto gestor = new GestorPuesto();
             List<String> puestos = gestor.GetPuestosByEmpresa(comboBoxNombreEmpresa.Text);
             foreach (String r in puestos)
