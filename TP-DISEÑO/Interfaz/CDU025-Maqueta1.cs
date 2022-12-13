@@ -107,7 +107,7 @@ namespace TP_DISEÑO.Interfaz
                 {
                     for (int j = 0; j < dataGridViewCandidatosAEvaluar.Rows.Count; j++)
                     {
-                        if (dataGridViewCandidatosAEvaluar.Rows[j].Cells[1].Value == fila.Cells[1].Value)
+                        if (dataGridViewCandidatosAEvaluar.Rows[j].Cells[1].Value.Equals(fila.Cells[1].Value))
                         {
                             resultado = true;
                         }
