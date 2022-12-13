@@ -323,7 +323,7 @@
             this.Controls.Add(this.NuevoPuesto);
             this.Name = "CDU008";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "s";
+            this.Text = "CDU008-GestionarPuestos.cs";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidatosAEvaluar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).EndInit();

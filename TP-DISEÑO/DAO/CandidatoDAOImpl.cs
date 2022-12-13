@@ -62,7 +62,7 @@ namespace TP_DISEÑO.DAO
                             break;
                     }
                 }
-                candidatos.Distinct().ToList();
+                /*candidatos.Distinct().ToList();*/
             }
             catch (DbEntityValidationException dbEx)
             {

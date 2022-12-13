@@ -52,7 +52,15 @@ namespace TP_DISEÑO.Interfaz
                 DTO.CandidatoDTO candidatosdto = new DTO.CandidatoDTO();
                 candidatosdto.Apellido = ApellidoInput.Text;
                 candidatosdto.Nombre = NombreInput.Text;
-                candidatosdto.IdCandidato = Int32.Parse(NroCandidatoInput.Text.ToString());
+                try 
+                { 
+                    candidatosdto.IdCandidato = Int32.Parse(NroCandidatoInput.Text.ToString()); 
+                }
+                catch (Exception exec)
+                {
+                    Console.WriteLine("{0} Exception caught.", exec);
+                }
+
                 List<DTO.CandidatoDTO> candidatos = gestorCandidato.filtrarCandidatos(candidatosdto);
                 for (int i = 0; i <= candidatos.Count(); i++)
                 {

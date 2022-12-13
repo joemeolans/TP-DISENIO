@@ -53,7 +53,7 @@ namespace TP_DISEÑO.Interfaz
                 puestodto.codigo = CodigoDelPuestoInput.Text;
                 puestodto.nombreEmpresa = EmpresaInput.Text;
                 List <DTO.PuestoBuscadoDTO> puestos = gestorPuesto.BuscarPuesto(puestodto);
-                for (int i=0; i<=puestos.Count(); i++)
+                for (int i=0; i<puestos.Count(); i++)
                 {
                     dataGridViewCandidatosAEvaluar.Rows.Add();
                     dataGridViewCandidatosAEvaluar.Rows[i].Cells[0].Value = puestos[i].codigo;
