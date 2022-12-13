@@ -47,10 +47,30 @@ namespace TP_DISEÑO.DAO
 
             try
             {
-                if (id != 0)
+                if (id != 0 && (nombre.Length == 0) && (apellido.Length == 0))
                 {
                     candidato cand = context.candidato.Find(id);
                     if(cand != null)
+                    {
+                        candidatos.Add(cand);
+                    }
+                }else if(id != 0 && (nombre.Length > 0) && (apellido.Length == 0)){
+                    candidato cand = context.candidato.Find(id);
+                    if(cand != null && cand.Nombre.Equals(nombre))
+                    {
+                        candidatos.Add(cand);
+                    }
+                }else if(id != 0 && (nombre.Length == 0) && (apellido.Length > 0))
+                {
+                    candidato cand = context.candidato.Find(id);
+                    if(cand != null && cand.Apellido.Equals(apellido))
+                    {
+                        candidatos.Add(cand);
+                    }
+                }else if(id != 0 && (nombre.Length > 0) && (apellido.Length > 0))
+                {
+                    candidato cand = context.candidato.Find(id);
+                    if(cand != null && cand.Apellido.Equals(apellido) && cand.Nombre.Equals(nombre))
                     {
                         candidatos.Add(cand);
                     }
