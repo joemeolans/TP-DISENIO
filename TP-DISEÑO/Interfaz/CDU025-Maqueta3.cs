@@ -31,5 +31,10 @@ namespace TP_DISEÑO.Interfaz
                 this.Close();
             }
         }
+
+        private void CDU025_Maqueta3_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

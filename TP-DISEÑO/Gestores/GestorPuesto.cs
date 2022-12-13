@@ -267,20 +267,19 @@ namespace TP_DISEÑO.Gestores
             return this.puestoBuscadoDAO.GetAllCompetencias(idPuesto, context);
         }
 
-        public List<DTO.PuestoBuscadoDTO> GetPuestosByEmpresa(string nombreEmpresa)
+        public List<string> GetPuestosByEmpresa(string nombreEmpresa)
         {
-            List<DTO.PuestoBuscadoDTO> pbDTO = new List<DTO.PuestoBuscadoDTO>();
+            List<string> nombrePuestos = new List<string>();
            
             using(CapitalHumano3Entities context = new CapitalHumano3Entities())
             {
                 List<puestobuscado> puestos = this.puestoBuscadoDAO.GetPuestosByEmpresa(nombreEmpresa, context);
                 foreach(var oPuesto in puestos)
                 {
-                    DTO.PuestoBuscadoDTO oPuestoDTO = new DTO.PuestoBuscadoDTO();
-                    oPuestoDTO.nombre = oPuesto.Nombre;
+                    nombrePuestos.Add(oPuesto.Nombre);
                 }
             }
-            return pbDTO;
+            return nombrePuestos;
         }
 
         public List<DTO.CompetenciaDTO> GetCompetenciasByEmpresaPuesto(string nombreEmpresa, string nombrePuesto)
@@ -289,14 +288,15 @@ namespace TP_DISEÑO.Gestores
 
             using (CapitalHumano3Entities context = new CapitalHumano3Entities())
             {
-                List<puestobuscadocompetencia> pbCompetencias = ;
+                List<puestobuscadocompetencia> pbCompetencias = new List<puestobuscadocompetencia>();
                 foreach(var oCompetencia in pbCompetencias)
                 {
-                    DTO.PuestoBuscadoDTO oCompetenciaDTO = new DTO.PuestoBuscadoDTO();
+                    DTO.CompetenciaDTO oCompetenciaDTO = new DTO.CompetenciaDTO();
                     oCompetenciaDTO.NombreCompetencia = oCompetencia.competencia.NombreCompetencia;
                     oCompetenciaDTO.PonderacionMinima = oCompetencia.PuntajeMinimo;
                 }
             }
+            return compDTO;
         }
     }
 }

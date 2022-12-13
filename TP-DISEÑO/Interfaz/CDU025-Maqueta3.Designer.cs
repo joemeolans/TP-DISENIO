@@ -35,12 +35,13 @@
             this.BotonFinalizar = new System.Windows.Forms.Button();
             this.botonVolver = new System.Windows.Forms.Button();
             this.textoListaDeCandidatos = new System.Windows.Forms.Label();
-            this.dataGridViewListaCandidatos = new System.Windows.Forms.DataGridView();
-            this.NombreCompetencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PonderacionMinima = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCandidatosAEvaluar = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaCandidatos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidatosAEvaluar)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -119,36 +120,44 @@
             // 
             this.textoListaDeCandidatos.AutoSize = true;
             this.textoListaDeCandidatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoListaDeCandidatos.Location = new System.Drawing.Point(95, 169);
+            this.textoListaDeCandidatos.Location = new System.Drawing.Point(154, 169);
             this.textoListaDeCandidatos.Name = "textoListaDeCandidatos";
             this.textoListaDeCandidatos.Size = new System.Drawing.Size(265, 25);
             this.textoListaDeCandidatos.TabIndex = 55;
             this.textoListaDeCandidatos.Text = "Lista de candidatos a evaluar";
             this.textoListaDeCandidatos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridViewListaCandidatos
+            // dataGridViewCandidatosAEvaluar
             // 
-            this.dataGridViewListaCandidatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewListaCandidatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NombreCompetencia,
-            this.PonderacionMinima});
-            this.dataGridViewListaCandidatos.Location = new System.Drawing.Point(100, 197);
-            this.dataGridViewListaCandidatos.Name = "dataGridViewListaCandidatos";
-            this.dataGridViewListaCandidatos.RowHeadersVisible = false;
-            this.dataGridViewListaCandidatos.Size = new System.Drawing.Size(673, 550);
-            this.dataGridViewListaCandidatos.TabIndex = 54;
+            this.dataGridViewCandidatosAEvaluar.AllowUserToAddRows = false;
+            this.dataGridViewCandidatosAEvaluar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCandidatosAEvaluar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.dataGridViewCandidatosAEvaluar.Location = new System.Drawing.Point(159, 207);
+            this.dataGridViewCandidatosAEvaluar.Name = "dataGridViewCandidatosAEvaluar";
+            this.dataGridViewCandidatosAEvaluar.RowHeadersVisible = false;
+            this.dataGridViewCandidatosAEvaluar.Size = new System.Drawing.Size(574, 559);
+            this.dataGridViewCandidatosAEvaluar.TabIndex = 58;
             // 
-            // NombreCompetencia
+            // dataGridViewTextBoxColumn1
             // 
-            this.NombreCompetencia.HeaderText = "Nombre de la competencia";
-            this.NombreCompetencia.Name = "NombreCompetencia";
-            this.NombreCompetencia.Width = 400;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Número de candidato";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 150;
             // 
-            // PonderacionMinima
+            // dataGridViewTextBoxColumn2
             // 
-            this.PonderacionMinima.HeaderText = "Ponderación mínima";
-            this.PonderacionMinima.Name = "PonderacionMinima";
-            this.PonderacionMinima.Width = 250;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Apellido";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 200;
             // 
             // CDU025_Maqueta3
             // 
@@ -156,19 +165,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aquamarine;
             this.ClientSize = new System.Drawing.Size(870, 861);
+            this.Controls.Add(this.dataGridViewCandidatosAEvaluar);
             this.Controls.Add(this.BotonFinalizar);
             this.Controls.Add(this.botonVolver);
             this.Controls.Add(this.textoListaDeCandidatos);
-            this.Controls.Add(this.dataGridViewListaCandidatos);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BordeFotoCapitalHumano);
             this.Controls.Add(this.CerrarSesion);
             this.Name = "CDU025_Maqueta3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CDU025_Maqueta3";
+            this.Load += new System.EventHandler(this.CDU025_Maqueta3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaCandidatos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidatosAEvaluar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,8 +192,9 @@
         private System.Windows.Forms.Button BotonFinalizar;
         private System.Windows.Forms.Button botonVolver;
         private System.Windows.Forms.Label textoListaDeCandidatos;
-        private System.Windows.Forms.DataGridView dataGridViewListaCandidatos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompetencia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PonderacionMinima;
+        private System.Windows.Forms.DataGridView dataGridViewCandidatosAEvaluar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }

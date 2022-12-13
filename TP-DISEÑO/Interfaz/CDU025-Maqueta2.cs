@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TP_DISEÑO.DTO;
 using TP_DISEÑO.Gestores;
 
 namespace TP_DISEÑO.Interfaz
@@ -46,6 +47,22 @@ namespace TP_DISEÑO.Interfaz
             {
                 MessageBox.Show("Debe seleccionar todos los campos.");
             }
+            else
+            {
+                GestorPuesto gestor = new GestorPuesto();
+                List<CompetenciaDTO> competencias = gestor.GetCompetenciasByEmpresaPuesto(textNombreEmpresa.Text, textFuncionOPuesto.Text);
+                int i = 0;
+
+                foreach(CompetenciaDTO oCompetencia in competencias)
+                {
+                    dataGridViewListaCompetencias.Rows.Add();
+                    dataGridViewListaCompetencias.Rows[i].Cells[0].Value = oCompetencia.NombreCompetencia;
+                    dataGridViewListaCompetencias.Rows[i].Cells[1].Value = oCompetencia.PonderacionMinima;
+                    i++;
+                }
+
+            }
+
         }
 
         private void CDU025_Maqueta2_Load(object sender, EventArgs e)
