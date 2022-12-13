@@ -135,6 +135,7 @@ namespace TP_DISEÑO.Gestores
                     List<candidato> candidatos = this.candidatoDAO.GetCandidatos(candidatoDTO.Nombre, candidatoDTO.Apellido, candidatoDTO.IdCandidato, parametros, context);
                     if (candidatos.Count() > 0)
                     {
+                        
                         foreach (candidato oCandidato in candidatos)
                         {
                             DTO.CandidatoDTO oCandidatoDTO = new DTO.CandidatoDTO();

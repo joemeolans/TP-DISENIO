@@ -47,22 +47,29 @@ namespace TP_DISEÑO.DAO
 
             try
             {
-                foreach(int oParametro in parametros)
+                if (id != 0)
                 {
-                    switch (oParametro)
+                    candidato cand = context.candidato.Find(id);
+                    if(cand != null)
                     {
-                        case 1:
-                            candidatos.AddRange(context.candidato.Where(c => c.Nombre.Contains(nombre)).ToList());
-                            break;
-                        case 2:
-                            candidatos.AddRange(context.candidato.Where(c => c.Apellido.Contains(apellido)).ToList());
-                            break;
-                        case 3:
-                            candidatos.Add(context.candidato.Find(id));
-                            break;
+                        candidatos.Add(cand);
                     }
                 }
-                candidatos.Distinct().ToList();
+                else
+                {
+                    if((nombre.Length > 0) && (apellido.Length>0))
+                    {
+                        candidatos.AddRange(context.candidato.Where(c => c.Nombre == nombre && c.Apellido == apellido).ToList());
+                    }
+                    else if((nombre.Length > 0) && (apellido.Length == 0))
+                    {
+                        candidatos.AddRange(context.candidato.Where(c => c.Nombre.Contains(nombre)).ToList());
+                    }
+                    else if((nombre.Length == 0) && (apellido.Length > 0))
+                    {
+                        candidatos.AddRange(context.candidato.Where(c => c.Apellido.Contains(apellido)).ToList());
+                    }
+                }
             }
             catch (DbEntityValidationException dbEx)
             {
@@ -75,7 +82,7 @@ namespace TP_DISEÑO.DAO
                 }
             }
 
-            return candidatos;
+            return candidatos.Distinct().ToList();
         }
     }
 

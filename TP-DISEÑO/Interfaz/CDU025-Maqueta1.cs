@@ -50,11 +50,32 @@ namespace TP_DISEÑO.Interfaz
             {
                 Gestores.GestorCandidato gestorCandidato = new Gestores.GestorCandidato();
                 DTO.CandidatoDTO candidatosdto = new DTO.CandidatoDTO();
-                candidatosdto.Apellido = ApellidoInput.Text;
-                candidatosdto.Nombre = NombreInput.Text;
+                if (ApellidoInput.Text == null)
+                {
+                    candidatosdto.Apellido = null;
+                }
+                else
+                {
+                    candidatosdto.Apellido = ApellidoInput.Text;
+                }
+                if (NombreInput.Text == null)
+                {
+                    candidatosdto.Nombre = null;
+                }
+                else
+                {
+                    candidatosdto.Nombre = NombreInput.Text;
+                }
                 try 
-                { 
-                    candidatosdto.IdCandidato = Int32.Parse(NroCandidatoInput.Text.ToString()); 
+                {
+                    if(NroCandidatoInput.Text == null)
+                    {
+                        candidatosdto.IdCandidato = 0;
+                    }
+                    else
+                    {
+                        candidatosdto.IdCandidato = Int32.Parse(NroCandidatoInput.Text.ToString());
+                    }
                 }
                 catch (Exception exec)
                 {
@@ -62,12 +83,15 @@ namespace TP_DISEÑO.Interfaz
                 }
 
                 List<DTO.CandidatoDTO> candidatos = gestorCandidato.filtrarCandidatos(candidatosdto);
-                for (int i = 0; i <= candidatos.Count(); i++)
+                int i = 0;
+                dataGridViewListaCandidatos.Rows.Clear();
+                foreach(var candidato in candidatos)
                 {
                     dataGridViewListaCandidatos.Rows.Add();
                     dataGridViewListaCandidatos.Rows[i].Cells[1].Value = candidatos[i].IdCandidato;
                     dataGridViewListaCandidatos.Rows[i].Cells[2].Value = candidatos[i].Nombre;
                     dataGridViewListaCandidatos.Rows[i].Cells[3].Value = candidatos[i].Apellido;
+                    i++;
                 }
             }
         }
