@@ -98,16 +98,29 @@ namespace TP_DISEÑO.Interfaz
 
         private void BotonAgregar_Click(object sender, EventArgs e)
         {
-            int i = 0;
-            foreach(DataGridViewRow fila in dataGridViewListaCandidatos.Rows)
+            bool resultado = false;
+            int i = dataGridViewCandidatosAEvaluar.Rows.Count;
+            foreach (DataGridViewRow fila in dataGridViewListaCandidatos.Rows)
             {
-                if(fila.Cells[0].Value.ToString() == "1")
+                
+                if(fila.Cells[0].Value != null && fila.Cells[0].Value.Equals(true))
                 {
-                    dataGridViewCandidatosAEvaluar.Rows.Add();
-                    dataGridViewCandidatosAEvaluar.Rows[i].Cells[1].Value = fila.Cells[1].Value;
-                    dataGridViewCandidatosAEvaluar.Rows[i].Cells[2].Value = fila.Cells[2].Value;
-                    dataGridViewCandidatosAEvaluar.Rows[i].Cells[3].Value = fila.Cells[3].Value;
-                    i++;
+                    for (int j = 0; j < dataGridViewCandidatosAEvaluar.Rows.Count; j++)
+                    {
+                        if (dataGridViewCandidatosAEvaluar.Rows[j].Cells[1].Value == fila.Cells[1].Value)
+                        {
+                            resultado = true;
+                        }
+                    }
+                    if (resultado == false)
+                    {
+                        dataGridViewCandidatosAEvaluar.Rows.Add();
+                        dataGridViewCandidatosAEvaluar.Rows[i].Cells[1].Value = fila.Cells[1].Value;
+                        dataGridViewCandidatosAEvaluar.Rows[i].Cells[2].Value = fila.Cells[2].Value;
+                        dataGridViewCandidatosAEvaluar.Rows[i].Cells[3].Value = fila.Cells[3].Value;
+                        i++;
+                    }
+                    
                 }
             }
         }

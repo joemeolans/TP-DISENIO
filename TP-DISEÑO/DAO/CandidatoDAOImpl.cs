@@ -79,7 +79,7 @@ namespace TP_DISEÑO.DAO
                 {
                     if((nombre.Length > 0) && (apellido.Length>0))
                     {
-                        candidatos.AddRange(context.candidato.Where(c => c.Nombre == nombre && c.Apellido == apellido).ToList());
+                        candidatos.AddRange(context.candidato.Where(c => c.Nombre.Contains(nombre) && c.Apellido.Contains(apellido)).ToList());
                     }
                     else if((nombre.Length > 0) && (apellido.Length == 0))
                     {
