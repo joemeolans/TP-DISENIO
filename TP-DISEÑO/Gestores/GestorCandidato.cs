@@ -40,7 +40,7 @@ namespace TP_DISEÑO.Gestores
                 resultado = true;
             }
             // el Tipo debe ser uno de los tipos posibles
-            if( (CDTO.Tipo != "DNI") && (CDTO.Tipo != "Libreta cívica(LC)") && (CDTO.Tipo != "Libreta de enrolamiento(LE)"))
+            if( (CDTO.Tipo != "DNI") && (CDTO.Tipo != "Libreta Civica") && (CDTO.Tipo != "Libreta Enrolamiento"))
             {
                 resultado = true;
             }
@@ -133,13 +133,16 @@ namespace TP_DISEÑO.Gestores
                 using (CapitalHumano3Entities context = new CapitalHumano3Entities())
                 {
                     List<candidato> candidatos = this.candidatoDAO.GetCandidatos(candidatoDTO.Nombre, candidatoDTO.Apellido, candidatoDTO.IdCandidato, parametros, context);
-                    foreach (candidato oCandidato in candidatos)
+                    if (candidatos.Count() > 0)
                     {
-                        DTO.CandidatoDTO oCandidatoDTO = new DTO.CandidatoDTO();
-                        oCandidatoDTO.Nombre = oCandidato.Nombre;
-                        oCandidatoDTO.Apellido = oCandidato.Apellido;
-                        oCandidatoDTO.IdCandidato = oCandidato.IdCandidato;
-                        resultado.Add(oCandidatoDTO);
+                        foreach (candidato oCandidato in candidatos)
+                        {
+                            DTO.CandidatoDTO oCandidatoDTO = new DTO.CandidatoDTO();
+                            oCandidatoDTO.Nombre = oCandidato.Nombre;
+                            oCandidatoDTO.Apellido = oCandidato.Apellido;
+                            oCandidatoDTO.IdCandidato = oCandidato.IdCandidato;
+                            resultado.Add(oCandidatoDTO);
+                        }
                     }
                 }
             }

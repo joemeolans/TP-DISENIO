@@ -52,17 +52,17 @@ namespace TP_DISEÑO.DAO
                     switch (oParametro)
                     {
                         case 1:
-                            candidatos.Concat(context.candidato.Where(c => c.Nombre.Contains(nombre)).ToList());
+                            candidatos.AddRange(context.candidato.Where(c => c.Nombre.Contains(nombre)).ToList());
                             break;
                         case 2:
-                            candidatos.Concat(context.candidato.Where(c => c.Apellido.Contains(apellido)).ToList());
+                            candidatos.AddRange(context.candidato.Where(c => c.Apellido.Contains(apellido)).ToList());
                             break;
                         case 3:
                             candidatos.Add(context.candidato.Find(id));
                             break;
                     }
                 }
-                /*candidatos.Distinct().ToList();*/
+                candidatos.Distinct().ToList();
             }
             catch (DbEntityValidationException dbEx)
             {
