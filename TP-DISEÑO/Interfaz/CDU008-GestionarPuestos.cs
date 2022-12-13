@@ -53,6 +53,8 @@ namespace TP_DISEÑO.Interfaz
                 puestodto.codigo = CodigoDelPuestoInput.Text;
                 puestodto.nombreEmpresa = EmpresaInput.Text;
                 List <DTO.PuestoBuscadoDTO> puestos = gestorPuesto.BuscarPuesto(puestodto);
+                
+                dataGridViewCandidatosAEvaluar.Rows.Clear();
                 for (int i=0; i<puestos.Count(); i++)
                 {
                     Console.WriteLine(puestos[0].nombre);

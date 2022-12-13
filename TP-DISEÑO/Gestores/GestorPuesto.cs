@@ -228,11 +228,9 @@ namespace TP_DISEÑO.Gestores
             if(pbDTO.nombreEmpresa is string)
             {
                 if(pbDTO.nombreEmpresa.Length > 0 && pbDTO.nombreEmpresa.Length <= 20)
-                {
-                    if(!(this.empresaDAO.GetEmpresaByNombre(pbDTO.nombreEmpresa, context) == null))
-                    {
+                { 
                     resultado.Add(3);
-                    }
+                    
                 }
             }
             return resultado;
@@ -243,23 +241,20 @@ namespace TP_DISEÑO.Gestores
             {
                 List<PuestoBuscadoDTO> pDTO = new List<PuestoBuscadoDTO>();
                 List<int> parametros = this.validarBuscaPuesto(pbDTO, context);
-                List<DTO.PuestoBuscadoDTO> puestosDTO = new List<DTO.PuestoBuscadoDTO>();
                 if(parametros.Count != 0)
                 {
                     List<puestobuscado> puestos = this.puestoBuscadoDAO.GetPuestosBuscados(pbDTO.nombre, pbDTO.codigo, pbDTO.nombreEmpresa, parametros, context);
-                    Console.WriteLine(puestos[0].Nombre);
-                    
-                    foreach (puestobuscado oPuesto in puestos)
-                    {
-                        DTO.PuestoBuscadoDTO oPuestoBuscadoDTO = new DTO.PuestoBuscadoDTO();
-                        oPuestoBuscadoDTO.nombre = oPuesto.Nombre;
-                        oPuestoBuscadoDTO.codigo = oPuesto.CodigoPuesto;
-                        oPuestoBuscadoDTO.nombreEmpresa = oPuesto.empresa.Nombre;
-                        pDTO.Add(oPuestoBuscadoDTO);
-                        
+                    if (puestos.Count() > 0) {
+                        foreach (puestobuscado oPuesto in puestos)
+                        {
+                            DTO.PuestoBuscadoDTO oPuestoBuscadoDTO = new DTO.PuestoBuscadoDTO();
+                            oPuestoBuscadoDTO.nombre = oPuesto.Nombre;
+                            oPuestoBuscadoDTO.codigo = oPuesto.CodigoPuesto;
+                            oPuestoBuscadoDTO.nombreEmpresa = oPuesto.empresa.Nombre;
+                            pDTO.Add(oPuestoBuscadoDTO);
+
+                        }
                     }
-                    Console.WriteLine(puestos[0].Nombre);
-                return pDTO;
                 }
                 return pDTO;
             }
@@ -283,6 +278,7 @@ namespace TP_DISEÑO.Gestores
             using(CapitalHumano3Entities context = new CapitalHumano3Entities())
             {
                 List<puestobuscado> puestos = this.puestoBuscadoDAO.GetPuestosByEmpresa(nombreEmpresa, context);
+
                 foreach(var oPuesto in puestos)
                 {
                     nombrePuestos.Add(oPuesto.Nombre);

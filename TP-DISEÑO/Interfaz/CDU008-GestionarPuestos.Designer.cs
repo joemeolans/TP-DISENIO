@@ -40,9 +40,6 @@
             this.CompletarLosSigDatos = new System.Windows.Forms.Label();
             this.CodigoDelPuestoInput = new System.Windows.Forms.TextBox();
             this.dataGridViewCandidatosAEvaluar = new System.Windows.Forms.DataGridView();
-            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreDelPuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.botonModificarPuesto = new System.Windows.Forms.Button();
             this.botonEliminarPuesto = new System.Windows.Forms.Button();
             this.textoListaCandidatosAEvaluar = new System.Windows.Forms.Label();
@@ -50,6 +47,10 @@
             this.BordeFotoCapitalHumano = new System.Windows.Forms.PictureBox();
             this.textoAdvertencia = new System.Windows.Forms.Label();
             this.EmpresaInput = new System.Windows.Forms.TextBox();
+            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreDelPuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidatosAEvaluar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).BeginInit();
@@ -189,31 +190,14 @@
             this.dataGridViewCandidatosAEvaluar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Código,
             this.NombreDelPuesto,
-            this.Empresa});
+            this.Empresa,
+            this.Seleccionar});
             this.dataGridViewCandidatosAEvaluar.Location = new System.Drawing.Point(22, 359);
             this.dataGridViewCandidatosAEvaluar.Name = "dataGridViewCandidatosAEvaluar";
             this.dataGridViewCandidatosAEvaluar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridViewCandidatosAEvaluar.RowHeadersVisible = false;
             this.dataGridViewCandidatosAEvaluar.Size = new System.Drawing.Size(824, 318);
             this.dataGridViewCandidatosAEvaluar.TabIndex = 48;
-            // 
-            // Código
-            // 
-            this.Código.HeaderText = "Código";
-            this.Código.Name = "Código";
-            this.Código.Width = 150;
-            // 
-            // NombreDelPuesto
-            // 
-            this.NombreDelPuesto.HeaderText = "Nombre del puesto";
-            this.NombreDelPuesto.Name = "NombreDelPuesto";
-            this.NombreDelPuesto.Width = 350;
-            // 
-            // Empresa
-            // 
-            this.Empresa.HeaderText = "Empresa";
-            this.Empresa.Name = "Empresa";
-            this.Empresa.Width = 304;
             // 
             // botonModificarPuesto
             // 
@@ -297,6 +281,32 @@
             this.EmpresaInput.Size = new System.Drawing.Size(207, 20);
             this.EmpresaInput.TabIndex = 53;
             // 
+            // Código
+            // 
+            this.Código.HeaderText = "Código";
+            this.Código.Name = "Código";
+            this.Código.Width = 150;
+            // 
+            // NombreDelPuesto
+            // 
+            this.NombreDelPuesto.HeaderText = "Nombre del puesto";
+            this.NombreDelPuesto.Name = "NombreDelPuesto";
+            this.NombreDelPuesto.Width = 300;
+            // 
+            // Empresa
+            // 
+            this.Empresa.HeaderText = "Empresa";
+            this.Empresa.Name = "Empresa";
+            this.Empresa.Width = 204;
+            // 
+            // Seleccionar
+            // 
+            this.Seleccionar.HeaderText = "Seleccionar";
+            this.Seleccionar.Name = "Seleccionar";
+            this.Seleccionar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Seleccionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Seleccionar.Width = 150;
+            // 
             // CDU008
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -350,10 +360,11 @@
         private System.Windows.Forms.Button botonModificarPuesto;
         private System.Windows.Forms.Button botonEliminarPuesto;
         private System.Windows.Forms.Label textoListaCandidatosAEvaluar;
+        private System.Windows.Forms.Label textoAdvertencia;
+        private System.Windows.Forms.TextBox EmpresaInput;
         private System.Windows.Forms.DataGridViewTextBoxColumn Código;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreDelPuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Empresa;
-        private System.Windows.Forms.Label textoAdvertencia;
-        private System.Windows.Forms.TextBox EmpresaInput;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Seleccionar;
     }
 }

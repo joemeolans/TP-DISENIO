@@ -35,25 +35,38 @@ namespace TP_DISEÑO.DAO
         public List<puestobuscado> GetPuestosBuscados(string nombre, string codigo, string nombreEmpresa, List<int> parametros, CapitalHumano3Entities context)
         {
             List<puestobuscado> puestos = new List<puestobuscado>();
+            List<puestobuscado> puestos1 = new List<puestobuscado>();
+            List<puestobuscado> puestos2 = new List<puestobuscado>();
+            List<puestobuscado> resultado = new List<puestobuscado>();
 
             try
             {
-                foreach(int oParametro in parametros)
+                foreach (int oParametro in parametros)
                 {
                     switch (oParametro)
                     {
                         case 1:
-                            puestos.Concat(context.puestobuscado.Where(p => p.Nombre.Contains(nombre)).ToList());
+                            puestos = context.puestobuscado.Where(p => p.Nombre.Contains(nombre)).ToList();
                             break;
                         case 2:
-                            puestos = (from p in context.puestobuscado where p.CodigoPuesto == codigo select p).ToList();
+                            puestos1 = (from p in context.puestobuscado where p.CodigoPuesto == codigo select p).ToList();
                             break;
                         case 3:
-                            puestos.Concat(context.empresa.Where(e => e.Nombre.Contains(nombreEmpresa)).SelectMany(p => p.puestobuscado).ToList());
+                            List<empresa> empresas = context.empresa.Where(e => e.Nombre.Contains(nombreEmpresa)).ToList();
+                            foreach(empresa empresa in empresas)
+                            {
+                                Console.WriteLine(empresa.Nombre);
+                                foreach(puestobuscado puesto in empresa.puestobuscado)
+                                {
+                                    puestos2.Add(puesto);
+                                }
+                            }    
+
                             break;
                     }
                 }
-                puestos.Distinct().ToList();
+
+            
             }
             catch (DbEntityValidationException dbEx)
             {
@@ -65,7 +78,11 @@ namespace TP_DISEÑO.DAO
                     }
                 }
             }
-            return puestos;
+            resultado.AddRange(puestos);
+            resultado.AddRange(puestos1);
+            resultado.AddRange(puestos2);
+
+            return resultado.Distinct().ToList();
         }
         public puestobuscado GetPuestobuscado(int idPuesto, CapitalHumano3Entities context)
         {
@@ -103,7 +120,11 @@ namespace TP_DISEÑO.DAO
             List<puestobuscado> puestos = new List<puestobuscado>();
             try
             {
-                puestos.Concat(context.empresa.Where(e => e.Nombre == nombreEmpresa).SelectMany(p => p.puestobuscado).ToList());
+                empresa empresa = context.empresa.Where(e => e.Nombre == nombreEmpresa).FirstOrDefault();
+                foreach(var oPuesto in empresa.puestobuscado)
+                {
+                    puestos.Add(oPuesto);
+                }
             }
              catch (Exception e)
             {

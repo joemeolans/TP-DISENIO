@@ -78,12 +78,11 @@ namespace TP_DISEÑO.Interfaz
 
         private void comboBoxNombreEmpresa_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             GestorPuesto gestor = new GestorPuesto();
-            List<String> empresas = gestor.GetPuestosByEmpresa(comboBoxNombreEmpresa.Text);
-            foreach (String r in empresas)
+            List<String> puestos = gestor.GetPuestosByEmpresa(comboBoxNombreEmpresa.Text);
+            foreach (String r in puestos)
             {
-                comboBoxNombreEmpresa.Items.Add(r);
+                comboBoxFuncionOPuesto.Items.Add(r);
             }
         }
     }
