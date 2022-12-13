@@ -41,6 +41,17 @@ namespace TP_DISEÑO.Interfaz
             }
             else
             {
+                /* ver como hacerlo
+                List<CandidatoDTO> cand = new List<CandidatoDTO>();
+                foreach(DataGridViewRow fila in dataGridViewCandidatosAEvaluar.Rows)
+                {
+                    CandidatoDTO cDTO = new CandidatoDTO();
+                    cDTO.IdCandidato = Int32.Parse(fila.Cells[1].Value.ToString());
+                    cDTO.Nombre = fila.Cells[2].Value.ToString();
+                    cDTO.Apellido = fila.Cells[3].Value.ToString();
+                    cand.Add(cDTO);
+                }
+                */
                 Form irAMaqueta2 = new CDU025_Maqueta2();
                 irAMaqueta2.Show();
                 this.Hide();

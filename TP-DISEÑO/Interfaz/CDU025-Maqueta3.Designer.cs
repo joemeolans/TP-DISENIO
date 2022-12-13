@@ -35,13 +35,13 @@
             this.BotonFinalizar = new System.Windows.Forms.Button();
             this.botonVolver = new System.Windows.Forms.Button();
             this.textoListaDeCandidatos = new System.Windows.Forms.Label();
-            this.dataGridViewCandidatosAEvaluar = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCandidatos = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidatosAEvaluar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidatos)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -127,21 +127,21 @@
             this.textoListaDeCandidatos.Text = "Lista de candidatos a evaluar";
             this.textoListaDeCandidatos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridViewCandidatosAEvaluar
+            // dataGridViewCandidatos
             // 
-            this.dataGridViewCandidatosAEvaluar.AllowUserToAddRows = false;
-            this.dataGridViewCandidatosAEvaluar.AllowUserToResizeColumns = false;
-            this.dataGridViewCandidatosAEvaluar.AllowUserToResizeRows = false;
-            this.dataGridViewCandidatosAEvaluar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCandidatosAEvaluar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCandidatos.AllowUserToAddRows = false;
+            this.dataGridViewCandidatos.AllowUserToResizeColumns = false;
+            this.dataGridViewCandidatos.AllowUserToResizeRows = false;
+            this.dataGridViewCandidatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCandidatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
-            this.dataGridViewCandidatosAEvaluar.Location = new System.Drawing.Point(159, 207);
-            this.dataGridViewCandidatosAEvaluar.Name = "dataGridViewCandidatosAEvaluar";
-            this.dataGridViewCandidatosAEvaluar.RowHeadersVisible = false;
-            this.dataGridViewCandidatosAEvaluar.Size = new System.Drawing.Size(574, 559);
-            this.dataGridViewCandidatosAEvaluar.TabIndex = 58;
+            this.dataGridViewCandidatos.Location = new System.Drawing.Point(159, 207);
+            this.dataGridViewCandidatos.Name = "dataGridViewCandidatos";
+            this.dataGridViewCandidatos.RowHeadersVisible = false;
+            this.dataGridViewCandidatos.Size = new System.Drawing.Size(574, 559);
+            this.dataGridViewCandidatos.TabIndex = 58;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -167,7 +167,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aquamarine;
             this.ClientSize = new System.Drawing.Size(870, 861);
-            this.Controls.Add(this.dataGridViewCandidatosAEvaluar);
+            this.Controls.Add(this.dataGridViewCandidatos);
             this.Controls.Add(this.BotonFinalizar);
             this.Controls.Add(this.botonVolver);
             this.Controls.Add(this.textoListaDeCandidatos);
@@ -180,7 +180,7 @@
             this.Load += new System.EventHandler(this.CDU025_Maqueta3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidatosAEvaluar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,7 +194,7 @@
         private System.Windows.Forms.Button BotonFinalizar;
         private System.Windows.Forms.Button botonVolver;
         private System.Windows.Forms.Label textoListaDeCandidatos;
-        private System.Windows.Forms.DataGridView dataGridViewCandidatosAEvaluar;
+        private System.Windows.Forms.DataGridView dataGridViewCandidatos;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
