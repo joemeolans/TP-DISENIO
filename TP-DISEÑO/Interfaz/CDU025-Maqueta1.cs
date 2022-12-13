@@ -117,6 +117,7 @@ namespace TP_DISEÑO.Interfaz
                         if (dataGridViewCandidatosAEvaluar.Rows[j].Cells[1].Value.Equals(fila.Cells[1].Value))
                         {
                             resultado = true;
+                            break;
                         }
                         else
                         {

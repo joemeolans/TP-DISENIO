@@ -44,6 +44,7 @@ namespace TP_DISEÑO
             this.TablaCaracterísticasDelPuesto = new System.Windows.Forms.DataGridView();
             this.Competencia = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Ponderación = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Salir = new System.Windows.Forms.Button();
             this.CerrarSesion = new System.Windows.Forms.Button();
             this.NombreEmpresa = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@ namespace TP_DISEÑO
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BordeFotoCapitalHumano = new System.Windows.Forms.PictureBox();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TablaCaracterísticasDelPuesto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).BeginInit();
@@ -171,6 +171,8 @@ namespace TP_DISEÑO
             // TablaCaracterísticasDelPuesto
             // 
             this.TablaCaracterísticasDelPuesto.AllowUserToAddRows = false;
+            this.TablaCaracterísticasDelPuesto.AllowUserToResizeColumns = false;
+            this.TablaCaracterísticasDelPuesto.AllowUserToResizeRows = false;
             this.TablaCaracterísticasDelPuesto.BackgroundColor = System.Drawing.Color.PaleTurquoise;
             this.TablaCaracterísticasDelPuesto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.TablaCaracterísticasDelPuesto.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
@@ -202,6 +204,13 @@ namespace TP_DISEÑO
             this.Ponderación.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Ponderación.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Ponderación.Width = 230;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Image = global::TP_DISEÑO.Properties.Resources.tachitodebasura;
+            this.Eliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Eliminar.Name = "Eliminar";
             // 
             // Salir
             // 
@@ -312,13 +321,6 @@ namespace TP_DISEÑO
             this.BordeFotoCapitalHumano.Size = new System.Drawing.Size(117, 114);
             this.BordeFotoCapitalHumano.TabIndex = 20;
             this.BordeFotoCapitalHumano.TabStop = false;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Image = global::TP_DISEÑO.Properties.Resources.tachitodebasura;
-            this.Eliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Eliminar.Name = "Eliminar";
             // 
             // CDU009
             // 

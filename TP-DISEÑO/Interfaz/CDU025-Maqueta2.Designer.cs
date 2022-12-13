@@ -138,6 +138,8 @@
             // dataGridViewListaCompetencias
             // 
             this.dataGridViewListaCompetencias.AllowUserToAddRows = false;
+            this.dataGridViewListaCompetencias.AllowUserToResizeColumns = false;
+            this.dataGridViewListaCompetencias.AllowUserToResizeRows = false;
             this.dataGridViewListaCompetencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewListaCompetencias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NombreCompetencia,

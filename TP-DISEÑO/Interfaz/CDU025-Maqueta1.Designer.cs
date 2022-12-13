@@ -247,6 +247,8 @@
             // dataGridViewListaCandidatos
             // 
             this.dataGridViewListaCandidatos.AllowUserToAddRows = false;
+            this.dataGridViewListaCandidatos.AllowUserToResizeColumns = false;
+            this.dataGridViewListaCandidatos.AllowUserToResizeRows = false;
             this.dataGridViewListaCandidatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewListaCandidatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Seleccionar,
@@ -298,6 +300,8 @@
             // dataGridViewCandidatosAEvaluar
             // 
             this.dataGridViewCandidatosAEvaluar.AllowUserToAddRows = false;
+            this.dataGridViewCandidatosAEvaluar.AllowUserToResizeColumns = false;
+            this.dataGridViewCandidatosAEvaluar.AllowUserToResizeRows = false;
             this.dataGridViewCandidatosAEvaluar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCandidatosAEvaluar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewCheckBoxColumn1,

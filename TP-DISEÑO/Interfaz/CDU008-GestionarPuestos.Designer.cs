@@ -186,6 +186,8 @@
             // dataGridViewCandidatosAEvaluar
             // 
             this.dataGridViewCandidatosAEvaluar.AllowUserToAddRows = false;
+            this.dataGridViewCandidatosAEvaluar.AllowUserToResizeColumns = false;
+            this.dataGridViewCandidatosAEvaluar.AllowUserToResizeRows = false;
             this.dataGridViewCandidatosAEvaluar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCandidatosAEvaluar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Código,
