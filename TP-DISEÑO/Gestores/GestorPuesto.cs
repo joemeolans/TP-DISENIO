@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TP_DISEÑO.DAO;
+using TP_DISEÑO.DTO;
 
 namespace TP_DISEÑO.Gestores
 {
@@ -239,20 +241,27 @@ namespace TP_DISEÑO.Gestores
         {
             using (CapitalHumano3Entities context = new CapitalHumano3Entities())
             {
+                List<PuestoBuscadoDTO> pDTO = new List<PuestoBuscadoDTO>();
                 List<int> parametros = this.validarBuscaPuesto(pbDTO, context);
                 List<DTO.PuestoBuscadoDTO> puestosDTO = new List<DTO.PuestoBuscadoDTO>();
                 if(parametros.Count != 0)
                 {
                     List<puestobuscado> puestos = this.puestoBuscadoDAO.GetPuestosBuscados(pbDTO.nombre, pbDTO.codigo, pbDTO.nombreEmpresa, parametros, context);
+                    Console.WriteLine(puestos[0].Nombre);
+                    
                     foreach (puestobuscado oPuesto in puestos)
                     {
                         DTO.PuestoBuscadoDTO oPuestoBuscadoDTO = new DTO.PuestoBuscadoDTO();
                         oPuestoBuscadoDTO.nombre = oPuesto.Nombre;
                         oPuestoBuscadoDTO.codigo = oPuesto.CodigoPuesto;
                         oPuestoBuscadoDTO.nombreEmpresa = oPuesto.empresa.Nombre;
+                        pDTO.Add(oPuestoBuscadoDTO);
+                        
                     }
+                    Console.WriteLine(puestos[0].Nombre);
+                return pDTO;
                 }
-                return puestosDTO;
+                return pDTO;
             }
             
         }

@@ -46,7 +46,7 @@ namespace TP_DISEÑO.DAO
                             puestos.Concat(context.puestobuscado.Where(p => p.Nombre.Contains(nombre)).ToList());
                             break;
                         case 2:
-                            puestos.Concat(context.puestobuscado.Where(p => p.CodigoPuesto == codigo).ToList());
+                            puestos = (from p in context.puestobuscado where p.CodigoPuesto == codigo select p).ToList();
                             break;
                         case 3:
                             puestos.Concat(context.empresa.Where(e => e.Nombre.Contains(nombreEmpresa)).SelectMany(p => p.puestobuscado).ToList());
