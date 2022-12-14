@@ -12,21 +12,23 @@ namespace TP_DISEÑO.Interfaz
 {
     public partial class CDU008 : Form
     {
-        public CDU008()
+        string NUsuario;
+        public CDU008(string Usuario)
         {
+            NUsuario = Usuario;
             InitializeComponent();
         }
 
         private void NuevoPuesto_Click(object sender, EventArgs e)
         {
-            Form darDeAltaPuesto = new CDU009();
+            Form darDeAltaPuesto = new CDU009(NUsuario);
             darDeAltaPuesto.Show();
             this.Hide();
         }
 
         private void VolverAlMenu_Click(object sender, EventArgs e)
         {
-            Form volverAlMenu = new MenuPrincipal();
+            Form volverAlMenu = new MenuPrincipal(NUsuario);
             volverAlMenu.Show();
             this.Hide();
         }

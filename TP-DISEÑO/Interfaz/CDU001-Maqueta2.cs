@@ -12,6 +12,7 @@ namespace TP_DISEÑO.Interfaz
 {
     public partial class CDU001_Maqueta2 : Form
     {
+        string nombreUsuarioConsultor;
         public CDU001_Maqueta2()
         {
             InitializeComponent();
@@ -26,14 +27,15 @@ namespace TP_DISEÑO.Interfaz
 
         private void Aceptar_Click(object sender, EventArgs e)
         {
-            if( (string.IsNullOrWhiteSpace(NombreUsuarioInput.Text)) || (string.IsNullOrWhiteSpace(ContraseñaInput.Text)) )
+            Gestores.GestorConsultor gestorConsultor = new Gestores.GestorConsultor();
+            DTO.ConsultorDTO consultordto = new DTO.ConsultorDTO();
+            if ( (string.IsNullOrWhiteSpace(NombreUsuarioInput.Text)) || (string.IsNullOrWhiteSpace(ContraseñaInput.Text)) )
             {
                 MessageBox.Show("Debe completar todos los campos.");
             }
             else
             {
-                Gestores.GestorConsultor gestorConsultor = new Gestores.GestorConsultor();
-                DTO.ConsultorDTO consultordto = new DTO.ConsultorDTO();
+                
                 consultordto.nombreUsuario = NombreUsuarioInput.Text;
                 consultordto.contraseña = ContraseñaInput.Text;
                 bool ingreso = gestorConsultor.ingresarUsuario(consultordto);
@@ -43,7 +45,8 @@ namespace TP_DISEÑO.Interfaz
                 }
                 else
                 {
-                    Form ingresarMenuPrincipal = new MenuPrincipal();
+                    nombreUsuarioConsultor = consultordto.nombreUsuario;
+                    Form ingresarMenuPrincipal = new MenuPrincipal(nombreUsuarioConsultor);
                     ingresarMenuPrincipal.Show();
                     this.Hide();
                 }

@@ -85,7 +85,7 @@ namespace TP_DISEÑO.Gestores
                         bool resultadocheck = this.checkPassword(CDTO, consultor);
                         if (resultadocheck == true)
                         {
-                            resultado=true; //El error numero 7 indica que la contrasenia ingresada no es la correcta. 
+                            resultado = true; //El error numero 7 indica que la contrasenia ingresada no es la correcta. 
                         }
                     }
                     else
@@ -96,6 +96,11 @@ namespace TP_DISEÑO.Gestores
                 return resultado;
             }
 
+        }
+
+        public consultor GetConsultorByNombre(string nombre, CapitalHumano3Entities context)
+        {
+            return this.consultorDAO.GetUsuarioByNombre(nombre, context);
         }
 
     }

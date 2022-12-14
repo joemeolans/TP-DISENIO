@@ -13,5 +13,6 @@ namespace TP_DISEÑO.DAO
         List<competencia> GetAllCompetencias(int idPuesto, CapitalHumano3Entities context);
         List<puestobuscado> GetPuestosByEmpresa(string nombreEmpresa, CapitalHumano3Entities context);
         List<puestobuscadocompetencia> GetPBCByEmpresaPuesto(string nombreEmpresa, string nombrePuesto, CapitalHumano3Entities context);
+        puestobuscado GetPuestobuscadoByNombreYEmpresa(string nombreEmppresa, string nombrePuesto, CapitalHumano3Entities context);
     }
 }

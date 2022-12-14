@@ -14,14 +14,16 @@ namespace TP_DISEÑO.Interfaz
     public partial class CDU0025_Maqueta1 : Form
     {
         public List<int> lisIdCand = new List<int>();
-        public CDU0025_Maqueta1()
-        { 
+        string NombreUsuario;
+        public CDU0025_Maqueta1(string nombreUsuario)
+        {
+            NombreUsuario = nombreUsuario;
             InitializeComponent();
         }
 
         private void BotonVolver_Click(object sender, EventArgs e)
         {
-            Form volverAlMenu = new MenuPrincipal();
+            Form volverAlMenu = new MenuPrincipal(NombreUsuario);
             volverAlMenu.Show();
             this.Hide();
         }
@@ -55,7 +57,7 @@ namespace TP_DISEÑO.Interfaz
                 {
                     lisIdCand.Add(oCandDTO.IdCandidato);
                 }
-                Form irAMaqueta2 = new CDU025_Maqueta2(lisIdCand);
+                Form irAMaqueta2 = new CDU025_Maqueta2(lisIdCand, NombreUsuario);
                 irAMaqueta2.Show();
                 this.Hide();
             }

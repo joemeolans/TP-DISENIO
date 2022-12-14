@@ -12,21 +12,23 @@ namespace TP_DISEÑO.Interfaz
 {
     public partial class MenuPrincipal : Form
     {
-        public MenuPrincipal()
+        string nombreUsuario;
+        public MenuPrincipal(string Usuario)
         {
+            nombreUsuario = Usuario;
             InitializeComponent();
         }
 
         private void GestionarPuestos_Click(object sender, EventArgs e)
         {
-            Form gestionarPuestos = new CDU008();
+            Form gestionarPuestos = new CDU008(nombreUsuario);
             gestionarPuestos.Show();
             this.Hide();
         }
 
         private void EvaluarCandidatos_Click(object sender, EventArgs e)
         {
-            Form evaluarCandidatos = new CDU0025_Maqueta1();
+            Form evaluarCandidatos = new CDU0025_Maqueta1(nombreUsuario);
             evaluarCandidatos.Show();
             this.Hide();
         }

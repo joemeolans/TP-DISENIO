@@ -13,10 +13,11 @@ namespace TP_DISEÑO
 {
     public partial class CDU009 : Form
     {
-        
-        public CDU009()
+        string NombreUsuario;
+        public CDU009(string nombreUsuario)
         {
             InitializeComponent();
+            NombreUsuario = nombreUsuario;
         }
 
         Gestores.GestorPuesto gestor { get; set; }
@@ -42,7 +43,7 @@ namespace TP_DISEÑO
 
         private void Salir_Click(object sender, EventArgs e)
         {
-            Form vueltaAlMenu = new MenuPrincipal();
+            Form vueltaAlMenu = new MenuPrincipal(NombreUsuario);
             vueltaAlMenu.Show();
             this.Hide();
         }
@@ -59,7 +60,7 @@ namespace TP_DISEÑO
 
         private void Cancelar_Click(object sender, EventArgs e)
         {
-            Form volverAGestionarPuesto = new CDU008();
+            Form volverAGestionarPuesto = new CDU008(NombreUsuario);
             volverAGestionarPuesto.Show();
             this.Hide();
         }
@@ -263,7 +264,7 @@ namespace TP_DISEÑO
                 {
                     if (MessageBox.Show("El puesto se ha creado correctamente ¿Desea cargar otro?", "Capital Humano", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                         {
-                        Form volverAlMenuPrincipal = new MenuPrincipal();
+                        Form volverAlMenuPrincipal = new MenuPrincipal(NombreUsuario);
                         volverAlMenuPrincipal.Show();
                         this.Hide();
                     }

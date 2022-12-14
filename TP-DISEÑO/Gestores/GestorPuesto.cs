@@ -304,5 +304,23 @@ namespace TP_DISEÑO.Gestores
             }
             return compDTO;
         }
+
+        public int GetPuestobuscadoByNombreYEmpresa(string nombreEmpresa, string nombrePuesto)
+        {
+            int idPuesto = 0;
+            using(CapitalHumano3Entities context = new CapitalHumano3Entities())
+            {
+                try
+                {
+                    idPuesto = this.puestoBuscadoDAO.GetPuestobuscadoByNombreYEmpresa(nombreEmpresa, nombrePuesto, context).IdPuesto;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("{0} Exception caught.", e);
+                }
+            }
+            return idPuesto;
+            
+        }
     }
 }

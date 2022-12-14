@@ -15,8 +15,12 @@ namespace TP_DISEÑO.Interfaz
     public partial class CDU025_Maqueta2 : Form
     {
         List<int> liscanDTO = new List<int>();
-        public CDU025_Maqueta2(List<int> Idcandidatos)
+        string nombreEmpresa;
+        string nombrePuesto;
+        string NombreUsuario;
+        public CDU025_Maqueta2(List<int> Idcandidatos, string nombreUsuario)
         {
+            NombreUsuario = nombreUsuario;
             liscanDTO = Idcandidatos;
             InitializeComponent();
         }
@@ -24,7 +28,7 @@ namespace TP_DISEÑO.Interfaz
         private void botonVolver_Click(object sender, EventArgs e)
         {
             liscanDTO.Clear();  
-            Form volverAMaqueta1 = new CDU0025_Maqueta1();
+            Form volverAMaqueta1 = new CDU0025_Maqueta1(NombreUsuario);
             volverAMaqueta1.Show();
             this.Hide();
         }
@@ -39,8 +43,9 @@ namespace TP_DISEÑO.Interfaz
 
         private void BotonSig_Click(object sender, EventArgs e)
         {
-
-            Form irAMaqueta3 = new CDU025_Maqueta3(liscanDTO);
+            nombreEmpresa = comboBoxNombreEmpresa.Text;
+            nombrePuesto = comboBoxFuncionOPuesto.Text;
+            Form irAMaqueta3 = new CDU025_Maqueta3(liscanDTO, nombrePuesto, nombreEmpresa, NombreUsuario);
             irAMaqueta3.Show();
             this.Hide();
         }

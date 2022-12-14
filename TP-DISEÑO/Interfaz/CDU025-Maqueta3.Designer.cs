@@ -97,6 +97,7 @@
             this.BotonFinalizar.TabIndex = 57;
             this.BotonFinalizar.Text = "Finalizar";
             this.BotonFinalizar.UseVisualStyleBackColor = false;
+            this.BotonFinalizar.Click += new System.EventHandler(this.BotonFinalizar_Click);
             // 
             // botonVolver
             // 
@@ -177,7 +178,6 @@
             this.Name = "CDU025_Maqueta3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CDU025_Maqueta3";
-            this.Load += new System.EventHandler(this.CDU025_Maqueta3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BordeFotoCapitalHumano)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidatos)).EndInit();

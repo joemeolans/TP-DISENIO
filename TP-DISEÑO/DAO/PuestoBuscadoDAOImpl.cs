@@ -157,5 +157,19 @@ namespace TP_DISEÑO.DAO
             }
             return pbc;
         }
+
+        public puestobuscado GetPuestobuscadoByNombreYEmpresa(string nombreEmpresa, string nombrePuesto, CapitalHumano3Entities context)
+        {
+            puestobuscado puestobuscado = new puestobuscado();
+            try
+            {
+                puestobuscado = context.puestobuscado.Where(p => p.empresa.Nombre == nombreEmpresa && p.Nombre == nombrePuesto).FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("{0} Exception caught.", e);
+            }
+            return puestobuscado;
+        }
     }
 }

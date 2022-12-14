@@ -75,6 +75,7 @@
             this.NombreUsuarioInput.Name = "NombreUsuarioInput";
             this.NombreUsuarioInput.Size = new System.Drawing.Size(466, 20);
             this.NombreUsuarioInput.TabIndex = 5;
+          
             // 
             // botonAceptar
             // 
