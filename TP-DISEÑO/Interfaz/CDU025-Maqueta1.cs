@@ -13,8 +13,9 @@ namespace TP_DISEÑO.Interfaz
 {
     public partial class CDU0025_Maqueta1 : Form
     {
+        public List<int> lisIdCand = new List<int>();
         public CDU0025_Maqueta1()
-        {
+        { 
             InitializeComponent();
         }
 
@@ -41,9 +42,8 @@ namespace TP_DISEÑO.Interfaz
             }
             else
             {
-                /* ver como hacerlo
                 List<CandidatoDTO> cand = new List<CandidatoDTO>();
-                foreach(DataGridViewRow fila in dataGridViewCandidatosAEvaluar.Rows)
+                foreach (DataGridViewRow fila in dataGridViewCandidatosAEvaluar.Rows)
                 {
                     CandidatoDTO cDTO = new CandidatoDTO();
                     cDTO.IdCandidato = Int32.Parse(fila.Cells[1].Value.ToString());
@@ -51,8 +51,11 @@ namespace TP_DISEÑO.Interfaz
                     cDTO.Apellido = fila.Cells[3].Value.ToString();
                     cand.Add(cDTO);
                 }
-                */
-                Form irAMaqueta2 = new CDU025_Maqueta2();
+                foreach(CandidatoDTO oCandDTO in cand)
+                {
+                    lisIdCand.Add(oCandDTO.IdCandidato);
+                }
+                Form irAMaqueta2 = new CDU025_Maqueta2(lisIdCand);
                 irAMaqueta2.Show();
                 this.Hide();
             }

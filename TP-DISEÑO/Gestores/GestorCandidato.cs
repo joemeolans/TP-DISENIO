@@ -109,6 +109,14 @@ namespace TP_DISEÑO.Gestores
         {
             return this.candidatoDAO.GetCandidatoById(idCandidato, context);
         }
+        public candidato GetCandidatoById2(int idCandidato)
+        {
+            using(CapitalHumano3Entities context = new CapitalHumano3Entities())
+            {
+
+                return this.candidatoDAO.GetCandidatoById(idCandidato, context);
+            }
+        }
 
         public List<DTO.CandidatoDTO> filtrarCandidatos(DTO.CandidatoDTO candidatoDTO)
         {
