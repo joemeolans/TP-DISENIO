@@ -109,7 +109,7 @@ namespace TP_DISEÑO.Gestores
 
                                 foreach (var oItemRP in itemsRP)
                                 {
-                                    Console.WriteLine("ItemsRP: {0}", oItemRP.itemrespuesta.Descripcion);
+                                    // Console.WriteLine("ItemsRP: {0}", oItemRP.itemrespuesta.Descripcion);
                                     respuestacuestionario respCuest = new respuestacuestionario();
                                     respCuest.OrdenRespuesta = oItemRP.itemrespuesta.OrdenRespuesta;
                                     respCuest.Descripcion = oItemRP.itemrespuesta.Descripcion;

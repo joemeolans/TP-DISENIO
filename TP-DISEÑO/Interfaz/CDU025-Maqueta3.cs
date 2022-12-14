@@ -80,14 +80,22 @@ namespace TP_DISEÑO.Interfaz
                 {
                     Form volverMenuPrincipal = new MenuPrincipal(nUsuario);
                     volverMenuPrincipal.Show();
-                    this.Hide(); ;
+                    this.Hide();
                 }
             }
             else
             {
-                if (MessageBox.Show("La evaluación se realizó correctamente. ¿Desea continuar?", "Evaluación realizada", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+                if (MessageBox.Show("La evaluación se realizó correctamente. ¿Desea realizar otra evaluación?", "Evaluación realizada", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    this.Close();
+                    Form volverAIntentar = new CDU0025_Maqueta1(nUsuario);
+                    volverAIntentar.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    Form volverMenuPrincipal = new MenuPrincipal(nUsuario);
+                    volverMenuPrincipal.Show();
+                    this.Hide();
                 }
             }
             
