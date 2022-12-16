@@ -141,8 +141,9 @@ namespace TP_DISEÑO.Interfaz
                 string error = "Los usuarios con los siguientes Numero de candidato ya tienen cuestionarios activos: ";
                 foreach (int id in IdCandidatosInvalidos)
                 {
-                    MessageBox.Show(error /*id.ToString()*/);
+                    error += "\n" + id.ToString();
                 }
+                MessageBox.Show(error);
             }
             else
             {
