@@ -170,5 +170,29 @@ namespace TP_DISEÑO.Gestores
 
             return resultado;
         }
+
+        public List<int> filtrarCandidatos(List<DTO.CandidatoDTO> candidatosDTO)
+        {
+            List<int> resultado = new List<int>();
+            using (CapitalHumano3Entities context = new CapitalHumano3Entities())
+            {
+                foreach(var oCandidatoDTO in candidatosDTO)
+                {
+                    candidato candidato = context.candidato.Find(oCandidatoDTO.IdCandidato);
+                    if(candidato != null)
+                    {
+                        foreach (var oCuestionario in candidato.cuestionario)
+                        {
+                            if(oCuestionario.estado1.Estado1 == "Activo")
+                            {
+                                resultado.Add(oCandidatoDTO.IdCandidato);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            return resultado;
+        }
     }
 }
