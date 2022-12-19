@@ -129,14 +129,16 @@ namespace TP_DISEÑO.Interfaz
             List<CandidatoDTO> listCand = new List<CandidatoDTO>();
             foreach(DataGridViewRow ocand in dataGridViewListaCandidatos.Rows)
             {
-                CandidatoDTO candidatoDTO = new CandidatoDTO();
-                candidatoDTO.IdCandidato = Int32.Parse(ocand.Cells[1].Value.ToString());
-                candidatoDTO.Nombre = ocand.Cells[2].Value.ToString();
-                candidatoDTO.Apellido = ocand.Cells[3].Value.ToString();
-                listCand.Add(candidatoDTO);
+                if (ocand.Cells[0].Value != null && ocand.Cells[0].Value.Equals(true)){
+                    CandidatoDTO candidatoDTO = new CandidatoDTO();
+                    candidatoDTO.IdCandidato = Int32.Parse(ocand.Cells[1].Value.ToString());
+                    candidatoDTO.Nombre = ocand.Cells[2].Value.ToString();
+                    candidatoDTO.Apellido = ocand.Cells[3].Value.ToString();
+                    listCand.Add(candidatoDTO);
+                }
             }
             List<int> IdCandidatosInvalidos = gestorEval.filtrarCandidatos(listCand);
-            if (!(IdCandidatosInvalidos == null))
+            if (IdCandidatosInvalidos.Count > 0)
             {
                 string error = "Los usuarios con los siguientes Numero de candidato ya tienen cuestionarios activos: ";
                 foreach (int id in IdCandidatosInvalidos)

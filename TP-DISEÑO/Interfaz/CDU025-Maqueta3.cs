@@ -25,6 +25,9 @@ namespace TP_DISEÑO.Interfaz
             nPuesto = nombrePuesto;
             nEmpresa = nombreEmpresa;
             nUsuario = nombreUsuario;
+            Random random = new Random();
+            string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            GestorEvaluacion gestorEv = new GestorEvaluacion();
             InitializeComponent();
             GestorCandidato gestorCand = new GestorCandidato();
             foreach(int id in candidatoList)
@@ -34,6 +37,8 @@ namespace TP_DISEÑO.Interfaz
                 ocandidatoDTO.IdCandidato = oCandidato.IdCandidato;
                 ocandidatoDTO.Nombre = oCandidato.Nombre;
                 ocandidatoDTO.Apellido = oCandidato.Apellido;
+                ocandidatoDTO.Clave = new string(Enumerable.Repeat(chars, 20).Select(s => s[random.Next(s.Length)]).ToArray());
+                gestorEv.GuardarClaveCuestionario(ocandidatoDTO.Clave, ocandidatoDTO.IdCandidato);
                 candidatoDTOs.Add(ocandidatoDTO);
             }
             int i = dataGridViewCandidatos.Rows.Count;
@@ -44,6 +49,7 @@ namespace TP_DISEÑO.Interfaz
                 dataGridViewCandidatos.Rows[i].Cells[0].Value = cDTO.IdCandidato;
                 dataGridViewCandidatos.Rows[i].Cells[1].Value = cDTO.Nombre;
                 dataGridViewCandidatos.Rows[i].Cells[2].Value = cDTO.Apellido;
+                dataGridViewCandidatos.Rows[i].Cells[3].Value = cDTO.Clave;
                 i++;
             }
         }
@@ -100,5 +106,6 @@ namespace TP_DISEÑO.Interfaz
             }
             
         }
+
     }
 }
