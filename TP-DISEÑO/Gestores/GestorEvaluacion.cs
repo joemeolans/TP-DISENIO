@@ -201,5 +201,16 @@ namespace TP_DISEÑO.Gestores
             string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             return new string(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
         }
+
+        public void GuardarClaveCuestionario(string clave, int idCandidato)
+        {
+            using (CapitalHumano3Entities context = new CapitalHumano3Entities())
+            {
+                candidato candidato = context.candidato.Find(idCandidato);
+                candidato.Contrasenia = clave;
+                context.SaveChanges();
+            }
+                
+        }
     }
 }
