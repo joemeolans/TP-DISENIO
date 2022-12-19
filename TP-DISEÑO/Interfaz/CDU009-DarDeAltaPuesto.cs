@@ -220,12 +220,7 @@ namespace TP_DISEÑO
                         }
                         if (error == 9)
                         {
-                            MensajeErrorLogico += "Ya existe ese nombre de puesto para la empresa seleccionada.\n";
-                            HayErrorLogico = true;
-                        }
-                        if (error == 10)
-                        {
-                            MensajeErrorLogico += "Ya existe ese código de puesto para la empresa seleccionada.\n";
+                            MensajeErrorLogico += "Ya existe el par Nombre-Codigo de puesto para la empresa seleccionada.\n";
                             HayErrorLogico = true;
                         }
                         if (error == 11)

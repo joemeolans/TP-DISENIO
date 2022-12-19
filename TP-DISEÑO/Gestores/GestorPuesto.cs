@@ -55,18 +55,9 @@ namespace TP_DISEÑO.Gestores
                     empresa empresa = empresaDAO.GetEmpresaByNombre(pbDTO.nombreEmpresa, context);
                     foreach (var oPuesto in empresa.puestobuscado)
                     {
-                        if (oPuesto.Nombre == pbDTO.nombre)
+                        if (oPuesto.Nombre.ToLower().Equals(pbDTO.nombre.ToLower()) && oPuesto.CodigoPuesto.ToLower().Equals(pbDTO.codigo.ToLower()))
                         {
-                            errores.Add(9); // ERROR 9: Ya existe ese nombre de puesto para la empresa seleccionada
-                            if (oPuesto.CodigoPuesto == pbDTO.codigo)
-                            {
-                                errores.Add(10); // ERROR 10: Ya existe ese codigo de puesto para la empresa seleccionada
-                            }
-                            break;
-                        }
-                        if(oPuesto.CodigoPuesto == pbDTO.codigo)
-                        {
-                            errores.Add(10); // ERROR 10: Ya existe ese codigo de puesto para la empresa seleccionada
+                            errores.Add(9); // ERROR 9: Ya existe ese nombre y codigo de puesto para la empresa seleccionada
                             break;
                         }
                     }
