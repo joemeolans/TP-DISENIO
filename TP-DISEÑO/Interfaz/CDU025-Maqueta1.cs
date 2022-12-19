@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP_DISEÑO.DTO;
+using TP_DISEÑO.Gestores;
 
 namespace TP_DISEÑO.Interfaz
 {
@@ -123,32 +124,57 @@ namespace TP_DISEÑO.Interfaz
         {
             bool resultado = false;
             int i = dataGridViewCandidatosAEvaluar.Rows.Count;
-            foreach (DataGridViewRow fila in dataGridViewListaCandidatos.Rows)
+            /*Ver si esta bien esto*/
+            GestorEvaluacion gestorEval = new GestorEvaluacion();
+            List<CandidatoDTO> listCand = new List<CandidatoDTO>();
+            foreach(DataGridViewRow ocand in dataGridViewListaCandidatos.Rows)
             {
-                
-                if(fila.Cells[0].Value != null && fila.Cells[0].Value.Equals(true))
+                CandidatoDTO candidatoDTO = new CandidatoDTO();
+                candidatoDTO.IdCandidato = Int32.Parse(ocand.Cells[1].Value.ToString());
+                candidatoDTO.Nombre = ocand.Cells[2].Value.ToString();
+                candidatoDTO.Apellido = ocand.Cells[3].Value.ToString();
+                listCand.Add(candidatoDTO);
+            }
+            List<int> IdCandidatosInvalidos = gestorEval.filtrarCandidatos(listCand);
+            if (!(IdCandidatosInvalidos == null))
+            {
+                string error = "Los usuarios con los siguientes Numero de candidato ya tienen cuestionarios activos: ";
+                foreach (int id in IdCandidatosInvalidos)
                 {
-                    for (int j = 0; j < dataGridViewCandidatosAEvaluar.Rows.Count; j++)
+                    error += "\n" + id.ToString();
+                }
+                MessageBox.Show(error);
+            }
+            else
+            {
+                /*Hasta aca*/
+                foreach (DataGridViewRow fila in dataGridViewListaCandidatos.Rows)
+                {
+
+                    if (fila.Cells[0].Value != null && fila.Cells[0].Value.Equals(true))
                     {
-                        if (dataGridViewCandidatosAEvaluar.Rows[j].Cells[1].Value.Equals(fila.Cells[1].Value))
+                        for (int j = 0; j < dataGridViewCandidatosAEvaluar.Rows.Count; j++)
                         {
-                            resultado = true;
-                            break;
+                            if (dataGridViewCandidatosAEvaluar.Rows[j].Cells[1].Value.Equals(fila.Cells[1].Value))
+                            {
+                                resultado = true;
+                                break;
+                            }
+                            else
+                            {
+                                resultado = false;
+                            }
                         }
-                        else
+                        if (resultado == false)
                         {
-                            resultado = false;
+                            dataGridViewCandidatosAEvaluar.Rows.Add();
+                            dataGridViewCandidatosAEvaluar.Rows[i].Cells[1].Value = fila.Cells[1].Value;
+                            dataGridViewCandidatosAEvaluar.Rows[i].Cells[2].Value = fila.Cells[2].Value;
+                            dataGridViewCandidatosAEvaluar.Rows[i].Cells[3].Value = fila.Cells[3].Value;
+                            i++;
                         }
+
                     }
-                    if (resultado == false)
-                    {
-                        dataGridViewCandidatosAEvaluar.Rows.Add();
-                        dataGridViewCandidatosAEvaluar.Rows[i].Cells[1].Value = fila.Cells[1].Value;
-                        dataGridViewCandidatosAEvaluar.Rows[i].Cells[2].Value = fila.Cells[2].Value;
-                        dataGridViewCandidatosAEvaluar.Rows[i].Cells[3].Value = fila.Cells[3].Value;
-                        i++;
-                    }
-                    
                 }
             }
         }
