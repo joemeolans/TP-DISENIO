@@ -63,7 +63,7 @@ namespace TP_DISEÑO.Gestores
         public bool checkPassword(DTO.ConsultorDTO CDTO, consultor consultor)
         {
             bool valor = false;
-            if (CDTO.contraseña != consultor.Contrasenia) //Esta parte no me queda claro
+            if (CDTO.contraseña != consultor.Contrasenia)
             {
                 valor = true; //Existe un usuario con tal contraseña.
             }
@@ -85,7 +85,7 @@ namespace TP_DISEÑO.Gestores
                         bool resultadocheck = this.checkPassword(CDTO, consultor);
                         if (resultadocheck == true)
                         {
-                            resultado = true; //El error numero 7 indica que la contrasenia ingresada no es la correcta. 
+                            resultado = true;
                         }
                     }
                     else
